@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.6. Injective Functions and Left Inverses &#8212; Linear Algebra for Data Workbook</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.7. Surjective Functions and Right Inverses" href="chap2_surjective-functions-and-right-inverses.html" />
+    <link rel="prev" title="2.5. Homework 2" href="hw02.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Linear Algebra for Data Workbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Welcome to Stats 89a
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Background
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00_Background/python_overview.html">
+   1. (CH0): Python 101
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/basics.html">
+     1.1. The Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/numpy.html">
+     1.2. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/plotting.html">
+     1.3. MatPlotLib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/playground0.html">
+     1.4. Play Ground
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/hw0.html">
+     1.5. Homework 0: Due Sunday January 24, 2021, 11:59 PM CA time
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction and Overview
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="chap1_introduction_header.html">
+   1. (CH1): Introduction and Overview
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap1_overview.html">
+     1.1. Linear Algebra for Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap1_examples.html">
+     1.2. Examples
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="chap2_algebras_header.html">
+   2. (CH2): Algebra, algebras, and functions
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_sets.html">
+     2.1. Sets and Set Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_basic-table-operations.html">
+     2.2. Data Frames and Set Operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw01.html">
+     2.3. Homework 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_functions-and-compositions.html">
+     2.4. Functions and Compositions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw02.html">
+     2.5. Homework 2
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.6. Injective Functions and Left Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_surjective-functions-and-right-inverses.html">
+     2.7. Surjective Functions and Right Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_generalized-inverses.html">
+     2.8. Generalized inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw03.html">
+     2.9. Homework 3
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/10_Overview/chap2_injective-functions-and-left-inverses.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_Overview/chap2_injective-functions-and-left-inverses.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erichson/LinearAlgebra/master?urlpath=tree/10_Overview/chap2_injective-functions-and-left-inverses.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example-of-an-injective-function">
+   2.6.1. An example of an injective function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-left-inverses">
+   2.6.2. Constructing left inverses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-numerical-example">
+   2.6.3. A numerical example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#idempotence-and-left-inverses">
+   2.6.4. Idempotence and left inverses
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="injective-functions-and-left-inverses">
+<h1><span class="section-number">2.6. </span>Injective Functions and Left Inverses<a class="headerlink" href="#injective-functions-and-left-inverses" title="Permalink to this headline">¶</a></h1>
+<p>An <em>injective</em> function is a mapping from a set <span class="math notranslate nohighlight">\(A\)</span> to a set <span class="math notranslate nohighlight">\(B\)</span> such that: if <span class="math notranslate nohighlight">\(a'\neq a\)</span> then <span class="math notranslate nohighlight">\(f(a)\neq f(a')\)</span>.
+That is, <span class="math notranslate nohighlight">\(f\)</span> is injective if and only if it maps distinct elements of the domain <span class="math notranslate nohighlight">\(A\)</span> to distinct elements of the co-domain <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Informally, if <span class="math notranslate nohighlight">\(f : A \rightarrow B\)</span> is injective, then this means that <span class="math notranslate nohighlight">\(A\)</span> must be ``smaller’’ (not larger than) than <span class="math notranslate nohighlight">\(B\)</span>, since if <span class="math notranslate nohighlight">\(A\)</span> were larger than <span class="math notranslate nohighlight">\(B\)</span>, then at least two elements of <span class="math notranslate nohighlight">\(A\)</span> would have to map to the same element of <span class="math notranslate nohighlight">\(B\)</span>.
+This intuition of larger/smaller is formally true for discrete sets and functions on discrete sets.
+Although it is not precisely true for infinite sets (such as the set of integers or the set of real numbers or the set of points on the Euclidean plane), it is not a bad intuition.</p>
+<p>In this section, we will investigate injective functions.
+We will use the table operations we’ve seen before, as well as simple numerical examples.
+In both cases, we will see that injective functions always have special complementary functions called <em>left inverses</em>.</p>
+<p>In the next few sections of the workbook, we will work with datasets containing information about several western cities, which we will introduce now.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">western_cities</span></code> dataset contains information about 251 cities located in the western United States.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datasets</span> <span class="k">import</span> <span class="n">western_cities</span>
+<span class="n">western_cities</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;City&#39;</span><span class="p">,</span> <span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;State&#39;</span><span class="p">]</span>
+<span class="n">western_cities</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="n">b49f10f16a0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">western_cities</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">western_cities</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;City&#39;</span><span class="p">,</span> <span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;State&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">western_cities</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="o">/</span><span class="n">Volumes</span><span class="o">/</span><span class="n">GoogleDrive</span><span class="o">-</span><span class="mi">112349428810515690974</span><span class="o">/</span><span class="n">My</span> <span class="n">Drive</span><span class="o">/</span><span class="n">PhD</span><span class="o">/</span><span class="n">Teaching</span><span class="o">/</span><span class="n">Stat89A_Spring2022</span><span class="o">/</span><span class="n">linalg</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">datasci</span><span class="o">/</span><span class="mi">10</span><span class="n">_Overview</span><span class="o">/</span><span class="n">datasets</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">HERE</span> <span class="o">=</span> <span class="s2">&quot;../datasets/&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">circuit_courts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">HERE</span><span class="p">,</span> <span class="s2">&quot;circuit_courts.csv&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">discretized_functions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">HERE</span><span class="p">,</span> <span class="s2">&quot;discretized_functions.csv&quot;</span><span class="p">))</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span> 
+<span class="ne">--&gt; </span><span class="mi">605</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> 
+<span class="g g-Whitespace">    </span><span class="mi">607</span> 
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">457</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> 
+<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">812</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">813</span> 
+<span class="ne">--&gt; </span><span class="mi">814</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span> 
+<span class="g g-Whitespace">    </span><span class="mi">816</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1043</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1044</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1045</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1046</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1047</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1860</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1861</span>         <span class="c1"># open handles</span>
+<span class="ne">-&gt; </span><span class="mi">1862</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1863</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1864</span>         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="s2">&quot;compression&quot;</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>             <span class="n">compression</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span>             <span class="n">memory_map</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>             <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span> 
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span>                 <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span>                 <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">644</span>                 <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../datasets/circuit_courts.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will also want a bit more information about these western states. Importantly, we will use information about the capitals of each of these states. This information is stored in the <code class="docutils literal notranslate"><span class="pre">state_capitals</span></code> dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datasets</span> <span class="k">import</span> <span class="n">states</span> <span class="k">as</span> <span class="n">state_capitals</span>
+<span class="n">state_capitals</span> <span class="o">=</span> <span class="n">state_capitals</span><span class="p">[[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">]]</span>
+<span class="n">state_capitals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">60</span><span class="n">ede66bc773</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">states</span> <span class="k">as</span> <span class="n">state_capitals</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">state_capitals</span> <span class="o">=</span> <span class="n">state_capitals</span><span class="p">[[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">state_capitals</span>
+
+<span class="o">/</span><span class="n">Volumes</span><span class="o">/</span><span class="n">GoogleDrive</span><span class="o">-</span><span class="mi">112349428810515690974</span><span class="o">/</span><span class="n">My</span> <span class="n">Drive</span><span class="o">/</span><span class="n">PhD</span><span class="o">/</span><span class="n">Teaching</span><span class="o">/</span><span class="n">Stat89A_Spring2022</span><span class="o">/</span><span class="n">linalg</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">datasci</span><span class="o">/</span><span class="mi">10</span><span class="n">_Overview</span><span class="o">/</span><span class="n">datasets</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">HERE</span> <span class="o">=</span> <span class="s2">&quot;../datasets/&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">circuit_courts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">HERE</span><span class="p">,</span> <span class="s2">&quot;circuit_courts.csv&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">discretized_functions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">HERE</span><span class="p">,</span> <span class="s2">&quot;discretized_functions.csv&quot;</span><span class="p">))</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span> 
+<span class="ne">--&gt; </span><span class="mi">605</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> 
+<span class="g g-Whitespace">    </span><span class="mi">607</span> 
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">457</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> 
+<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">812</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">813</span> 
+<span class="ne">--&gt; </span><span class="mi">814</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span> 
+<span class="g g-Whitespace">    </span><span class="mi">816</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1043</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1044</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1045</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1046</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1047</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1860</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1861</span>         <span class="c1"># open handles</span>
+<span class="ne">-&gt; </span><span class="mi">1862</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1863</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1864</span>         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="s2">&quot;compression&quot;</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>             <span class="n">compression</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span>             <span class="n">memory_map</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>             <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span> 
+
+<span class="nn">/usr/local/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span>                 <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span>                 <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">644</span>                 <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../datasets/circuit_courts.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="an-example-of-an-injective-function">
+<h2><span class="section-number">2.6.1. </span>An example of an injective function<a class="headerlink" href="#an-example-of-an-injective-function" title="Permalink to this headline">¶</a></h2>
+<p>Recall our intuition that injective functions map “smaller” sets to “larger” ones. In the case of the <code class="docutils literal notranslate"><span class="pre">western_cities</span></code> dataset, we have three potential sets which we could work with: <code class="docutils literal notranslate"><span class="pre">City</span></code>, <code class="docutils literal notranslate"><span class="pre">Population</span></code> and <code class="docutils literal notranslate"><span class="pre">State</span></code>. Let’s see how many unique values are in each.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;City has </span><span class="si">%i</span><span class="s1"> unique values&#39;</span> <span class="o">%</span> <span class="n">western_cities</span><span class="p">[</span><span class="s2">&quot;City&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Population has </span><span class="si">%i</span><span class="s1"> unique values&#39;</span> <span class="o">%</span> <span class="n">western_cities</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;State has </span><span class="si">%i</span><span class="s1"> unique values&#39;</span> <span class="o">%</span> <span class="n">western_cities</span><span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">2273</span><span class="n">d5db2d0e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;City has </span><span class="si">%i</span><span class="s1"> unique values&#39;</span> <span class="o">%</span> <span class="n">western_cities</span><span class="p">[</span><span class="s2">&quot;City&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Population has </span><span class="si">%i</span><span class="s1"> unique values&#39;</span> <span class="o">%</span> <span class="n">western_cities</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;State has </span><span class="si">%i</span><span class="s1"> unique values&#39;</span> <span class="o">%</span> <span class="n">western_cities</span><span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;western_cities&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that clearly <code class="docutils literal notranslate"><span class="pre">State</span></code> is the smallest set, while <code class="docutils literal notranslate"><span class="pre">City</span></code> and <code class="docutils literal notranslate"><span class="pre">Population</span></code> are much larger.
+Of course, this is because there are many cities within each state.
+Thus, to construct an injective function, let’s choose <code class="docutils literal notranslate"><span class="pre">State</span></code> to be our domain, and either <code class="docutils literal notranslate"><span class="pre">Population</span></code> or <code class="docutils literal notranslate"><span class="pre">City</span></code> to be our co-domain.
+For this section, we will consider the function <span class="math notranslate nohighlight">\(f\)</span> from <code class="docutils literal notranslate"><span class="pre">State</span></code> to <code class="docutils literal notranslate"><span class="pre">City</span></code> which maps each state to its capital.
+This function is already given to us in the <code class="docutils literal notranslate"><span class="pre">state_capitals</span></code> dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state_capitals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mo">017173405</span><span class="n">f7f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">state_capitals</span>
+
+<span class="ne">NameError</span>: name &#39;state_capitals&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Clearly, this function is injective, since each distinct state is mapped to a distinct city.
+However, that this function is not <em>surjective</em>, since the set <code class="docutils literal notranslate"><span class="pre">Capital</span></code> is a strict subset of the set of all western cities <code class="docutils literal notranslate"><span class="pre">City</span></code>.
+That is, there are some cities that are not the capital of a state.</p>
+<p>Since the function <span class="math notranslate nohighlight">\(f\)</span> is injective, we’ve seen in class that it must have at least one complementary function called a <em>left inverse</em>.
+In our case, a left inverse is a function <span class="math notranslate nohighlight">\(g:\)</span> <code class="docutils literal notranslate"><span class="pre">City</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">State</span></code>, such that <span class="math notranslate nohighlight">\(g\circ f\)</span> is the identity function on the set <code class="docutils literal notranslate"><span class="pre">State</span></code>.
+In fact, since <code class="docutils literal notranslate"><span class="pre">City</span></code> is <em>strictly</em> larger than <code class="docutils literal notranslate"><span class="pre">State</span></code> there must be more than one left inverse.
+In what follows, we will see a few examples of left inverses.</p>
+</div>
+<div class="section" id="constructing-left-inverses">
+<h2><span class="section-number">2.6.2. </span>Constructing left inverses<a class="headerlink" href="#constructing-left-inverses" title="Permalink to this headline">¶</a></h2>
+<p>Let’s think about what properties a function <span class="math notranslate nohighlight">\(g:\)</span> <code class="docutils literal notranslate"><span class="pre">City</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">State</span></code> must have in order to be a left inverse for our function <span class="math notranslate nohighlight">\(f\)</span> mapping each state to its capital. Since we need <span class="math notranslate nohighlight">\(g\circ f\)</span> to be the identity function on <code class="docutils literal notranslate"><span class="pre">State</span></code>, we need that for any state <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(g(f(s)) = s\)</span>. In particular, we need that for each state capital, <span class="math notranslate nohighlight">\(g\)</span> maps this capital back to the state that it is the capital of. Importantly, <em>it does not matter what <span class="math notranslate nohighlight">\(g\)</span> does to cities which are not in the set <code class="docutils literal notranslate"><span class="pre">Capital</span></code></em>. As we will see, it is for this reason that there will be several left inverses for <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Let’s use this characterization to give one example of a left inverse. Consider the function <span class="math notranslate nohighlight">\(g_1\)</span>: <code class="docutils literal notranslate"><span class="pre">City</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">State</span></code> mapping each city to the state that it is in. We can obtain this function straightforwardly from the <code class="docutils literal notranslate"><span class="pre">western_cities</span></code> data frame:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="n">western_cities</span><span class="p">[[</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]]</span>
+<span class="n">g1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mf">64e3</span><span class="n">d72aa75c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">g1</span> <span class="o">=</span> <span class="n">western_cities</span><span class="p">[[</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;western_cities&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, every state capital is in the state of which it is the capital, and so intuitively <span class="math notranslate nohighlight">\(g_1\)</span> should be a valid left inverse for <span class="math notranslate nohighlight">\(f\)</span>. Let’s verify this with code by computing <span class="math notranslate nohighlight">\(g_1\circ f\)</span> using a left join. (Note: here we need to specify a value of <code class="docutils literal notranslate"><span class="pre">left_on</span></code> and <code class="docutils literal notranslate"><span class="pre">right_on</span></code> when we do the join, because the column names are different for the two tables.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state_to_state1</span> <span class="o">=</span> <span class="n">state_capitals</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Capital&quot;</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)[[</span><span class="s2">&quot;State_x&quot;</span><span class="p">,</span> <span class="s2">&quot;State_y&quot;</span><span class="p">]]</span>
+<span class="n">state_to_state1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;(g1 o f)(State)&quot;</span><span class="p">]</span>
+<span class="n">state_to_state1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">5</span><span class="n">c25e2060599</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">state_to_state1</span> <span class="o">=</span> <span class="n">state_capitals</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Capital&quot;</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)[[</span><span class="s2">&quot;State_x&quot;</span><span class="p">,</span> <span class="s2">&quot;State_y&quot;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">state_to_state1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;(g1 o f)(State)&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">state_to_state1</span>
+
+<span class="ne">NameError</span>: name &#39;state_capitals&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Indeed, we see that <span class="math notranslate nohighlight">\(g_1\circ f\)</span> is indeed the identity function on <code class="docutils literal notranslate"><span class="pre">State</span></code>, and so <span class="math notranslate nohighlight">\(g_1\)</span> is a left inverse for <span class="math notranslate nohighlight">\(f\)</span>. As we said above, however, this is not the only left inverse we could have constructed: we only care about what the left inverse does on the elements of the <em>range</em> of <span class="math notranslate nohighlight">\(f\)</span>, which in this case is the set <code class="docutils literal notranslate"><span class="pre">Capital</span></code>.</p>
+<p>To come up with another example, let’s alter <span class="math notranslate nohighlight">\(g_1\)</span> by changing some of the states that cities get mapped to. It doesn’t matter which cities we change, as long as it isn’t one of the 6 cities in the subset <code class="docutils literal notranslate"><span class="pre">Capital</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span> <span class="o">=</span> <span class="n">western_cities</span><span class="p">[[</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]]</span>
+<span class="n">g2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g2</span><span class="p">[</span><span class="s2">&quot;City&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tacoma&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Colorado&quot;</span> <span class="c1"># map Tacoma to Colorado</span>
+<span class="n">g2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g2</span><span class="p">[</span><span class="s2">&quot;City&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Pomona&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hawaii&quot;</span> <span class="c1"># map Pomona to Hawaii</span>
+<span class="n">g2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">eb345262cc53</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">g2</span> <span class="o">=</span> <span class="n">western_cities</span><span class="p">[[</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g2</span><span class="p">[</span><span class="s2">&quot;City&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tacoma&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Colorado&quot;</span> <span class="c1"># map Tacoma to Colorado</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">g2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g2</span><span class="p">[</span><span class="s2">&quot;City&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Pomona&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hawaii&quot;</span> <span class="c1"># map Pomona to Hawaii</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">g2</span>
+
+<span class="ne">NameError</span>: name &#39;western_cities&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we decided to map the city Tacoma (which is in Washington) to Colorado, and Pomona (which is in California) to Hawaii. We can verify that <code class="docutils literal notranslate"><span class="pre">g1</span></code> and <code class="docutils literal notranslate"><span class="pre">g2</span></code> are indeed different:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">fef4abed06dd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">g1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;g1&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, if we compute the composition <span class="math notranslate nohighlight">\(g_2\circ f\)</span>, we see that it still gives us the identity function on <code class="docutils literal notranslate"><span class="pre">State</span></code>, and therefore that <span class="math notranslate nohighlight">\(g_2\)</span> is another valid left inverse for <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state_to_state2</span> <span class="o">=</span> <span class="n">state_capitals</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">g2</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Capital&quot;</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)[[</span><span class="s2">&quot;State_x&quot;</span><span class="p">,</span> <span class="s2">&quot;State_y&quot;</span><span class="p">]]</span>
+<span class="n">state_to_state2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;(g2 o f)(State)&quot;</span><span class="p">]</span>
+<span class="n">state_to_state2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mo">06</span><span class="n">b3384cbb2c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">state_to_state2</span> <span class="o">=</span> <span class="n">state_capitals</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">g2</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Capital&quot;</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)[[</span><span class="s2">&quot;State_x&quot;</span><span class="p">,</span> <span class="s2">&quot;State_y&quot;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">state_to_state2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;(g2 o f)(State)&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">state_to_state2</span>
+
+<span class="ne">NameError</span>: name &#39;state_capitals&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-numerical-example">
+<h2><span class="section-number">2.6.3. </span>A numerical example<a class="headerlink" href="#a-numerical-example" title="Permalink to this headline">¶</a></h2>
+<p>To finish this section, we will give a simple numerical example of an injective function, which will complement the examples given with the data frame above.</p>
+<p>Here, we consider a function <span class="math notranslate nohighlight">\(f:\mathbb{Z}\to\mathbb{R}\)</span>, where <span class="math notranslate nohighlight">\(\mathbb{Z} = \{\dots, -2,-1,0,1,2,\dots\}\)</span> is the set of integers, and <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is the set of real numbers. While <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> are both infinite sets, we can intuitively see that <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is ‘larger’, in the sense that there are many elements of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> which are not in <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> (this intuition of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> being larger can in fact be formalized by proving that there is no surjective function from <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>).</p>
+<p>We define the function <span class="math notranslate nohighlight">\(f\)</span> as follows: for any integer <span class="math notranslate nohighlight">\(z\in \mathbb{Z}\)</span>, let <span class="math notranslate nohighlight">\(f(z)\)</span> be a random number in the interval <span class="math notranslate nohighlight">\((z-1/2, z+1/2)\)</span>. Let’s define a python function which does this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># set random seed for reproducibility</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-.</span><span class="mi">5</span><span class="p">,</span> <span class="n">high</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">z</span> <span class="o">+</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see a few examples of this function’s output</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(-5) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(2) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(14) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="mi">14</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(-5) = -4.951186
+f(2) = 2.048814
+f(14) = 14.048814
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function is indeed injective: if <span class="math notranslate nohighlight">\(z\neq z'\)</span>, then the intersection of the sets <span class="math notranslate nohighlight">\((z-1/2, z+1/2)\)</span> and <span class="math notranslate nohighlight">\((z'-1/2, z'+1/2)\)</span> must be empty. Since <span class="math notranslate nohighlight">\(f\)</span> is injective, it must have a left inverse, i.e. a function <span class="math notranslate nohighlight">\(g\)</span> such that <span class="math notranslate nohighlight">\(g\circ f\)</span> is equal to the identity function on the integers. How can we construct such a left inverse? We need a function <span class="math notranslate nohighlight">\(g\)</span> such that for any integer <span class="math notranslate nohighlight">\(z\)</span> and any value <span class="math notranslate nohighlight">\(f(z) \in (z-1/2, z+1/2)\)</span>, we have <span class="math notranslate nohighlight">\(g(f(z)) = z\)</span>. A natural way to construct such a function <span class="math notranslate nohighlight">\(g\)</span> is simply by rounding to the nearest integer. To do this in python, we can use the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> function <code class="docutils literal notranslate"><span class="pre">rint</span></code>. Let’s define this function below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">rint</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can verify on our examples that this does indeed give us a valid left inverse:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g(f(-5)) = </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g(f(2)) = </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g(f(14)) = </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">14</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g(f(-5)) = -5
+g(f(2)) = 2
+g(f(14)) = 14
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected, this gives us the identity function on the integers!</p>
+<p>As we’ve seen, injective functions must always have left inverses, and in many cases have more than one of them. Intuitively, we can think about injective functions as being functions whose domain is “smaller” than their co-domain – and it is this property that allows us to construct a variety of left inverses. As we will see in the next section, there is an analogous concept for functions whose domain is “larger” than their co-domain, and that this is related to the idea of surjective functions and right inverses.</p>
+</div>
+<div class="section" id="idempotence-and-left-inverses">
+<h2><span class="section-number">2.6.4. </span>Idempotence and left inverses<a class="headerlink" href="#idempotence-and-left-inverses" title="Permalink to this headline">¶</a></h2>
+<p>One might be tempted to think that if we flipped the order of composition, we would also obtain an identity: namely that <span class="math notranslate nohighlight">\(f\circ g\)</span> might be the identity function on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+However, this cannot be the case: for a real number <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(g(x)\)</span> gives the nearest integer, which <span class="math notranslate nohighlight">\(f\)</span> is not guaranteed to map back to the same input <span class="math notranslate nohighlight">\(x\)</span>.
+On the other hand, <span class="math notranslate nohighlight">\(f\circ g\)</span> does have another special property: it is always <em>idempotent</em>, meaning <span class="math notranslate nohighlight">\((f\circ g)^2 = f\circ g\)</span>.
+This is easy to see this algebraically, using the fact that <span class="math notranslate nohighlight">\(g\circ f\)</span> is the identity on the integers:
+\begin{equation*}
+(f\circ g)^2 = (f\circ g)\circ (f\circ g) = f\circ (g\circ f)\circ g = f\circ \text{Id}_{\mathbb{Z}}\circ g = f\circ g
+\end{equation*}
+We can also verify this property numerically for our example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(f o g)(-5.21) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="o">-</span><span class="mf">5.21</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(f o g)^2(-5.21) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="o">-</span><span class="mf">5.21</span><span class="p">)))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(f o g)(4.68) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mf">4.68</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(f o g)^2(4.68) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mf">4.68</span><span class="p">)))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(f o g)(13.74) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mf">13.74</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(f o g)^2(13.74) = </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mf">13.74</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(f o g)(-5.21) = -4.951186
+(f o g)^2(-5.21) = -4.951186
+
+(f o g)(4.68) = 5.048814
+(f o g)^2(4.68) = 5.048814
+
+(f o g)(13.74) = 14.048814
+(f o g)^2(13.74) = 14.048814
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./10_Overview"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw02.html" title="previous page"><span class="section-number">2.5. </span>Homework 2</a>
+    <a class='right-next' id="next-link" href="chap2_surjective-functions-and-right-inverses.html" title="next page"><span class="section-number">2.7. </span>Surjective Functions and Right Inverses</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Michael W. Mahoney, N. Benjamin Erichson and Ryan Theisen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

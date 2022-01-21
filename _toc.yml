@@ -1,0 +1,151 @@
+- file: overview
+  numbered: true
+
+- part: Background
+  numbered: true
+  chapters:
+  - file: 00_Background/python_overview
+    sections:
+    - file: 00_Background/basics
+    - file: 00_Background/numpy
+    - file: 00_Background/plotting
+    - file: 00_Background/playground0
+    - file: 00_Background/hw0
+
+
+- part: Introduction and Overview
+  numbered: true
+  chapters:
+    - file: 10_Overview/chap1_introduction_header
+      sections:
+      - file: 10_Overview/chap1_overview
+      - file: 10_Overview/chap1_examples
+    - file: 10_Overview/chap2_algebras_header
+      sections:
+      - file: 10_Overview/chap2_sets
+      - file: 10_Overview/chap2_basic-table-operations
+      - file: 10_Overview/hw01
+      - file: 10_Overview/chap2_functions-and-compositions
+      - file: 10_Overview/hw02
+      - file: 10_Overview/chap2_injective-functions-and-left-inverses
+      - file: 10_Overview/chap2_surjective-functions-and-right-inverses
+      - file: 10_Overview/chap2_generalized-inverses
+      - file: 10_Overview/hw03
+
+
+# - part: Basic Linear Algebra
+#   chapters:
+#   - file: 20_BasicLA/basicLA_1_chheader
+#     sections:
+#     - file: 20_BasicLA/basicLA_1A_introduction-to-norms
+#     - file: 20_BasicLA/basicLA_1B_lp-balls
+#     - file: 20_BasicLA/hw04
+#   - file: 20_BasicLA/basicLA_2_chheader
+#     sections:
+#     - file: 20_BasicLA/basicLA_2A_vectorspaces
+#     - file: 20_BasicLA/hw05
+#     - file: 20_BasicLA/numpy_cheatsheet
+#   - file: 20_BasicLA/basicLA_3_chheader
+#     sections:
+#     - file: 20_BasicLA/basicLA_3_linear_examples_new
+#     - file: 20_BasicLA/basicLA_3_matrices_and_linear_functions
+#     - file: 20_BasicLA/hw06
+#     - file: 20_BasicLA/basicLA_3_inverses
+#     - file: 20_BasicLA/basicLA_3_changing_basis
+#     - file: 20_BasicLA/hw07
+#     - file: 20_BasicLA/basicLA_3_deconstructing
+#     - file: 20_BasicLA/basicLA_3_powers_of_matrices
+#     - file: 20_BasicLA/hw08
+#   - file: 20_BasicLA/basicLA_4_chheader
+#     sections:
+#     - file: 20_BasicLA/basicLA_4_dot-products-and-angles
+#     - file: 20_BasicLA/basicLA_4_QR
+#     - file: 20_BasicLA/basicLA_4_projections
+#     - file: 20_BasicLA/hw09
+#     - file: 20_BasicLA/basicLA_4_inverses-revisited
+#     - file: 20_BasicLA/chapter6_Lab08
+#     - file: 20_BasicLA/chapter6_Lab08B_part2
+#     - file: 20_BasicLA/chapter6_Lab08B
+#     - file: 20_BasicLA/chapter6_HW07
+#     - file: 20_BasicLA/chapter6_HW08
+#   - file: 20_BasicLA/basicLA_5_chheader
+#     sections:
+#     - file: 20_BasicLA/basicLA_2_placeholder
+#     - file: 20_BasicLA/more_on_qr
+#
+#
+# - part: Basic Probability for LA
+#   chapters:
+#   - file: 30_BasicProb/chheader_discreteProb
+#     sections:
+#     - file: 30_BasicProb/prob1A_coin_flipping_ben
+#     - file: 30_BasicProb/prob4A_dist_highdim_ben
+#     - file: 30_BasicProb/hw10
+#     - file: 30_BasicProb/prob4D_classification_LowDim_ben
+#     - file: 30_BasicProb/prob4E_classification_HighDim_ben
+#
+# - part: Basic Probability for LA (FROM MWM PRE S21)
+#   chapters:
+#   - file: 30_BasicProb/chheader_discreteProb_mm
+#     sections:
+#     - file: 30_BasicProb/prob1A_coin_flipping
+#     - file: 30_BasicProb/prob1B_coupon_collecting
+#     - file: 30_BasicProb/prob1C_determine_success
+#     - file: 30_BasicProb/prob1D_birthday_paradox
+#   - file: 30_BasicProb/chheader_randomVars
+#     sections:
+#     - file: 30_BasicProb/prob2A_meanVariance
+#     - file: 30_BasicProb/prob2B_varianceCovariance
+#   - file: 30_BasicProb/chheader_variabilityConcentration
+#     sections:
+#     - file: 30_BasicProb/prob3A_tail_bounds
+#   - file: 30_BasicProb/chheader_highdimLA
+#     sections:
+#     - file: 30_BasicProb/prob4A_distAngle_highdim
+#     - file: 30_BasicProb/prob4B_pairwise
+#     - file: 30_BasicProb/prob4D_classification_LowDim
+#     - file: 30_BasicProb/prob4E_classification_HighDim
+#
+# - part: Advanced LA, Spectral Theorem
+#   chapters:
+#   - file: 40_SpectralThm/chheader_eigenstuff
+#     sections:
+#     - file: 40_SpectralThm/SpectralThm_1_quadratic-forms
+#     - file: 40_SpectralThm/hw11
+#     - file: 40_SpectralThm/SpectralThm_1_eigenthings
+#     - file: 40_SpectralThm/hw12
+#     - file: 40_SpectralThm/SpectralThm_1_SVD
+#     - file: 40_SpectralThm/hw13
+#     - file: 40_SpectralThm/eigen_lab09
+#     - file: 40_SpectralThm/eigen_hw09
+#     - file: 40_SpectralThm/eigen_lab10
+#     - file: 40_SpectralThm/eigen_hw10
+#
+# - part: PCA, LS, ETC
+#   chapters:
+#   - file: 50_Applications/chheader_pca
+#     sections:
+#     - file: 50_Applications/PCA
+#     - file: 50_Applications/LS
+#     - file: 50_Applications/pca_HW11
+#   - file: 50_Applications/chheader_ls
+#     sections:
+#     - file: 50_Applications/ls_Lab12
+#     - file: 50_Applications/ls_HW12
+#   - file: 50_Applications/chheader_randnla
+#     sections:
+#     - file: 50_Applications/randnla
+#   - file: 50_Applications/chheader_pagerank
+#     sections:
+#     - file: 50_Applications/pagerank
+#   - file: 50_Applications/chheader_calculus
+#     sections:
+#     - file: 50_Applications/high_dim_differentiation
+#     - file: 50_Applications/high_dim_integration
+#
+# - part: Misc Extra Stuff
+#   chapters:
+#   - file: 60_Misc/play0
+#   - file: 60_Misc/play1
+#   - file: 60_Misc/play2
+#   - file: 60_Misc/play3

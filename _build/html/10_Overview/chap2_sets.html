@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.1. Sets and Set Algebra &#8212; Linear Algebra for Data Workbook</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.2. Data Frames and Set Operations" href="chap2_basic-table-operations.html" />
+    <link rel="prev" title="2. (CH2): Algebra, algebras, and functions" href="chap2_algebras_header.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Linear Algebra for Data Workbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Welcome to Stats 89a
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Background
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../00_Background/python_overview.html">
+   1. (CH0): Python 101
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/basics.html">
+     1.1. The Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/numpy.html">
+     1.2. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/plotting.html">
+     1.3. MatPlotLib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/playground0.html">
+     1.4. Play Ground
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_Background/hw0.html">
+     1.5. Homework 0: Due Sunday January 24, 2021, 11:59 PM CA time
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction and Overview
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="chap1_introduction_header.html">
+   1. (CH1): Introduction and Overview
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap1_overview.html">
+     1.1. Linear Algebra for Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap1_examples.html">
+     1.2. Examples
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="chap2_algebras_header.html">
+   2. (CH2): Algebra, algebras, and functions
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Sets and Set Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_basic-table-operations.html">
+     2.2. Data Frames and Set Operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw01.html">
+     2.3. Homework 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_functions-and-compositions.html">
+     2.4. Functions and Compositions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw02.html">
+     2.5. Homework 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_injective-functions-and-left-inverses.html">
+     2.6. Injective Functions and Left Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_surjective-functions-and-right-inverses.html">
+     2.7. Surjective Functions and Right Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chap2_generalized-inverses.html">
+     2.8. Generalized inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw03.html">
+     2.9. Homework 3
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_Overview/chap2_sets.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-sets">
+   2.1.1. Introduction to Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets-in-python">
+   2.1.2. Sets in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-operations-on-sets">
+   2.1.3. Basic Operations on Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-morgan-s-laws">
+   2.1.4. De Morgan’s laws
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partitions">
+   2.1.5. Partitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distributive-rule">
+   2.1.6. Distributive Rule
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#idempotence-of-unions">
+   2.1.7. Idempotence of unions
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="sets-and-set-algebra">
+<h1><span class="section-number">2.1. </span>Sets and Set Algebra<a class="headerlink" href="#sets-and-set-algebra" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will cover basic aspects of sets in python. We will then use this to illustrate some of the simple properties that we’ve seen from the algebra of sets and the algebra of transformations.</p>
+<ul class="simple">
+<li><p>Introduction to sets and sets in python.</p></li>
+<li><p>Illustration of basic operations, including subset, superset, intersections, and unions.</p></li>
+<li><p>Illustration of more adanced notions, including: De Morgan’s Laws; partitions versus non-partitions; distributive rule for intersection over union and distributive rule for unions over intersections; and how performing union/intersection with a given set is an idempotent operation.</p></li>
+</ul>
+<div class="section" id="introduction-to-sets">
+<h2><span class="section-number">2.1.1. </span>Introduction to Sets<a class="headerlink" href="#introduction-to-sets" title="Permalink to this headline">¶</a></h2>
+<p>Sets are collections of objects (without repetitions). Set theory dates back to the great German mathematician Georg Cantor (1845-1918) and forms the foundation of modern mathematics.</p>
+<p>We can describe a set by listing all its elements explicitly, for example</p>
+<div class="math notranslate nohighlight">
+\[
+M := \{1,2,3,4,5,6\}
+\]</div>
+<p>defines a set <span class="math notranslate nohighlight">\(M\)</span>. It is convention to use capital letters (e.g., A, B, C) to represent sets. The objects in a set are called elements and are represented by lower case letters (e.g., x, y, z).</p>
+<ul class="simple">
+<li><p>We say <span class="math notranslate nohighlight">\(x\)</span> is an element in <span class="math notranslate nohighlight">\(X\)</span>, or short <span class="math notranslate nohighlight">\(x\in X\)</span>, if <span class="math notranslate nohighlight">\(x\)</span> is contained in the set <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+<li><p>Otherwise we say that <span class="math notranslate nohighlight">\(x\)</span> is not an element of <span class="math notranslate nohighlight">\(X\)</span>, or short <span class="math notranslate nohighlight">\(x\not\in X\)</span>.</p></li>
+</ul>
+<p>For example 2 is an element in <span class="math notranslate nohighlight">\(M\)</span>, i.e., <span class="math notranslate nohighlight">\(2\in M\)</span>. In contrast, 7 is not an element in <span class="math notranslate nohighlight">\(M\)</span>, i.e., <span class="math notranslate nohighlight">\(7\not\in M\)</span>.</p>
+<p>Our set <span class="math notranslate nohighlight">\(M\)</span> contains 6 elements. We also say that the set <span class="math notranslate nohighlight">\(M\)</span> has a cardinality of 6 and we can express this concisely as <span class="math notranslate nohighlight">\(|M|=6\)</span>.</p>
+<ul class="simple">
+<li><p>If a set is not infinite, then the cardinality of a set is a measure of the “number of elements” of the set.</p></li>
+</ul>
+<p>Note, here we use the logical symbol <span class="math notranslate nohighlight">\(:=\)</span> to define <span class="math notranslate nohighlight">\(M\)</span> as an object that is equal to the set <span class="math notranslate nohighlight">\(\{1,2,3,4,5,6\}\)</span>. In contrast, the symbol <span class="math notranslate nohighlight">\(=\)</span> expresses that the object on the left side is equal to the object on its right side. We will often be a bit sloppy and simply use <span class="math notranslate nohighlight">\(=\)</span> to define a set, but it is good to keep in mind that there can be a difference between a definition and an equality. This is in particular import when we are writing code, e.g., <code class="docutils literal notranslate"><span class="pre">x=5</span></code> assigns the value 5 to <code class="docutils literal notranslate"><span class="pre">x</span></code> and this is different from the logical operation <code class="docutils literal notranslate"><span class="pre">x==5</span></code> which compares whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is equal to 5.</p>
+<p>We can also define an infinite set, i.e., a set that has no last element as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{N}^* := \{1,2,3,...\}.
+\]</div>
+<p>This set contains all positive integers, i.e., it is the set of all natural numbers without 0. (We call <span class="math notranslate nohighlight">\(\{\}\)</span> the set brackets, and the dots <span class="math notranslate nohighlight">\(...\)</span> are called ellipsis.)</p>
+<p>In many situations it would be tedious to list all elements. But, we can also define sets by stating properties that characterize its members. For example we can define <span class="math notranslate nohighlight">\(M\)</span> more concisely as</p>
+<div class="math notranslate nohighlight">
+\[
+M := \{x \in \mathbb{N}^* | x\le 6\}.
+\]</div>
+<p>Here we say that the element <span class="math notranslate nohighlight">\(x\)</span> is a member of <span class="math notranslate nohighlight">\(\mathbb{N}^*\)</span> such that <span class="math notranslate nohighlight">\(x\)</span> is smaller or equal to 6. When we define sets by stating properties we use typically the following notation</p>
+<div class="math notranslate nohighlight">
+\[
+\{\text{membership}|\text{properties}\}
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\{\text{pattern}|\text{membership}\}.
+\]</div>
+<p>You have already seen an example for the first set notation, and here is an example for the second notation</p>
+<div class="math notranslate nohighlight">
+\[
+X := \{2n | n \in \mathbb{N}^* \}.
+\]</div>
+<p>This set contains all natural numbers that are divisible by 2.</p>
+</div>
+<div class="section" id="sets-in-python">
+<h2><span class="section-number">2.1.2. </span>Sets in Python<a class="headerlink" href="#sets-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Python has a rich number of build-in set objects. Like mathematical sets, Python sets have the following properties:</p>
+<ul class="simple">
+<li><p>Sets are unordered.</p></li>
+<li><p>Set elements are unique.</p></li>
+</ul>
+<p>We can define a set in Python using the curly braces.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s check the type of this new object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To compute the cardinality of this set, we can use the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can also define a set by using the Python set function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>More compactly, we can create the set as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Now let’s create a few more sets.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>We can ask which of these sets is a subset of M. Recall, a set A is considered a subset of another set B if every element of A is in B.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course, Z is not a subset of M. But it is a superset, since every element of M is in Z, right?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, we can also check whether two sets are equal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">==</span> <span class="n">X</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">==</span> <span class="n">Z</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="basic-operations-on-sets">
+<h2><span class="section-number">2.1.3. </span>Basic Operations on Sets<a class="headerlink" href="#basic-operations-on-sets" title="Permalink to this headline">¶</a></h2>
+<p>In order to work with sets we need to introduce some set operations first. To illustrate these operations, we define the sets <span class="math notranslate nohighlight">\(A=\{2,3,4,5\}\)</span>, <span class="math notranslate nohighlight">\(B=\{4,5,6\}\)</span>, and <span class="math notranslate nohighlight">\(\Omega=\{1,2,3,...9\}\)</span>.</p>
+<p>Here is a summary of basic operations.</p>
+<ul class="simple">
+<li><p>Union: <span class="math notranslate nohighlight">\(A \cup B := \{x | x\in A \,\,\, \text{or} \,\,\, x\in B\} = \{x\in A | x\in B\}\)</span>.</p>
+<ul>
+<li><p>The union <span class="math notranslate nohighlight">\(A \cup B\)</span> consists of the elements that appear in <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> or both.</p></li>
+<li><p>Example: <span class="math notranslate nohighlight">\(A \cup B := \{2,3,4,5,6\}\)</span></p></li>
+</ul>
+</li>
+<li><p>Intersection:  <span class="math notranslate nohighlight">\(A \cap B := \{x| x\in A \,\,\, \text{and} \,\,\, x\in B\}\)</span>.</p></li>
+<li><p>The intersection <span class="math notranslate nohighlight">\(A \cap B\)</span> consists of elements that appear in both A and B.</p></li>
+<li><p>Example: <span class="math notranslate nohighlight">\(A \cap B := \{4,5\}\)</span></p></li>
+<li><p>Complement:  <span class="math notranslate nohighlight">\(A^C := \{x \in \Omega | x\not\in A\}\)</span>, where <span class="math notranslate nohighlight">\(A \subseteq \Omega\)</span>.</p></li>
+<li><p>The complement <span class="math notranslate nohighlight">\(A^C\)</span> consists of all the elements of <span class="math notranslate nohighlight">\(\Omega\)</span> that are not in A.</p></li>
+<li><p>Example: <span class="math notranslate nohighlight">\(A^C := \{1,6,7,8,9\}\)</span></p></li>
+<li><p>Relative Complement:  <span class="math notranslate nohighlight">\(A\backslash B := \{x \in A | x\not\in B\}\)</span>.</p></li>
+<li><p>The relative complement <span class="math notranslate nohighlight">\(A\backslash B\)</span> consists of all the elements in A but not in B.</p></li>
+<li><p>Example: <span class="math notranslate nohighlight">\(A\backslash B := \{2,3\}\)</span></p></li>
+</ul>
+<p>We say two sets are disjoint if there are no element in common between the two sets, i.e., <span class="math notranslate nohighlight">\(D\cap E = \emptyset\)</span>. In our example A and B are not disjoint.</p>
+<p>Now let’s try to repeat this example in Python. First we have to define the sets.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">omega</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">omega</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">3</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">7</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>First, we compute the union <span class="math notranslate nohighlight">\(A \cup B\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we compute the intersection <span class="math notranslate nohighlight">\(A \cap B\)</span></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we compute the relative complement <span class="math notranslate nohighlight">\(A \backslash B\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can also use the difference function to compute the complement.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="de-morgan-s-laws">
+<h2><span class="section-number">2.1.4. </span>De Morgan’s laws<a class="headerlink" href="#de-morgan-s-laws" title="Permalink to this headline">¶</a></h2>
+<p>Recall, that De Morgan’s Laws relate the intersection and union of sets through complements.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((A\cup B)^c = A^c \cap B^c\)</span> (law of union)</p></li>
+<li><p><span class="math notranslate nohighlight">\((A\cap B)^c = A^c \cup B^c\)</span> (law of intersection)</p></li>
+</ul>
+<p>Let’s try to verify these laws for our above example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This set is equal to</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">omega</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">A</span><span class="p">))</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">omega</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Hence, the law of unions holds for our example. You will verify the law of intersections for this example as a homework problem.</p>
+</div>
+<div class="section" id="partitions">
+<h2><span class="section-number">2.1.5. </span>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline">¶</a></h2>
+<p>Given a set, one often wants to split it into representative pieces. A partition of a set is such a splitting of the elements of the set into non-empty subsets, in such a way that every element is included in exactly one subset. Here is an example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">}</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The set B and C partition the set A, i.e., the union of B and C contains all elements that are in A, while the intersection of B and C is the empty set.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">==</span> <span class="n">A</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Partitions are important if want to count the elemens of sets. The cardinality of A is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since B and C are partitions, we have <span class="math notranslate nohighlight">\(|A| = |B| + |C|\)</span></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note, that this does not work for the following two sets, since they do not perform a partition of A.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Again, the union of B and C contains all elements that are in A.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">==</span> <span class="n">A</span>
+</pre></div>
+</div>
+<p>But, the intersection yield a non-empty set.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Now, things go wrong if we count the elements.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get the correct answer, we need to subtract the intersection of A and B, i.e. <span class="math notranslate nohighlight">\(|A| = |B| + |C| - |B\cap C|\)</span></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="distributive-rule">
+<h2><span class="section-number">2.1.6. </span>Distributive Rule<a class="headerlink" href="#distributive-rule" title="Permalink to this headline">¶</a></h2>
+<p>We have the following two rules:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\cap (B\cup C) = (A\cap B) \cup (A\cap C)\)</span> (intersection distributed over union)</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\cup (B\cap C) = (A\cup B) \cap (A\cup C)\)</span> (union distributes over intersection)</p></li>
+</ul>
+<p>Let’s varify these rules for our example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">C</span><span class="p">))</span> <span class="o">==</span> <span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">B</span><span class="p">))</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">C</span><span class="p">))</span> <span class="o">==</span> <span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">))</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="idempotence-of-unions">
+<h2><span class="section-number">2.1.7. </span>Idempotence of unions<a class="headerlink" href="#idempotence-of-unions" title="Permalink to this headline">¶</a></h2>
+<p>One property of the union operation is that it is idempotent.  We know that, e.g., <span class="math notranslate nohighlight">\(A \cup A = A\)</span>, but we can use this to get more interesting results.  In particular, this means that when we apply a union with a set multiple times, the result is the same as if we apply it once.</p>
+<p>Here, we will demonstrate this with the sets <span class="math notranslate nohighlight">\(A=\{1,2,\dots,20\}, B = \{21,22,\dots,40\}\)</span>.  We will observe that <span class="math notranslate nohighlight">\(A\cup B = (A\cup B)\cup B\)</span>.</p>
+<p>Similarly, you should be able to verify on your own that <span class="math notranslate nohighlight">\(A\cup B = A \cup (A\cup B)\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">41</span><span class="p">)}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As we would expect, <span class="math notranslate nohighlight">\(A\cup B = \{1,2,\dots, 39, 40\}\)</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_union_B</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A_union_B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now let’s apply the union with <span class="math notranslate nohighlight">\(B\)</span> again, and see if this changes the set.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_union_B_union_B</span> <span class="o">=</span> <span class="n">A_union_B</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A_union_B</span> <span class="o">==</span> <span class="n">A_union_B_union_B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Indeed, the set is unchanged from applying the union with <span class="math notranslate nohighlight">\(B\)</span> twice. In the homework, we will see that a similar idempotence property holds for intersections.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./10_Overview"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="chap2_algebras_header.html" title="previous page"><span class="section-number">2. </span>(CH2): Algebra, algebras, and functions</a>
+    <a class='right-next' id="next-link" href="chap2_basic-table-operations.html" title="next page"><span class="section-number">2.2. </span>Data Frames and Set Operations</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Michael W. Mahoney, N. Benjamin Erichson and Ryan Theisen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
