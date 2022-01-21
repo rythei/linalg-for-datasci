@@ -1,1 +1,0 @@
-# linalg-for-datasci
