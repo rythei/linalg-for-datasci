@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.5. Homework 0: Due Sunday January 24, 2021, 11:59 PM CA time &#8212; Linear Algebra for Data Workbook</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. (CH1): Introduction and Overview" href="../10_Overview/chap1_introduction_header.html" />
+    <link rel="prev" title="1.4. Play Ground" href="playground0.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Linear Algebra for Data Workbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Welcome to Stats 89a
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Background
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="python_overview.html">
+   1. (CH0): Python 101
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="basics.html">
+     1.1. The Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     1.2. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting.html">
+     1.3. MatPlotLib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="playground0.html">
+     1.4. Play Ground
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.5. Homework 0: Due Sunday January 24, 2021, 11:59 PM CA time
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction and Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../10_Overview/chap1_introduction_header.html">
+   1. (CH1): Introduction and Overview
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap1_overview.html">
+     1.1. Linear Algebra for Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap1_examples.html">
+     1.2. Examples
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../10_Overview/chap2_algebras_header.html">
+   2. (CH2): Algebra, algebras, and functions
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap2_sets.html">
+     2.1. Sets and Set Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap2_basic-table-operations.html">
+     2.2. Data Frames and Set Operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/hw01.html">
+     2.3. Homework 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap2_functions-and-compositions.html">
+     2.4. Functions and Compositions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/hw02.html">
+     2.5. Homework 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap2_injective-functions-and-left-inverses.html">
+     2.6. Injective Functions and Left Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap2_surjective-functions-and-right-inverses.html">
+     2.7. Surjective Functions and Right Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/chap2_generalized-inverses.html">
+     2.8. Generalized inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_Overview/hw03.html">
+     2.9. Homework 3
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/00_Background/hw0.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erichson/LinearAlgebra/master?urlpath=tree/00_Background/hw0.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/erichson/LinearAlgebra/blob/master/00_Background/hw0.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   1.5.1. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   1.5.2. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   1.5.3. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   1.5.4. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   1.5.5. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   1.5.6. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   1.5.7. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-directions">
+   1.5.8. IMPORTANT DIRECTIONS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-survey">
+   1.5.9. IMPORTANT SURVEY
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="homework-0-due-sunday-january-24-2021-11-59-pm-ca-time">
+<h1><span class="section-number">1.5. </span>Homework 0: Due Sunday January 24, 2021, 11:59 PM CA time<a class="headerlink" href="#homework-0-due-sunday-january-24-2021-11-59-pm-ca-time" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercise">
+<h2><span class="section-number">1.5.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Get used to using python as a calculator. Try computing all of the following:</p>
+<p>(i) <span class="math notranslate nohighlight">\(10 \sqrt{(2(11.4+12.6))}\)</span></p>
+<p>(ii) <span class="math notranslate nohighlight">\(e^{0.5}\)</span></p>
+<p>(iii) the value of <span class="math notranslate nohighlight">\(y=(10+sin(x)+x^2+cosh(x^2+1))/(sinh(x)+x^3+3x^4+e^x)\)</span> for <span class="math notranslate nohighlight">\(x=\pi\)</span> and <span class="math notranslate nohighlight">\(x=0.2\)</span></p>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">1.5.2. </span>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Write a function that takes as arguement <span class="math notranslate nohighlight">\(r\)</span> for the radius of a circle and returns the diameter <span class="math notranslate nohighlight">\(r\)</span> of the circle, as well as the circle’s circumference <span class="math notranslate nohighlight">\(c\)</span> and the area <span class="math notranslate nohighlight">\(a\)</span>. Try the function for <span class="math notranslate nohighlight">\(r=6\)</span>.</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">1.5.3. </span>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Write a for loop to sum up all natural numbers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(1,000,000\)</span>.</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">1.5.4. </span>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Compute the sum <span class="math notranslate nohighlight">\(\sum_{i=1}^{10}(i+1)\)</span>.</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">1.5.5. </span>Exercise<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>The curve <span class="math notranslate nohighlight">\(f(x)=x^2+3x+\sqrt5\)</span> intersects the curve <span class="math notranslate nohighlight">\(g(x)=-x^2-2x+1\)</span> at two points. Find the coordinates of the intersections and the gradients of the tangents to each curve at those points.</p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">1.5.6. </span>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>The Taylor series for sinh(x) is given by,</p>
+<div class="math notranslate nohighlight">
+\[sinh(x)=x+\frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!}+ ...\]</div>
+<p>Write a function that finds an approximate solution for <span class="math notranslate nohighlight">\(sinh(x)\)</span>. Try your function for <span class="math notranslate nohighlight">\(x=4\)</span> and compute the error between your approximate answer and numpy’s <code class="docutils literal notranslate"><span class="pre">sinh()</span></code> function. Report how many terms you need in order to achieve an error</p>
+<p>$<span class="math notranslate nohighlight">\(\epsilon &lt; 1e-4\)</span>$.</p>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">1.5.7. </span>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Consider the functions <span class="math notranslate nohighlight">\(f(x)=x^2\)</span>, <span class="math notranslate nohighlight">\(g(x)=sin(x)\)</span>, and <span class="math notranslate nohighlight">\(h(x)=sinh(x+1)-e^{2x}\)</span>. Write lambda functions that represents each of these functions. Then write another function that takes as its arguements two functions and the value of <span class="math notranslate nohighlight">\(x\)</span> and returns the composition of the functions (e.g., <span class="math notranslate nohighlight">\(f(g(x))=f\circ g(x)\)</span>). Use this to find:</p>
+<p>(i) <span class="math notranslate nohighlight">\(g\circ f(5.0)\)</span></p>
+<p>(ii) <span class="math notranslate nohighlight">\(f \circ g(2)\)</span></p>
+<p>(iii) <span class="math notranslate nohighlight">\(h \circ(g\circ f)(2\pi)\)</span></p>
+</div>
+<div class="section" id="important-directions">
+<h2><span class="section-number">1.5.8. </span>IMPORTANT DIRECTIONS<a class="headerlink" href="#important-directions" title="Permalink to this headline">¶</a></h2>
+<p>After your completed the cells with your information above, please follow the directions below and submit the PDF version of this notebook to Gradescope. You MUST add yourself to Gradescope first via entry code <strong>RWKRVE</strong> if you haven’t been added already.</p>
+<ol class="simple">
+<li><p>Save your notebook by clicking the “disc” icon on the top left corner (the very first icon from the left)</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">File</span></code> on the top left corner &gt;&gt;&gt; <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">as</span></code> &gt;&gt;&gt; <code class="docutils literal notranslate"><span class="pre">PDF</span> <span class="pre">via</span> <span class="pre">LaTeX</span></code> to your local computer.</p></li>
+<li><p>Go to Gradescope at <code class="docutils literal notranslate"><span class="pre">gradescope.com</span></code></p></li>
+<li><p>Find <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span> <span class="pre">Test</span> <span class="pre">Submission</span></code> on your dashboard after clicking into Stat 89A</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">Submission</span></code> on the bottom and submit your local PDF file of this notebook.</p></li>
+</ol>
+<p>You are all set! This is how you will be uploading your homework and notebooks for Stat 89A!</p>
+</div>
+<div class="section" id="important-survey">
+<h2><span class="section-number">1.5.9. </span>IMPORTANT SURVEY<a class="headerlink" href="#important-survey" title="Permalink to this headline">¶</a></h2>
+<p>Please also fill out this course survey as soon as you can:</p>
+<p><a class="reference external" href="https://forms.gle/ZxXkjqXDBF5xPYbb9">https://forms.gle/ZxXkjqXDBF5xPYbb9</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./00_Background"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="playground0.html" title="previous page"><span class="section-number">1.4. </span>Play Ground</a>
+    <a class='right-next' id="next-link" href="../10_Overview/chap1_introduction_header.html" title="next page"><span class="section-number">1. </span>(CH1): Introduction and Overview</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Michael W. Mahoney, N. Benjamin Erichson and Ryan Theisen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
