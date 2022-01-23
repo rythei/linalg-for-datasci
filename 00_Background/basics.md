@@ -49,8 +49,8 @@ Next, we assign numeric values (integers and floats) to the variables `a`, `b`, 
 
 ```{code-cell} ipython3
 a = 1 # assign the integer 1 to variable a
-b = 2.5	# assign 2 to variable a 
-c = 3.2	# assign 3 to variable c 
+b = 2.5	# assign 2 to variable a
+c = 3.2	# assign 3 to variable c
 ```
 
 You can also add variables (as you would expect).
@@ -176,7 +176,7 @@ print('The third through last elements of my_first_list are', my_first_list[2:6]
 Note how this is equivalent to:
 
 ```{code-cell} ipython3
-print('The third through last elements of my_first_list are also', my_first_list[2:]) 
+print('The third through last elements of my_first_list are also', my_first_list[2:])
 ```
 
 ### Tuples
@@ -365,18 +365,18 @@ For loops. Very important to do repeated, similar calculation.s Be careful with 
 ```{code-cell} ipython3
 for counter in [1,2,3,4]:
     print("{}. Still in the first loop".format(counter))
-    
+
 print("Out of the first loop")
 ```
 
-You can also use `range()` to generate an [iterable](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) of items to iterate through without typing every one of them yourself. 
+You can also use `range()` to generate an [iterable](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) of items to iterate through without typing every one of them yourself.
 
 This is helpful when you want to iterate through a bunch of things.
 
 ```{code-cell} ipython3
 for x in range(0, 9, 2):
     print("In second loop: {}".format(x))
-    
+
 print("Finished and out of second loop")
 ```
 
@@ -439,7 +439,7 @@ sum1 = sum(values)
 sum2 = 0.0
 for i in values:
     sum2 += i
-    
+
 sum3 = math.fsum(values)
 
 print('{:12}: {}'.format('Input values', values))
@@ -503,35 +503,35 @@ for r in range(0,21):
 
 The syntax:
 
-```{raw-cell}
+```{code-cell} ipython3
 new_function = lambda x : do_stuff(x)
 ```
 
 is equivalent to the syntax
 
-```{raw-cell}
+```{code-cell} ipython3
 def new_function(x):
     return do_stuff(x)
 ```
 
 However, one benefit of the former syntax is that it doesn't require us to name the new function, i.e. the following by itself is valid Python code:
 
-```{raw-cell}
+```{code-cell} ipython3
 lambda x : do_stuff(x)
 ```
 
 Another benefit of this syntax is that it can be written on one line. One effect this has is to make it easier to use functions as arguments to other functions (so called "higher-order functions"). For example, one can write
 
-```{raw-cell}
+```{code-cell} ipython3
 higher_order_function(lambda x : do_stuff(x))
 ```
 
 instead of
 
-```{raw-cell}
+```{code-cell} ipython3
 def new_function(x):
     return do_stuff(x)
-    
+
 higher_order_function(new_function)
 ```
 
@@ -539,33 +539,21 @@ This can be helpful in cases where the definition of the new function is short, 
 
 A common example is when we have a function which takes more than one argument, e.g. `bivariate_function(x1, x2)`, and we want to define functions from it using "partial evaluation", e.g.
 
-```{raw-cell}
+```{code-cell} ipython3
 def new_function(x):
     return bivariate_function(x1=x, x2=5)
 ```
 
 Using lambdas, we can do this in one line:
 
-```{raw-cell}
+```{code-cell} ipython3
 lambda x : bivariate_function(x1=x, x2=5)
 ```
 
 thus allowing us to use it in our higher-order function without needing to give it its own name:
 
-```{raw-cell}
+```{code-cell} ipython3
 higher_order_function(lambda x : bivariate_function(x1=x, x2=5))
 ```
 
 In the case that the function definition needs to be longer than one line, lambda functions are less useful.
-
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
-```

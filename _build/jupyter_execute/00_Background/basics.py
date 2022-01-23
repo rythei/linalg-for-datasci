@@ -31,8 +31,8 @@ The print functions often comes in handy to print some intermediate results that
 Next, we assign numeric values (integers and floats) to the variables `a`, `b`, and `c`.
 
 a = 1 # assign the integer 1 to variable a
-b = 2.5	# assign 2 to variable a 
-c = 3.2	# assign 3 to variable c 
+b = 2.5	# assign 2 to variable a
+c = 3.2	# assign 3 to variable c
 
 You can also add variables (as you would expect).
 
@@ -124,7 +124,7 @@ print('The third through last elements of my_first_list are', my_first_list[2:6]
 
 Note how this is equivalent to:
 
-print('The third through last elements of my_first_list are also', my_first_list[2:]) 
+print('The third through last elements of my_first_list are also', my_first_list[2:])
 
 ### Tuples
 
@@ -269,16 +269,16 @@ For loops. Very important to do repeated, similar calculation.s Be careful with 
 
 for counter in [1,2,3,4]:
     print("{}. Still in the first loop".format(counter))
-    
+
 print("Out of the first loop")
 
-You can also use `range()` to generate an [iterable](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) of items to iterate through without typing every one of them yourself. 
+You can also use `range()` to generate an [iterable](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) of items to iterate through without typing every one of them yourself.
 
 This is helpful when you want to iterate through a bunch of things.
 
 for x in range(0, 9, 2):
     print("In second loop: {}".format(x))
-    
+
 print("Finished and out of second loop")
 
 Another kind of loop is a list comprehension. This is a powerful Python trick. A list comprehension allows us to quickly iterate through every item in a list to create a new list based on the original list.
@@ -327,7 +327,7 @@ sum1 = sum(values)
 sum2 = 0.0
 for i in values:
     sum2 += i
-    
+
 sum3 = math.fsum(values)
 
 print('{:12}: {}'.format('Input values', values))
@@ -401,7 +401,7 @@ instead of
 
 def new_function(x):
     return do_stuff(x)
-    
+
 higher_order_function(new_function)
 
 This can be helpful in cases where the definition of the new function is short, especially when we know that we won't use the new function more than once so that giving it a name isn't useful. (Of course if the new function's definition is short, but we know that we will use it more than once, we can still give it a name using the code `new_function = lambda x : do_stuff(x)`.)
@@ -420,8 +420,3 @@ thus allowing us to use it in our higher-order function without needing to give 
 higher_order_function(lambda x : bivariate_function(x1=x, x2=5))
 
 In the case that the function definition needs to be longer than one line, lambda functions are less useful.
-
-
-
-
-

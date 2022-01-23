@@ -423,8 +423,8 @@ use and manipulate strings below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># assign the integer 1 to variable a</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">2.5</span>	<span class="c1"># assign 2 to variable a </span>
-<span class="n">c</span> <span class="o">=</span> <span class="mf">3.2</span>	<span class="c1"># assign 3 to variable c </span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">2.5</span>	<span class="c1"># assign 2 to variable a</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">3.2</span>	<span class="c1"># assign 3 to variable c</span>
 </pre></div>
 </div>
 </div>
@@ -667,7 +667,7 @@ my_first_list is of type &lt;class &#39;list&#39;&gt;
 <p>Note how this is equivalent to:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The third through last elements of my_first_list are also&#39;</span><span class="p">,</span> <span class="n">my_first_list</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The third through last elements of my_first_list are also&#39;</span><span class="p">,</span> <span class="n">my_first_list</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
 </pre></div>
 </div>
 </div>
@@ -1019,7 +1019,7 @@ pi is roughly: 3.1415926536
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">. Still in the first loop&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span>
-    
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Out of the first loop&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1040,7 +1040,7 @@ Out of the first loop
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In second loop: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished and out of second loop&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1097,10 +1097,7 @@ Finished and out of second loop
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ys:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [0, 1, 4, 9, 16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ys: [0, 1, 4, 9, 16]
 </pre></div>
 </div>
 </div>
@@ -1148,7 +1145,7 @@ Finished and out of second loop
 <span class="n">sum2</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
     <span class="n">sum2</span> <span class="o">+=</span> <span class="n">i</span>
-    
+
 <span class="n">sum3</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fsum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:12}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Input values&#39;</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
@@ -1219,6 +1216,9 @@ math.fsum() : 1.00000000000000000000
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For a radius of 20.000, the circumference is 125.664 and the area is 1256.637
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1269,14 +1269,117 @@ Radius:	    20.000	Circumference:	   125.664	Area:	  1256.637	BoundingBoxArea:	 
 <div class="section" id="lambda-functions">
 <h2><span class="section-number">1.1.8. </span>Lambda functions<a class="headerlink" href="#lambda-functions" title="Permalink to this headline">¶</a></h2>
 <p>The syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_function</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>is equivalent to the syntax</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>However, one benefit of the former syntax is that it doesn’t require us to name the new function, i.e. the following by itself is valid Python code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(x)&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <p>Another benefit of this syntax is that it can be written on one line. One effect this has is to make it easier to use functions as arguments to other functions (so called “higher-order functions”). For example, one can write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">higher_order_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">57</span><span class="o">-</span><span class="mi">4</span><span class="n">ebbdfeb7722</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">higher_order_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;higher_order_function&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>instead of</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">higher_order_function</span><span class="p">(</span><span class="n">new_function</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">58</span><span class="o">-</span><span class="n">f2f2b7b1b63c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">higher_order_function</span><span class="p">(</span><span class="n">new_function</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;higher_order_function&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>This can be helpful in cases where the definition of the new function is short, especially when we know that we won’t use the new function more than once so that giving it a name isn’t useful. (Of course if the new function’s definition is short, but we know that we will use it more than once, we can still give it a name using the code <code class="docutils literal notranslate"><span class="pre">new_function</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x</span> <span class="pre">:</span> <span class="pre">do_stuff(x)</span></code>.)</p>
 <p>A common example is when we have a function which takes more than one argument, e.g. <code class="docutils literal notranslate"><span class="pre">bivariate_function(x1,</span> <span class="pre">x2)</span></code>, and we want to define functions from it using “partial evaluation”, e.g.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">bivariate_function</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Using lambdas, we can do this in one line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">bivariate_function</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.&lt;lambda&gt;(x)&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <p>thus allowing us to use it in our higher-order function without needing to give it its own name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">higher_order_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">bivariate_function</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">61</span><span class="o">-</span><span class="mi">139</span><span class="n">dd3c18428</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">higher_order_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">bivariate_function</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;higher_order_function&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>In the case that the function definition needs to be longer than one line, lambda functions are less useful.</p>
 </div>
 </div>
