@@ -264,14 +264,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10c42b150&gt;]
-</pre></div>
-</div>
-<img alt="../_images/plotting_5_1.png" src="../_images/plotting_5_1.png" />
+<img alt="../_images/plotting_5_0.png" src="../_images/plotting_5_0.png" />
 </div>
 </div>
 <p>We can redefine our points using <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>. This allows us to get many more points.</p>
@@ -289,14 +287,12 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_highres</span><span class="p">,</span><span class="n">x2_highres</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10c636650&gt;]
-</pre></div>
-</div>
-<img alt="../_images/plotting_8_1.png" src="../_images/plotting_8_1.png" />
+<img alt="../_images/plotting_8_0.png" src="../_images/plotting_8_0.png" />
 </div>
 </div>
 <p>Lots of arguments can be given to plotting functions.  It’s worth knowing how to use them.</p>
@@ -328,14 +324,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_highres</span><span class="p">,</span><span class="n">x2_highres</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_highres</span><span class="p">,</span><span class="n">x2_highres</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10c6ff310&gt;]
-</pre></div>
-</div>
-<img alt="../_images/plotting_10_1.png" src="../_images/plotting_10_1.png" />
+<img alt="../_images/plotting_10_0.png" src="../_images/plotting_10_0.png" />
 </div>
 </div>
 <p>You can also set titles and axis labels for plots.</p>
@@ -349,14 +343,12 @@
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-value&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y-value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/plotting_12_1.png" src="../_images/plotting_12_1.png" />
+<img alt="../_images/plotting_12_0.png" src="../_images/plotting_12_0.png" />
 </div>
 </div>
 <p>The thing above between the dollar signs is <a class="reference external" href="https://matplotlib.org/3.1.1/tutorials/text/usetex.html">LaTeX</a>, which is nice for equations, but dont worry if you dont know it. You can use text only in your labels and titles if you like.</p>
@@ -376,14 +368,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;parabola&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x value&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/plotting_14_1.png" src="../_images/plotting_14_1.png" />
+<img alt="../_images/plotting_14_0.png" src="../_images/plotting_14_0.png" />
 </div>
 </div>
 <p>We can also do a scatterplot with <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code>.</p>
@@ -397,14 +387,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;scatter parabola -- no line&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x value&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/plotting_16_1.png" src="../_images/plotting_16_1.png" />
+<img alt="../_images/plotting_16_0.png" src="../_images/plotting_16_0.png" />
 </div>
 </div>
 <p>We can plot multiple functions on the same graph</p>
@@ -420,14 +408,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Two sinusoids&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x value&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/plotting_18_1.png" src="../_images/plotting_18_1.png" />
+<img alt="../_images/plotting_18_0.png" src="../_images/plotting_18_0.png" />
 </div>
 </div>
 <p>We can also create a legend using <code class="docutils literal notranslate"><span class="pre">plt.legend</span></code>.</p>
@@ -444,14 +430,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Two sinusoids: with a legend&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x value&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/plotting_20_1.png" src="../_images/plotting_20_1.png" />
+<img alt="../_images/plotting_20_0.png" src="../_images/plotting_20_0.png" />
 </div>
 </div>
 <p>Label our axes and graph using <code class="docutils literal notranslate"><span class="pre">plt.xlabel</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.ylabel</span></code>, and <code class="docutils literal notranslate"><span class="pre">plt.title</span></code>.</p>
@@ -468,14 +452,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$-axis&#39;</span><span class="p">)</span> <span class="c1"># We can use latex in between $$</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$-axis&#39;</span><span class="p">)</span> <span class="c1"># We can use latex in between $$</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Graph of $y=\sin(x)$ and $y=\cos(x)$&#39;</span><span class="p">)</span>  <span class="c1"># We can use latex in between $$.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Graph of $y=\\sin(x)$ and $y=\\cos(x)$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/plotting_22_1.png" src="../_images/plotting_22_1.png" />
+<img alt="../_images/plotting_22_0.png" src="../_images/plotting_22_0.png" />
 </div>
 </div>
 <p>Scale our axes using <code class="docutils literal notranslate"><span class="pre">plt.xlim</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.ylim</span></code></p>
@@ -495,14 +477,12 @@
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-5.0, 5.0)
-</pre></div>
-</div>
-<img alt="../_images/plotting_24_1.png" src="../_images/plotting_24_1.png" />
+<img alt="../_images/plotting_24_0.png" src="../_images/plotting_24_0.png" />
 </div>
 </div>
 <p>Notice how the <span class="math notranslate nohighlight">\(x\)</span>-axis seems to be more stretched out than the <span class="math notranslate nohighlight">\(y\)</span>-axis? Most of the time this is fine, but if you want to plot something where the <span class="math notranslate nohighlight">\(x\)</span>-<span class="math notranslate nohighlight">\(y\)</span> aspect ratio really matters, you can do the following:</p>
@@ -524,6 +504,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>  <span class="c1"># &lt;--- do this to fix aspect ratio</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -543,10 +524,10 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>points:
-[[0.17068549 0.22545697 0.01772393 0.72819956 0.69502866 0.55820405
-  0.77317931 0.6483817  0.43694145 0.81706296]
- [0.86127269 0.73536079 0.66496061 0.45664157 0.32731692 0.65207556
-  0.00429485 0.20143369 0.84296402 0.61627148]]
+[[0.37440622 0.03933903 0.47650936 0.12888289 0.50657678 0.53998925
+  0.85977858 0.34142017 0.98395385 0.35069274]
+ [0.19364564 0.39174276 0.19157689 0.15449236 0.89126975 0.03306425
+  0.8078053  0.10384992 0.90011197 0.68630503]]
 
 points has shape (2, 10)
 </pre></div>
@@ -567,12 +548,12 @@ points has shape (2, 10)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>xs (shape: (10,)):
-[0.17068549 0.22545697 0.01772393 0.72819956 0.69502866 0.55820405
- 0.77317931 0.6483817  0.43694145 0.81706296]
+[0.37440622 0.03933903 0.47650936 0.12888289 0.50657678 0.53998925
+ 0.85977858 0.34142017 0.98395385 0.35069274]
 
 ys (shape: (10,)):
-[0.86127269 0.73536079 0.66496061 0.45664157 0.32731692 0.65207556
- 0.00429485 0.20143369 0.84296402 0.61627148]
+[0.19364564 0.39174276 0.19157689 0.15449236 0.89126975 0.03306425
+ 0.8078053  0.10384992 0.90011197 0.68630503]
 </pre></div>
 </div>
 </div>
@@ -585,14 +566,12 @@ ys (shape: (10,)):
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Our beautiful scatter plot&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x$ value&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$ value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$y$ value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/plotting_32_1.png" src="../_images/plotting_32_1.png" />
+<img alt="../_images/plotting_32_0.png" src="../_images/plotting_32_0.png" />
 </div>
 </div>
 </div>

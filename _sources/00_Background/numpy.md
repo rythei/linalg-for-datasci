@@ -158,8 +158,10 @@ In practice, when dealing with non-integer steps (e.g. 0.5), it is always better
 
 For instance, we might want to produce an array that has 21 evenly spaced samples in the interval $[1,19]$. This is easy using `linspace`, but it requires a "hack" using `arange`.
 
-```{code-cell} ipython3
+```{code-cell}
 import matplotlib.pyplot as plt
+%matplotlib inline
+
 N = 21
 y = np.zeros(N)
 x0 = np.arange(0, 19, 19/N)
@@ -211,6 +213,9 @@ It is always a good idea to set a seed for debugging your code or reproducing re
 
 ## Basic Array Operations
 
+```{note}
+Many of the operations described in the remainder of this section, such as matrix multiplication and inner products, haven't been introduced mathematically yet, and we do not expect you to be familiar with them. However, it is useful to see the numpy syntax for these things, and perhaps refer back to this notebook later in the course when we will work with these operations frequently.
+```
 
 Performing basic operation on `ndarray` objects is easy.
 In many cases, these operations correspond to linear algebra operations.
