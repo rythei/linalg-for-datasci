@@ -1,4 +1,4 @@
-# MatPlotLib 
+# MatPlotLib
 
 ## Basic Plots
 

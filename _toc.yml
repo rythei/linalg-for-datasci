@@ -9,28 +9,28 @@
     - file: 00_Background/basics
     - file: 00_Background/numpy
     - file: 00_Background/plotting
-    - file: 00_Background/playground0
-    - file: 00_Background/hw0
+    #- file: 00_Background/playground0
+    # - file: 00_Background/hw0
 
 
-- part: Introduction and Overview
-  numbered: true
-  chapters:
-    - file: 10_Overview/chap1_introduction_header
-      sections:
-      - file: 10_Overview/chap1_overview
-      - file: 10_Overview/chap1_examples
-    - file: 10_Overview/chap2_algebras_header
-      sections:
-      - file: 10_Overview/chap2_sets
-      - file: 10_Overview/chap2_basic-table-operations
-      - file: 10_Overview/hw01
-      - file: 10_Overview/chap2_functions-and-compositions
-      - file: 10_Overview/hw02
-      - file: 10_Overview/chap2_injective-functions-and-left-inverses
-      - file: 10_Overview/chap2_surjective-functions-and-right-inverses
-      - file: 10_Overview/chap2_generalized-inverses
-      - file: 10_Overview/hw03
+# - part: Introduction and Overview
+#   numbered: true
+#   chapters:
+#     - file: 10_Overview/chap1_introduction_header
+#       sections:
+#       - file: 10_Overview/chap1_overview
+#       - file: 10_Overview/chap1_examples
+#     - file: 10_Overview/chap2_algebras_header
+#       sections:
+#       - file: 10_Overview/chap2_sets
+#       - file: 10_Overview/chap2_basic-table-operations
+#       - file: 10_Overview/hw01
+#       - file: 10_Overview/chap2_functions-and-compositions
+#       - file: 10_Overview/hw02
+#       - file: 10_Overview/chap2_injective-functions-and-left-inverses
+#       - file: 10_Overview/chap2_surjective-functions-and-right-inverses
+#       - file: 10_Overview/chap2_generalized-inverses
+#       - file: 10_Overview/hw03
 
 
 # - part: Basic Linear Algebra

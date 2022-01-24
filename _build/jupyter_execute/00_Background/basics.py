@@ -382,41 +382,57 @@ for r in range(0,21):
 
 The syntax:
 
+```
 new_function = lambda x : do_stuff(x)
+```
 
 is equivalent to the syntax
 
+```
 def new_function(x):
     return do_stuff(x)
+```
 
 However, one benefit of the former syntax is that it doesn't require us to name the new function, i.e. the following by itself is valid Python code:
 
+```
 lambda x : do_stuff(x)
+```
 
 Another benefit of this syntax is that it can be written on one line. One effect this has is to make it easier to use functions as arguments to other functions (so called "higher-order functions"). For example, one can write
 
+```
 higher_order_function(lambda x : do_stuff(x))
+```
 
 instead of
 
+```
 def new_function(x):
     return do_stuff(x)
 
 higher_order_function(new_function)
+```
 
 This can be helpful in cases where the definition of the new function is short, especially when we know that we won't use the new function more than once so that giving it a name isn't useful. (Of course if the new function's definition is short, but we know that we will use it more than once, we can still give it a name using the code `new_function = lambda x : do_stuff(x)`.)
 
 A common example is when we have a function which takes more than one argument, e.g. `bivariate_function(x1, x2)`, and we want to define functions from it using "partial evaluation", e.g.
 
+```
 def new_function(x):
     return bivariate_function(x1=x, x2=5)
+```
 
 Using lambdas, we can do this in one line:
 
+```
 lambda x : bivariate_function(x1=x, x2=5)
+```
 
 thus allowing us to use it in our higher-order function without needing to give it its own name:
 
+```
 higher_order_function(lambda x : bivariate_function(x1=x, x2=5))
+```
 
 In the case that the function definition needs to be longer than one line, lambda functions are less useful.

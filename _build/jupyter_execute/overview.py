@@ -27,14 +27,3 @@ To tackle the computer programming exercises you require some basic knowledge of
 
 00_Background/python_overview
 ```
-
-
-```{toctree}
-:hidden:
-:titlesonly:
-:numbered: True
-:caption: Introduction and Overview
-
-10_Overview/chap1_introduction_header
-10_Overview/chap2_algebras_header
-```
