@@ -19,6 +19,7 @@ fig = plt.figure()
 plt.axhline(linewidth=1, color='black', linestyle='--')
 plt.axvline(linewidth=1, color='black', linestyle='--')
 plt.plot(x1,x2, lw=2, color='red')
+plt.show()
 
 We can redefine our points using `np.linspace`. This allows us to get many more points.
 
@@ -29,6 +30,7 @@ x2_highres = x1_highres**2
 fig = plt.figure()
 plt.plot(x1,x2)
 plt.plot(x1_highres,x2_highres)
+plt.show()
 
 Lots of arguments can be given to plotting functions.  It's worth knowing how to use them.
 
@@ -58,6 +60,7 @@ plt.plot(x1_highres,x2_highres,color="red",linestyle="dashed",linewidth=1,marker
 plt.plot(x1_highres,x2_highres,color="red",linestyle="dashed",linewidth=3,marker='o',markerfacecolor='blue')
 
 plt.plot(x1_highres,x2_highres,color="red",linestyle="dashed",linewidth=3,marker='o',markerfacecolor='blue',markersize=5)
+plt.show()
 
 You can also set titles and axis labels for plots.
 
@@ -69,6 +72,7 @@ plt.title("$y=x^2$")
 
 plt.xlabel("x-value")
 plt.ylabel("y-value")
+plt.show()
 
 The thing above between the dollar signs is [LaTeX](https://matplotlib.org/3.1.1/tutorials/text/usetex.html), which is nice for equations, but dont worry if you dont know it. You can use text only in your labels and titles if you like.
 
@@ -93,6 +97,7 @@ plt.plot(xs, ys)
 plt.title("parabola")
 plt.xlabel("x value")
 plt.ylabel("y value")
+plt.show()
 
 We can also do a scatterplot with `plt.scatter`.
 
@@ -104,6 +109,7 @@ plt.scatter(xs, ys)
 plt.title("scatter parabola -- no line")
 plt.xlabel("x value")
 plt.ylabel("y value")
+plt.show()
 
 We can plot multiple functions on the same graph
 
@@ -117,6 +123,7 @@ plt.plot(xs, y2)
 plt.title("Two sinusoids")
 plt.xlabel("x value")
 plt.ylabel("y value")
+plt.show()
 
 We can also create a legend using `plt.legend`.
 
@@ -131,6 +138,7 @@ plt.legend()
 plt.title("Two sinusoids: with a legend")
 plt.xlabel("x value")
 plt.ylabel("y value")
+plt.show()
 
 Label our axes and graph using `plt.xlabel`, `plt.ylabel`, and `plt.title`.
 
@@ -145,6 +153,7 @@ plt.legend()
 plt.ylabel('$y$-axis') # We can use latex in between $$
 plt.xlabel('$x$-axis') # We can use latex in between $$
 plt.title('Graph of $y=\sin(x)$ and $y=\cos(x)$')  # We can use latex in between $$.
+plt.show()
 
 Scale our axes using `plt.xlim` and `plt.ylim`
 
@@ -162,6 +171,7 @@ plt.title('Graph of $y=\sin(x)$ and $y=\cos(x)$')  # We can use LaTeX in between
 
 plt.xlim(-10, 30)
 plt.ylim(-5, 5)
+plt.show()
 
 Notice how the $x$-axis seems to be more stretched out than the $y$-axis? Most of the time this is fine, but if you want to plot something where the $x$-$y$ aspect ratio really matters, you can do the following:
 
@@ -181,6 +191,7 @@ plt.xlim(-10, 30)
 plt.ylim(-10, 30)
 
 plt.gca().set_aspect('equal')  # <--- do this to fix aspect ratio
+plt.show()
 
 We can also use `plt.scatter` to plot a bunch of 2D points. Let's first generate a bunch of 2D points between $[0, 1) \times [0, 1)$. Note that each column of this matrix is a 2-dimensional vector that contains the $x$- and $y$-coordinates of a point.
 
@@ -205,3 +216,4 @@ plt.scatter(xs, ys)
 plt.title("Our beautiful scatter plot")
 plt.xlabel("$x$ value")
 plt.ylabel("$y$ value")
+plt.show()

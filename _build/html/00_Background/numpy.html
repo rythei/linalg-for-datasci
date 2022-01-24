@@ -367,8 +367,8 @@ There are several ways how we can do this.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 624 ms, sys: 165 ms, total: 788 ms
-Wall time: 763 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 628 ms, sys: 161 ms, total: 789 ms
+Wall time: 756 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49999995000000
@@ -385,8 +385,8 @@ Instead, we can use NumPy to do the same operation much faster.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 18.6 ms, sys: 7.19 ms, total: 25.8 ms
-Wall time: 25.4 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 19.5 ms, sys: 7.89 ms, total: 27.4 ms
+Wall time: 27.9 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49999995000000
@@ -572,6 +572,8 @@ This function has the following interface: <code class="docutils literal notrans
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
 <span class="n">N</span> <span class="o">=</span> <span class="mi">21</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">19</span><span class="o">/</span><span class="n">N</span><span class="p">)</span>
@@ -588,9 +590,7 @@ This function has the following interface: <code class="docutils literal notrans
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/numpy_27_0.png" src="../_images/numpy_27_0.png" />
 </div>
 </div>
 </div>
@@ -671,6 +671,10 @@ It is always a good idea to set a seed for debugging your code or reproducing re
 </div>
 <div class="section" id="basic-array-operations">
 <h2><span class="section-number">1.2.2. </span>Basic Array Operations<a class="headerlink" href="#basic-array-operations" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Many of the operations described in the remainder of this section, such as matrix multiplication and inner products, haven’t been introduced mathematically yet, and we do not expect you to be familiar with them. However, it is useful to see the numpy syntax for these things, and perhaps refer back to this notebook later in the course when we will work with these operations frequently.</p>
+</div>
 <p>Performing basic operation on <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> objects is easy.
 In many cases, these operations correspond to linear algebra operations.
 In other cases, they can be used to do other useful things.</p>
@@ -1255,8 +1259,8 @@ v^T w = v_{1}w_{1}+v_{2}w_{2}+\dots+v_{n}w_{n}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 45 µs, sys: 0 ns, total: 45 µs
-Wall time: 48.2 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 36 µs, sys: 0 ns, total: 36 µs
+Wall time: 39.8 µs
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([44])
@@ -1273,8 +1277,8 @@ Instead, we can use numpy’s build in function to compute the inner product.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 10 µs, sys: 3 µs, total: 13 µs
-Wall time: 16 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 12 µs, sys: 4 µs, total: 16 µs
+Wall time: 16.9 µs
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[44]])
@@ -1466,6 +1470,9 @@ C:
  [5 6]
  [3 4]
  [7 8]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
