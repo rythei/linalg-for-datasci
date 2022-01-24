@@ -503,32 +503,32 @@ for r in range(0,21):
 
 The syntax:
 
-```{code-cell} ipython3
+```
 new_function = lambda x : do_stuff(x)
 ```
 
 is equivalent to the syntax
 
-```{code-cell} ipython3
+```
 def new_function(x):
     return do_stuff(x)
 ```
 
 However, one benefit of the former syntax is that it doesn't require us to name the new function, i.e. the following by itself is valid Python code:
 
-```{code-cell} ipython3
+```
 lambda x : do_stuff(x)
 ```
 
 Another benefit of this syntax is that it can be written on one line. One effect this has is to make it easier to use functions as arguments to other functions (so called "higher-order functions"). For example, one can write
 
-```{code-cell} ipython3
+```
 higher_order_function(lambda x : do_stuff(x))
 ```
 
 instead of
 
-```{code-cell} ipython3
+```
 def new_function(x):
     return do_stuff(x)
 
@@ -539,20 +539,20 @@ This can be helpful in cases where the definition of the new function is short, 
 
 A common example is when we have a function which takes more than one argument, e.g. `bivariate_function(x1, x2)`, and we want to define functions from it using "partial evaluation", e.g.
 
-```{code-cell} ipython3
+```
 def new_function(x):
     return bivariate_function(x1=x, x2=5)
 ```
 
 Using lambdas, we can do this in one line:
 
-```{code-cell} ipython3
+```
 lambda x : bivariate_function(x1=x, x2=5)
 ```
 
 thus allowing us to use it in our higher-order function without needing to give it its own name:
 
-```{code-cell} ipython3
+```
 higher_order_function(lambda x : bivariate_function(x1=x, x2=5))
 ```
 
