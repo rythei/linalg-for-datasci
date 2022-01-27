@@ -38,6 +38,7 @@
   - file: content/basicLA_1_chheader
     sections:
     - file: content/basicLA_1_introduction-to-norms
+    - file: content/basicLA_1_norms-integration-monte-carlo
     - file: content/basicLA_1_lp-balls
     # - file: 20_BasicLA/hw04
 #   - file: 20_BasicLA/basicLA_2_chheader

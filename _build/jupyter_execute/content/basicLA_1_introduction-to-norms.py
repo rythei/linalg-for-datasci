@@ -311,7 +311,7 @@ p_range = np.arange(1,p_max+1,1)
 norm_values = [norm(x, ord=p) for p in p_range]
 
 plt.plot(p_range, norm_values, label='p norms')
-plt.hlines(norm(x, ord=np.inf), xmin=1, xmax=p_max, label='infinity norm')
+plt.hlines(norm(x, ord=np.inf), xmin=1, xmax=p_max, label=r'$\infty$-norm', color='red', linestyle='--')
 plt.xlabel('p')
 plt.ylabel('p-norm value')
 plt.legend()
@@ -325,65 +325,4 @@ Notice also that this plot is strictly decreasing: this is due to the following 
 
 - If $1\leq p<q\leq \infty$, then for any vector $x\in \mathbb{R}^n$, we have that $\|\boldsymbol{x}\|_q \leq \|\boldsymbol{x}\|_p$. In other words, $p$-norms are ordered in 'reverse' order: larger $p$ gives a smaller norm.
 
-In the next section of the workbook, we will investigate more properties of norms, and see that they have interesting geometric interpretations.  
-
-
-## Approximating integrals with norms
-
-An interesting application of norms is to use them to approximate integrals.
-For example, suppose we wanted to compute the integral $\int_{0}^1 x dx$.
-The idea is to approximate this with some $n$-dimensional vector $\boldsymbol{x}$ which discretizes the set $[0,1]$, for example into points $\boldsymbol{x} = (0/n, 1/n, 2/n,\dots, 1)$.
-The difference between each entry in this vector is approximately $dx \approx 1/n$, and so we can approximate this integral as $\int_{0}^1 x dx \approx \frac{1}{n}\sum_{i=1}^n |x_i| = \frac{1}{n}\|\boldsymbol{x}\|_1$.
-The true value of the integral $\int_{0}^1 x dx$ is just $1/2$, so let's see how good the approximation using the $1$-norm is as we make $n$ bigger.
-
-approximations = []
-
-n_range = np.arange(10, 2010, 10)
-
-for n in n_range:
-    x = np.array([i/n for i in range(n+1)])
-    integral = (1./n)*norm(x, ord=1)
-    approximations.append(integral)
-
-plt.plot(n_range, approximations, label='approximation using 1-norm')
-plt.hlines(1./2, 10, 2000, label='true integral = 1/2')
-plt.xlabel('n')
-plt.ylabel('integral value')
-plt.legend()
-plt.show()
-
-As we see, this as $n$ gets large, the $1$-norm approximation becomes very close to the true integral.
-
-More generally, we can do this approximation with integrals of the form $\int_{a}^{b} f(x) dx$ where $f(x)\geq 0$ on $[a,b]$. Then we can approximate the integral as follows:
-
-- First, discretize the interval $[a,b]$ with the vector $\boldsymbol{x}=(x_1,\dots,x_n, x_{n+1})$ whose $i$th entry is $x_i = a + \frac{(i-1)(b-a)}{n}$
-- Compute the vector $\boldsymbol{y}$ whose $i$th entry is $y_i = f(x_i)$
-- The integral is approximately $\frac{(b-a)}{n}\|\boldsymbol{y}\|_1$
-
-For example, let's consider the integral $\int_{1}^3 \frac{1}{x}dx$.  The true value of this integral is $\log(3)$, but let's try and approximate it using the $1$-norm approach.
-
-def f(x):
-    return 1./x
-
-n_max = 2000
-n_range = np.arange(10, n_max + 10, 10)
-
-a = 1
-b = 3
-
-approximations = []
-
-for n in n_range:
-    x = np.array([a+i*(b-a)/n for i in range(n+1)])
-    y = np.array([f(xi) for xi in x])
-    integral = ((b-a)/n)*norm(y, ord=1)
-    approximations.append(integral)
-
-plt.plot(n_range, approximations, label='approximation using 1-norm')
-plt.hlines(np.log(3), 10, n_max, label='true integral = log(3)')
-plt.xlabel('n')
-plt.ylabel('integral value')
-plt.legend()
-plt.show()
-
-Again, we see that this approximation works quite well as $n$ gets reasonably large. By changing the function $f$ and using different intervals $[a,b]$, we can compute many integrals in this way.
+Later, we will investigate more properties of norms, and see that they have interesting geometric interpretations.
