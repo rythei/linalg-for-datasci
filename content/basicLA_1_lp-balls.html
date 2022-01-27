@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2. \(\ell_p\) Balls &#8212; Linear Algebra for Data Workbook</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="1.1. Introduction to Norms" href="basicLA_1_introduction-to-norms.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Linear Algebra for Data Workbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Welcome to Stat 89A
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Background
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="python_chheader.html">
+   1. Python 101
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     1.1. The Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_numpy.html">
+     1.2. Introduction to NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_plotting.html">
+     1.3. MatPlotLib
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Basic Linear Algebra
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="basicLA_1_chheader.html">
+   1. Matrices, vectors, and
+   <span class="math notranslate nohighlight">
+    \(\mathbb{R}^n\)
+   </span>
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_1_introduction-to-norms.html">
+     1.1. Introduction to Norms
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.2.
+     <span class="math notranslate nohighlight">
+      \(\ell_p\)
+     </span>
+     Balls
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/basicLA_1_lp-balls.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/basicLA_1_lp-balls.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erichson/LinearAlgebra/master?urlpath=tree/content/basicLA_1_lp-balls.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-euclidean-ball">
+   1.2.1. The Euclidean ball
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-the-1-ball-and-infty-ball">
+   1.2.2. Visualizing the
+   <span class="math notranslate nohighlight">
+    \(1\)
+   </span>
+   -ball and
+   <span class="math notranslate nohighlight">
+    \(\infty\)
+   </span>
+   -ball
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-unit-balls-of-different-norms">
+   1.2.3. Comparing unit balls of different norms
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ell-p-balls">
+<h1><span class="section-number">1.2. </span><span class="math notranslate nohighlight">\(\ell_p\)</span> Balls<a class="headerlink" href="#ell-p-balls" title="Permalink to this headline">¶</a></h1>
+<p>In the previous section, we introduced norms as a way to measure the ‘size’ of a vector.
+Here, we will see that norms give us a natural way to define an important type of set, namely balls associated with those norms.
+These balls generalize circles and spheres (which are the balls associated with the Euclidean norm in <span class="math notranslate nohighlight">\(\mathbb{R}^{2}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{R}^{3}\)</span>, respectively.
+They can be used to understand the hard-to-visualize <span class="math notranslate nohighlight">\(\mathbb{R}^{n}\)</span>.</p>
+<p>Before we continue, recall the definition of the <span class="math notranslate nohighlight">\(p\)</span>-norms and the <span class="math notranslate nohighlight">\(\infty\)</span>-norm.
+For a vector <span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1,\dots,x_n) \in \mathbb{R}^n\)</span> and number <span class="math notranslate nohighlight">\(p\geq 1\)</span>, the <span class="math notranslate nohighlight">\(p\)</span>-norm is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\|\boldsymbol{x}\|_p = \left(\sum_{i=1}^n |x_i|^p\right)^{1/p} ,
+\]</div>
+<p>and the <span class="math notranslate nohighlight">\(\infty\)</span>-norm is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\|\boldsymbol{x}\|_\infty = \max_{i=1,\dots, n}|x_i| .
+\]</div>
+<p>For any given <span class="math notranslate nohighlight">\(p\)</span>-norm, for <span class="math notranslate nohighlight">\(p \in [1,\infty]\)</span>, there is a special set called the <em>unit <span class="math notranslate nohighlight">\(p\)</span>-ball</em>, which is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{B}_p = \{x\in\mathbb{R}^n \mid \|\boldsymbol{x}\|_p \leq 1\}
+\]</div>
+<p>This set contains all vectors <span class="math notranslate nohighlight">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> whose <span class="math notranslate nohighlight">\(p\)</span>-norm is at most <span class="math notranslate nohighlight">\(1\)</span>.
+The term ‘ball’ is used to describe this object because of intuition coming from the Euclidean norm / <span class="math notranslate nohighlight">\(2\)</span>-norm.
+This will become more clear in the next section.</p>
+<div class="section" id="the-euclidean-ball">
+<h2><span class="section-number">1.2.1. </span>The Euclidean ball<a class="headerlink" href="#the-euclidean-ball" title="Permalink to this headline">¶</a></h2>
+<p>A special case of the unit <span class="math notranslate nohighlight">\(p\)</span>-balls is the Euclidean unit ball, which is given by the set</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{B}_2 = \{x\in\mathbb{R}^n\mid \|\boldsymbol{x}\|_2 \leq 1\} .
+\]</div>
+<p>To get some intuition, let’s focus on the 2-dimensional case – i.e., when <span class="math notranslate nohighlight">\(n=2\)</span>.
+Then, the unit ball is the set of all points <span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1,x_2)\)</span> such that <span class="math notranslate nohighlight">\(\sqrt{x_1^2 + x_2^2} \leq 1\)</span>, or equivalently, the set of all points such that <span class="math notranslate nohighlight">\(x_1^2 + x_2^2 \leq 1\)</span>.
+From basic geometry, we know that the equation <span class="math notranslate nohighlight">\(x_1^2 + x_2^2 = 1\)</span> defines a circle of radius 1 in the plane.
+Hence, the set of points satisfying <span class="math notranslate nohighlight">\(x_1^2 + x_2^2 \leq 1\)</span> includes all points on or inside of this circle.</p>
+<p>To visualize the unit balls in this section, below we define the function <code class="docutils literal notranslate"><span class="pre">points_in_unit_ball()</span></code>, which generates points uniformly at random from the unit <span class="math notranslate nohighlight">\(p\)</span>-balls using the following method: first, we draw a point <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> at random from the set <span class="math notranslate nohighlight">\([-1,1]\times[-1,1]\)</span> (which we note is exactly equal to the infinity ball <span class="math notranslate nohighlight">\(\mathcal{B}_\infty\)</span>), and then store the point if <span class="math notranslate nohighlight">\(\|\boldsymbol{x}\|_p\leq 1\)</span>, and ignore it otherwise.
+We repeat this for <span class="math notranslate nohighlight">\(5000\)</span> points. However, you can also try varying the number of points yourself by changing the value of <code class="docutils literal notranslate"><span class="pre">n_samples</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">points_in_unit_ball</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">5000</span><span class="p">):</span>
+    <span class="c1"># generate samples uniformly from [-1,1] x [-1,1]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mf">1.</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="c1"># calculate the p-norm of each row of x</span>
+    <span class="n">norms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># select the rows of x whose p-norm is at most 1</span>
+    <span class="n">valid_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">norms</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">valid_x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use this to verify that the set <span class="math notranslate nohighlight">\(\mathcal{B}_2\)</span> is indeed a circle:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">samples</span> <span class="o">=</span> <span class="n">points_in_unit_ball</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">samples</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">samples</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Unit 2-ball&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/basicLA_1_lp-balls_3_0.png" src="../_images/basicLA_1_lp-balls_3_0.png" />
+</div>
+</div>
+<p>As expected, we see that this gives us a circle of radius of radius <span class="math notranslate nohighlight">\(1\)</span>.</p>
+</div>
+<div class="section" id="visualizing-the-1-ball-and-infty-ball">
+<h2><span class="section-number">1.2.2. </span>Visualizing the <span class="math notranslate nohighlight">\(1\)</span>-ball and <span class="math notranslate nohighlight">\(\infty\)</span>-ball<a class="headerlink" href="#visualizing-the-1-ball-and-infty-ball" title="Permalink to this headline">¶</a></h2>
+<p>While the unit ball for the <span class="math notranslate nohighlight">\(2\)</span>-norm was in fact a ‘round’ ball shape, this is not the case for other norms.
+Before plotting them, however, let’s try to figure out what the shape of the <span class="math notranslate nohighlight">\(\infty\)</span> and <span class="math notranslate nohighlight">\(1\)</span> norm balls should be.</p>
+<p>Let’s start with the <span class="math notranslate nohighlight">\(\infty\)</span>-norm ball.
+Take a point <span class="math notranslate nohighlight">\(x\in [-1,1]\times [-1,1]\)</span>.
+What is the largest that its <span class="math notranslate nohighlight">\(\infty\)</span>-norm could be?
+We have <span class="math notranslate nohighlight">\(\|\boldsymbol{x}\|_\infty = \max(|x_1|, |x_2|)\)</span>, but since <span class="math notranslate nohighlight">\(x_1 \in [-1,1]\)</span> and <span class="math notranslate nohighlight">\(x_2\in [-1,1]\)</span>, we have that <span class="math notranslate nohighlight">\(|x_1|\)</span> and <span class="math notranslate nohighlight">\(|x_2|\)</span> are both at most <span class="math notranslate nohighlight">\(1\)</span>, hence <span class="math notranslate nohighlight">\(\|\boldsymbol{x}\|_\infty \leq 1\)</span>.
+On the other hand, if <span class="math notranslate nohighlight">\(x\)</span> is outside of the set <span class="math notranslate nohighlight">\([-1,1]\times [-1,1]\)</span>, then at least one of its components is larger than <span class="math notranslate nohighlight">\(1\)</span> in absolute value, and so its <span class="math notranslate nohighlight">\(\infty\)</span>-norm must be greater than one.
+Therefore we guess that the unit <span class="math notranslate nohighlight">\(\infty\)</span>-ball must just be the entire box <span class="math notranslate nohighlight">\([-1,1]\times[-1,1]\)</span>.</p>
+<p>Let’s test this out using the our function from above function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">points_in_unit_ball</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">samples</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">samples</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Unit $\infty$-ball&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/basicLA_1_lp-balls_5_0.png" src="../_images/basicLA_1_lp-balls_5_0.png" />
+</div>
+</div>
+<p>As expected, we get a box (with sides parallel to the canonical axes)!</p>
+<p>Now let’s move on to the <span class="math notranslate nohighlight">\(1\)</span>-norm.
+Let’s consider the points along the boundary of the <span class="math notranslate nohighlight">\(1\)</span>-norm ball, which are the points satisfying  <span class="math notranslate nohighlight">\(|x_1|+|x_2| = 1\)</span>.
+When <span class="math notranslate nohighlight">\(x_1, x_2\geq 0\)</span>, this just gives us the equation of a line with slope <span class="math notranslate nohighlight">\(-1\)</span> and intercept <span class="math notranslate nohighlight">\(1\)</span>: <span class="math notranslate nohighlight">\(x_2 = 1-x_1\)</span>.
+When <span class="math notranslate nohighlight">\(x_2\geq 0\)</span> and <span class="math notranslate nohighlight">\(x_1&lt;0\)</span>, then this equation gives us a line with slope <span class="math notranslate nohighlight">\(1\)</span> and intercept <span class="math notranslate nohighlight">\(1\)</span>: <span class="math notranslate nohighlight">\(x_2 = 1+x_1\)</span>.
+When <span class="math notranslate nohighlight">\(x_2&lt;0\)</span> and <span class="math notranslate nohighlight">\(x_1&lt;0\)</span>, then we get a line with slope <span class="math notranslate nohighlight">\(-1\)</span> and intercept <span class="math notranslate nohighlight">\(-1\)</span>: <span class="math notranslate nohighlight">\(x_2 = -1 - x_1\)</span>, and finally what <span class="math notranslate nohighlight">\(x_2&lt;0\)</span> and <span class="math notranslate nohighlight">\(x_1\geq 0\)</span>, we get a line with slope <span class="math notranslate nohighlight">\(1\)</span> and intercept <span class="math notranslate nohighlight">\(-1\)</span>: <span class="math notranslate nohighlight">\(x_2 = -1+x_1\)</span>.
+If we put these four lines together, we should get the shape of a diamond.</p>
+<p>Let’s verify this as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">points_in_unit_ball</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">samples</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">samples</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Unit 1-ball&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/basicLA_1_lp-balls_7_0.png" src="../_images/basicLA_1_lp-balls_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="comparing-unit-balls-of-different-norms">
+<h2><span class="section-number">1.2.3. </span>Comparing unit balls of different norms<a class="headerlink" href="#comparing-unit-balls-of-different-norms" title="Permalink to this headline">¶</a></h2>
+<p>In the last section in the workbook, we saw that the <span class="math notranslate nohighlight">\(p\)</span>-norms are ordered, meaning that if <span class="math notranslate nohighlight">\(1\leq p&lt;q\leq \infty\)</span>, then for any vector <span class="math notranslate nohighlight">\(x\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\|\boldsymbol{x}\|_q \leq \|\boldsymbol{x}\|_p  .
+\]</div>
+<p>What does this mean in terms of the sizes of the different unit balls?
+Intuitively, if the norm <span class="math notranslate nohighlight">\(\|\cdot\|_q\)</span> gives <em>smaller</em> values than <span class="math notranslate nohighlight">\(\|\cdot\|_p\)</span>, then <em>more</em> vectors will have norm <span class="math notranslate nohighlight">\(\leq 1\)</span> with respect to the <span class="math notranslate nohighlight">\(q\)</span>-ball than the <span class="math notranslate nohighlight">\(p\)</span>-ball.
+Hence, because of the above inequality, we expect the unit balls to get bigger as <span class="math notranslate nohighlight">\(p\)</span> grows. Let’s plot some of the unit balls together to verify this visually.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+  <span class="n">samples</span> <span class="o">=</span> <span class="n">points_in_unit_ball</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+  <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;p = </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">p</span> <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="k">else</span> <span class="sa">r</span><span class="s1">&#39;p = $\infty$&#39;</span> <span class="c1">#nice formatted labels</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">samples</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">samples</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/basicLA_1_lp-balls_9_0.png" src="../_images/basicLA_1_lp-balls_9_0.png" />
+</div>
+</div>
+<p>Indeed, the <span class="math notranslate nohighlight">\(\infty\)</span>-norm ball is the largest of all the unit balls, and the <span class="math notranslate nohighlight">\(1\)</span>-ball is the smallest.
+A natural way to measure the size of the unit balls (at least in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>) is to measure their area (or volume, for <span class="math notranslate nohighlight">\(\mathbb{R}^{n}\)</span>, for <span class="math notranslate nohighlight">\(n \ge 3\)</span>).
+For example, the <span class="math notranslate nohighlight">\(\infty\)</span>-ball is just the entire set <span class="math notranslate nohighlight">\([-1,1]\times[-1,1]\)</span>, which is a box with area <span class="math notranslate nohighlight">\(4\)</span>, and the <span class="math notranslate nohighlight">\(2\)</span>-ball is a circle with radius <span class="math notranslate nohighlight">\(1\)</span>, which has area <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>We include a function below which lets us estimate the area of any <span class="math notranslate nohighlight">\(p\)</span>-ball.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unit_ball_volume</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mf">1.</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">norms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">vol</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">norms</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">unit_ball_volume(p)</span></code> works in the following way: similar to how we plotted the unit balls, we sample <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> (defaulting to 10,000) points at random from the set <span class="math notranslate nohighlight">\([-1,1]\times[-1,1]\)</span> and measure the fraction of points that satisfy <span class="math notranslate nohighlight">\(\|\boldsymbol{x}\|_p\leq 1\)</span>.
+We then multiply the result by <span class="math notranslate nohighlight">\(4\)</span> (the area of the box <span class="math notranslate nohighlight">\([-1,1]\times[-1,1]\)</span>), and this gives us a pretty good estimate of the area of unit <span class="math notranslate nohighlight">\(p\)</span>-ball!
+Let’s check this with the <span class="math notranslate nohighlight">\(2\)</span>-ball, and see if it gives us a good approximation to <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unit_ball_volume</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1384
+</pre></div>
+</div>
+</div>
+</div>
+<p>This will give us a different result every time due to random sampling, but it should be a pretty good estimate. We can make the approximation better by increasing the value of <code class="docutils literal notranslate"><span class="pre">n_samples</span></code>.</p>
+<p>We can do a similar check with the <span class="math notranslate nohighlight">\(1\)</span>-ball.
+This area can be computed by recognizing that the diamond shape is made up of 4 right triangles, each with area <span class="math notranslate nohighlight">\(1/2\)</span>, and so the area of the unit <span class="math notranslate nohighlight">\(1\)</span>-ball should be <span class="math notranslate nohighlight">\(2\)</span>.
+Let’s check that our function gives us a reasonably accurate estimate:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unit_ball_volume</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9948
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that this function just computes things in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, but in principal we could apply the same method to estimate the <em>volumes</em> of the <span class="math notranslate nohighlight">\(p\)</span>-balls in any dimension – though the computation would in general be much slower.</p>
+<p>Now we can use this function to see how the area of the unit balls in 2 dimensions grows with <span class="math notranslate nohighlight">\(p\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="n">unit_ball_volume</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">p_range</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p_range</span><span class="p">,</span> <span class="n">areas</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;area of p-ball&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/basicLA_1_lp-balls_17_0.png" src="../_images/basicLA_1_lp-balls_17_0.png" />
+</div>
+</div>
+<p>As expected, this is a nice increasing curve which starts at <span class="math notranslate nohighlight">\(2\)</span> (the area of the 1-ball) and increases to very close to <span class="math notranslate nohighlight">\(4\)</span> (the area of the <span class="math notranslate nohighlight">\(\infty\)</span>-ball).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="basicLA_1_introduction-to-norms.html" title="previous page"><span class="section-number">1.1. </span>Introduction to Norms</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Michael W. Mahoney, N. Benjamin Erichson and Ryan Theisen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
