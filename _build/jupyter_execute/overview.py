@@ -25,5 +25,15 @@ To tackle the computer programming exercises you require some basic knowledge of
 :numbered: True
 :caption: Background
 
-00_Background/python_overview
+content/python_chheader
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:numbered: True
+:caption: Basic Linear Algebra
+
+content/basicLA_1_chheader
 ```

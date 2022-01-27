@@ -4,11 +4,11 @@
 - part: Background
   numbered: true
   chapters:
-  - file: 00_Background/python_overview
+  - file: content/python_chheader
     sections:
-    - file: 00_Background/basics
-    - file: 00_Background/numpy
-    - file: 00_Background/plotting
+    - file: content/python_basics
+    - file: content/python_numpy
+    - file: content/python_plotting
     #- file: 00_Background/playground0
     # - file: 00_Background/hw0
 
@@ -33,13 +33,13 @@
 #       - file: 10_Overview/hw03
 
 
-# - part: Basic Linear Algebra
-#   chapters:
-#   - file: 20_BasicLA/basicLA_1_chheader
-#     sections:
-#     - file: 20_BasicLA/basicLA_1A_introduction-to-norms
-#     - file: 20_BasicLA/basicLA_1B_lp-balls
-#     - file: 20_BasicLA/hw04
+- part: Basic Linear Algebra
+  chapters:
+  - file: content/basicLA_1_chheader
+    sections:
+    - file: content/basicLA_1_introduction-to-norms
+    - file: content/basicLA_1_lp-balls
+    # - file: 20_BasicLA/hw04
 #   - file: 20_BasicLA/basicLA_2_chheader
 #     sections:
 #     - file: 20_BasicLA/basicLA_2A_vectorspaces
