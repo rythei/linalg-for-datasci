@@ -46,7 +46,7 @@ Further, these two operations obey the following axioms, that are valid for all 
 * Unit for scalar multiplication: the scalar $1\in \mathbb{R}$ satisfies $1\boldsymbol{v}=\boldsymbol{v}$.
 
 To better understand the two operations and the axioms, it is best to start by looking at vectors in $2$ dimensions.
-In the following, we will use the two vectors $\bf v$ and $\bf w$ that are vectors in $\boldsymbol{v},\boldsymbol{w} \in \mathbb{R}^2$.
+In the following, we will use the two vectors $\boldsymbol{v}$ and $\boldsymbol{w}$ that are vectors in $\boldsymbol{v},\boldsymbol{w} \in \mathbb{R}^2$.
 
 ```{code-cell}
 v = np.array([3,1])
@@ -643,7 +643,7 @@ e2_new = np.array([0,0.5])
 
 The coefficients $(1,2)$ here are called the coordinates of $V$ with respect to the basis $\boldsymbol{e}'_1,\boldsymbol{e}'_2$. Thus the same vector $V$ can be represented by different numbers, depending on the basis we choose to work with. Generally when we write $\boldsymbol{v}=(3,1)^T$, we are implicitly assuming that we are working with the standard basis, however it is equally valid to define $\boldsymbol{v} = (1,2)^T$ if we make clear that we are working with the basis $\boldsymbol{e}'_1,\boldsymbol{e}'_2$.
 
-Note, that we obtain the standard normal basis if we normalize $\boldsymbol{e}'_1$ and $\boldsymbol{e}'_2$, i.e., $\boldsymbol{e}_1 = \frac{\boldsymbol{e}'_1}{\|\boldsymbol{e}'_1 \|_2}$ and $\boldsymbol{e}_2 = \frac{\bf \boldsymbol{e}'_2}{\|\boldsymbol{e}'_2 \|_2}$.
+Note, that we obtain the standard normal basis if we normalize $\boldsymbol{e}'_1$ and $\boldsymbol{e}'_2$, i.e., $\boldsymbol{e}_1 = \frac{\boldsymbol{e}'_1}{\|\boldsymbol{e}'_1 \|_2}$ and $\boldsymbol{e}_2 = \frac{\boldsymbol{e}'_2}{\|\boldsymbol{e}'_2 \|_2}$.
 
 ```{code-cell}
 e1_new / np.linalg.norm(e1_new)
