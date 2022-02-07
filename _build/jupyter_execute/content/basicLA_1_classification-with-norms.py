@@ -4,7 +4,7 @@ In this section, we demonstrate a simple application of norms as a classificatio
 
 For the purpose of this example, we consider the following dataset, which can be generated using the `sklearn` package in Python:
 
-import sklearn.datasets import make_circles
+from sklearn.datasets import make_circles
 import matplotlib.pyplot as plt
 %matplotlib inline
 

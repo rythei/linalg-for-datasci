@@ -279,7 +279,7 @@
 <p>For the purpose of this example, we consider the following dataset, which can be generated using the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> package in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="nn">make_circles</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_circles</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
@@ -295,12 +295,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-1-1577c9bf30bc&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="kn">import</span> <span class="nn">sklearn.datasets</span> <span class="nn">import</span> <span class="nn">make_circles</span>
-                                 <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
+<img alt="../_images/basicLA_1_classification-with-norms_1_0.png" src="../_images/basicLA_1_classification-with-norms_1_0.png" />
 </div>
 </div>
 <p>Here we will attempt to develop a classifier which predicts a label for a datapoint <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> based on its <span class="math notranslate nohighlight">\(2\)</span>-norm. Specifically, we will consider classifiers of the form</p>
@@ -353,18 +348,7 @@ C_t(\boldsymbol{x}) = \begin{cases}1 &amp; \text{if }\|\boldsymbol{x}\|_2 \leq t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mf">9e8</span><span class="n">fba66ca3d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t_range</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">err</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> 
-
-<span class="ne">NameError</span>: name &#39;X&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/basicLA_1_classification-with-norms_5_0.png" src="../_images/basicLA_1_classification-with-norms_5_0.png" />
 </div>
 </div>
 <p>From the plot, we find that the best threshold is <span class="math notranslate nohighlight">\(t\approx 0.89\)</span>, and that at this value, the misclassification rate is <span class="math notranslate nohighlight">\(0.01\)</span>, or <span class="math notranslate nohighlight">\(1\%\)</span>.</p>
