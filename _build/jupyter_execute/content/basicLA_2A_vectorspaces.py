@@ -221,7 +221,7 @@ print(out)
 
 ## Span and Linear Independence
 
-We have seen that we can express any vector in $\mathbb{R}^2$ using the vectors $\boldsymbol{v}$ and $\boldsymbol{w}$, and any vector in $\mathbb{R}^3$ using the vectors $\boldsymbol{x}$, $\boldsymbol{z}$ and $\boldsymbol{z}$. A natural question that arises is whether there is something special about the vectors that we picked. The answer is yes, they are special because $\boldsymbol{v}$ and $\boldsymbol{w}$ span the entire plane in $\mathbb{R}^2$ and $\boldsymbol{x}$, $\boldsymbol{z]$ and $\boldsymbol{z}$ span the entire space in $\mathbb{R}^3$. That is, because for any $a,b \in \mathbb{R}$ we an always find a solution:
+We have seen that we can express any vector in $\mathbb{R}^2$ using the vectors $\boldsymbol{v}$ and $\boldsymbol{w}$, and any vector in $\mathbb{R}^3$ using the vectors $\boldsymbol{x}$, $\boldsymbol{y}$ and $\boldsymbol{z}$. A natural question that arises is whether there is something special about the vectors that we picked. The answer is yes, they are special because $\boldsymbol{v}$ and $\boldsymbol{w}$ span the entire plane in $\mathbb{R}^2$ and $\boldsymbol{x}$, $\boldsymbol{y}$ and $\boldsymbol{z}$ span the entire space in $\mathbb{R}^3$. That is, because for any $a,b \in \mathbb{R}$ we an always find a solution:
 
 
 $$
@@ -538,13 +538,13 @@ Here, the coefficients are $c_1=3$ and $c_2=1$.
 We can also consider other bases for $\mathbb{R}^2$. For example, the following vectors constitute a basis for $\mathbb{R}^2$.
 
 $$
-\boldsymbol{e'}_1=
+\boldsymbol{e}'_1=
 \begin{bmatrix}
 3  \\
 0   \\
 \end{bmatrix}, \quad \text{and} \quad
 %
-\boldsymbol{e'}_2=
+\boldsymbol{e}'_2=
 \begin{bmatrix}
 0  \\
 0.5   \\
@@ -552,9 +552,9 @@ $$
 $$
 
 
-This is a valid basis, since the two vectors $\boldsymbol{e'}_1$ and $\boldsymbol{e'}_2$ span the the space in $\mathbb{R}^2$ and they are linearly independent.
+This is a valid basis, since the two vectors $\boldsymbol{e}'_1$ and $\boldsymbol{e}'_2$ span the the space in $\mathbb{R}^2$ and they are linearly independent.
 
-Again, we can express the vector $\bf v$ also as a linear combination using the new basis vectors $\boldsymbol{e'}_1$ and $\boldsymbol{e'}_2$ as
+Again, we can express the vector $\boldsymbol{v}$ also as a linear combination using the new basis vectors $\boldsymbol{e}'_1$ and $\boldsymbol{e}'_2$ as
 
 
 $$
@@ -578,9 +578,9 @@ e2_new = np.array([0,0.5])
 
 1*e1_new + 2*e2_new
 
-The coefficients $(1,2)$ here are called the coordinates of $V$ with respect to the basis $\boldsymbol{e'}_1,\boldsymbol{e'}_2$. Thus the same vector $V$ can be represented by different numbers, depending on the basis we choose to work with. Generally when we write $\boldsymbol{v}=(3,1)^T$, we are implicitly assuming that we are working with the standard basis, however it is equally valid to define $\boldsymbol{v} = (1,2)^T$ if we make clear that we are working with the basis $\boldsymbol{e'}_1,\boldsymbol{e'}_2$.
+The coefficients $(1,2)$ here are called the coordinates of $V$ with respect to the basis $\boldsymbol{e}'_1,\boldsymbol{e}'_2$. Thus the same vector $V$ can be represented by different numbers, depending on the basis we choose to work with. Generally when we write $\boldsymbol{v}=(3,1)^T$, we are implicitly assuming that we are working with the standard basis, however it is equally valid to define $\boldsymbol{v} = (1,2)^T$ if we make clear that we are working with the basis $\boldsymbol{e}'_1,\boldsymbol{e}'_2$.
 
-Note, that we obtain the standard normal basis if we normalize $\boldsymbol{e'}_1$ and $\boldsymbol{e'}_2$, i.e., $\boldsymbol{e}_1 = \frac{\boldsymbol{e'}_1}{\|\boldsymbol{e'}_1 \|_2}$ and $\boldsymbol{e}_2 = \frac{\bf \boldsymbol{e'}_2}{\|\boldsymbol{e'}_2 \|_2}$.
+Note, that we obtain the standard normal basis if we normalize $\boldsymbol{e}'_1$ and $\boldsymbol{e}'_2$, i.e., $\boldsymbol{e}_1 = \frac{\boldsymbol{e}'_1}{\|\boldsymbol{e}'_1 \|_2}$ and $\boldsymbol{e}_2 = \frac{\bf \boldsymbol{e}'_2}{\|\boldsymbol{e}'_2 \|_2}$.
 
 e1_new / np.linalg.norm(e1_new)
 
@@ -607,7 +607,7 @@ Again, we can express the vector $\boldsymbol{v}$ in terms of this new basis as 
 
 2.82842713 * e1_new -1.41421356 * e2_new
 
-So how did we obtain the new coefficients $c_1=2.82842713$ and $c_2=-1.41421356$? For the example $\boldsymbol{e'}_1, \boldsymbol{e'}_2$ we could more or less guess the coefficients $(1,2)$, here it is less obvious. Since we can see that the basis vectors are rotated 45 degrees counterclockwise, we can assume that the new basis was formed by the following functions:
+So how did we obtain the new coefficients $c_1=2.82842713$ and $c_2=-1.41421356$? For the example $\boldsymbol{e}'_1, \boldsymbol{e}'_2$ we could more or less guess the coefficients $(1,2)$, here it is less obvious. Since we can see that the basis vectors are rotated 45 degrees counterclockwise, we can assume that the new basis was formed by the following functions:
 
 
 $$
@@ -620,7 +620,7 @@ and
 
 
 $$
-\boldsymbol{e'}_2 = f(\boldsymbol{e}_1, \boldsymbol{e}_2) = -\sin(\theta) \boldsymbol{e}_1 + \cos(\theta) \boldsymbol{e}_2
+\boldsymbol{e}'_2 = f(\boldsymbol{e}_1, \boldsymbol{e}_2) = -\sin(\theta) \boldsymbol{e}_1 + \cos(\theta) \boldsymbol{e}_2
 $$
 
 
