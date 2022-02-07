@@ -298,14 +298,14 @@
 <img alt="../_images/basicLA_1_classification-with-norms_1_0.png" src="../_images/basicLA_1_classification-with-norms_1_0.png" />
 </div>
 </div>
-<p>Here we will attempt to develop a classifier which predicts a label for a datapoint <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> based on its <span class="math notranslate nohighlight">\(2\)</span>-norm. Specifically, we will consider classifiers of the form</p>
+<p>Here we will attempt to develop a classifier which predicts a label for a datapoint <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> based on its <span class="math notranslate nohighlight">\(p\)</span>-norm. Specifically, we will consider classifiers of the form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-C_t(\boldsymbol{x}) = \begin{cases}1 &amp; \text{if }\|\boldsymbol{x}\|_2 \leq t\\ 0 &amp; \text{if } \|\boldsymbol{x}\|_2 &gt; t\end{cases}
+C_t(\boldsymbol{x}) = \begin{cases}1 &amp; \text{if }\|\boldsymbol{x}\|_p \leq t\\ 0 &amp; \text{if } \|\boldsymbol{x}\|_p &gt; t\end{cases}
 \end{split}\]</div>
-<p>where the threshold <span class="math notranslate nohighlight">\(t\)</span> is to be determined. To see why this is a natural form of classifier to use, remember that the <span class="math notranslate nohighlight">\(2\)</span>-ball at radius <span class="math notranslate nohighlight">\(t\)</span> is exactly a circle in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, and since the data shown above are in the form of concentric circles, it makes sense that thresholding on the <span class="math notranslate nohighlight">\(2\)</span>-norm may give good classification performance.</p>
+<p>where the threshold <span class="math notranslate nohighlight">\(t\)</span> is to be determined. To see why this is a natural form of classifier to use, remember that the <span class="math notranslate nohighlight">\(2\)</span>-ball at radius <span class="math notranslate nohighlight">\(t\)</span> is exactly a circle in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, and since the data shown above are in the form of concentric circles, it makes sense that thresholding on the <span class="math notranslate nohighlight">\(2\)</span>-norm may give good classification performance. However, we will also test the <span class="math notranslate nohighlight">\(1\)</span>-norm in this example to verify that the <span class="math notranslate nohighlight">\(2\)</span>-norm is indeed the most appropriate norm to use in this circumstance.</p>
 <p>It remains to determine the best value of threshold <span class="math notranslate nohighlight">\(t\)</span> to use. To do this, we will try many values of <span class="math notranslate nohighlight">\(t\)</span>, and pick the one that makes the fewest mistakes on the dataset.</p>
-<p>First, we define a function <code class="docutils literal notranslate"><span class="pre">predict(X,</span> <span class="pre">y,</span> <span class="pre">t)</span></code> which takes in data <code class="docutils literal notranslate"><span class="pre">X,y</span></code> and a given threshold <code class="docutils literal notranslate"><span class="pre">t</span></code>, and returns the misclassification rate for the <span class="math notranslate nohighlight">\(2\)</span>-norm classifier with threshold <span class="math notranslate nohighlight">\(t\)</span>. The misclassification rate is just the fraction of datapoints that are misclassified by <span class="math notranslate nohighlight">\(C_t\)</span>:</p>
+<p>First, we define a function <code class="docutils literal notranslate"><span class="pre">predict(X,</span> <span class="pre">y,</span> <span class="pre">t,</span> <span class="pre">norm)</span></code> which takes in data <code class="docutils literal notranslate"><span class="pre">X,y</span></code>, a given threshold <code class="docutils literal notranslate"><span class="pre">t</span></code>, and which norm to use, and returns the misclassification rate for the given norm classifier with threshold <span class="math notranslate nohighlight">\(t\)</span>. The misclassification rate is just the fraction of datapoints that are misclassified by <span class="math notranslate nohighlight">\(C_t\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \text{Misclassification Rate} = \frac{1}{n}\sum_{i=1}^n \mathbb{1}(C_t(\boldsymbol{x}_i)\neq y_i).
@@ -315,9 +315,9 @@ C_t(\boldsymbol{x}) = \begin{cases}1 &amp; \text{if }\|\boldsymbol{x}\|_2 \leq t
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="c1"># get the norm of each data point</span>
-    <span class="n">norms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">norms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># get predictions by evaluating if the point</span>
     <span class="c1"># is above or below the threshold t</span>
@@ -333,14 +333,15 @@ C_t(\boldsymbol{x}) = \begin{cases}1 &amp; \text{if }\|\boldsymbol{x}\|_2 \leq t
 <p>Next, we will evaluate the model at a variety of values of threshold <span class="math notranslate nohighlight">\(t\)</span>, and find which one has the lowest misclassification rate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.21</span><span class="p">,</span><span class="o">.</span><span class="mi">01</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.51</span><span class="p">,</span><span class="o">.</span><span class="mi">01</span><span class="p">)</span>
 
-<span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t_range</span><span class="p">:</span>
-    <span class="n">err</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-    <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_range</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">norm</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t_range</span><span class="p">:</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_range</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{norm}</span><span class="s1">-norm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;threshold, t&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;misclassification rate&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -351,7 +352,7 @@ C_t(\boldsymbol{x}) = \begin{cases}1 &amp; \text{if }\|\boldsymbol{x}\|_2 \leq t
 <img alt="../_images/basicLA_1_classification-with-norms_5_0.png" src="../_images/basicLA_1_classification-with-norms_5_0.png" />
 </div>
 </div>
-<p>From the plot, we find that the best threshold is <span class="math notranslate nohighlight">\(t\approx 0.89\)</span>, and that at this value, the misclassification rate is <span class="math notranslate nohighlight">\(0.01\)</span>, or <span class="math notranslate nohighlight">\(1\%\)</span>.</p>
+<p>From the plot, we find that the best threshold is indeed attained using the <span class="math notranslate nohighlight">\(2\)</span>-norm with <span class="math notranslate nohighlight">\(t\approx 0.89\)</span>, and that at these values, the misclassification rate is <span class="math notranslate nohighlight">\(0.01\)</span>, or <span class="math notranslate nohighlight">\(1\%\)</span>.</p>
 </div>
 
     <script type="text/x-thebe-config">
