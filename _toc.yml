@@ -40,10 +40,10 @@
     - file: content/basicLA_1_introduction-to-norms
     - file: content/basicLA_1_norms-integration-monte-carlo
     - file: content/basicLA_1_lp-balls
-    # - file: 20_BasicLA/hw04
-#   - file: 20_BasicLA/basicLA_2_chheader
-#     sections:
-#     - file: 20_BasicLA/basicLA_2A_vectorspaces
+    - file: content/basicLA_1_classification-with-norms
+  - file: content/basicLA_2_chheader
+    sections:
+    - file: content/basicLA_2A_vectorspaces
 #     - file: 20_BasicLA/hw05
 #     - file: 20_BasicLA/numpy_cheatsheet
 #   - file: 20_BasicLA/basicLA_3_chheader

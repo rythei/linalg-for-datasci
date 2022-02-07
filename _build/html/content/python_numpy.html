@@ -158,6 +158,25 @@
      Balls
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_1_classification-with-norms.html">
+     1.4. An application: classifying data points using norms
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="basicLA_2_chheader.html">
+   2. Basics of vectors and vector spaces
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_2A_vectorspaces.html">
+     2.1. Vectors and vector spaces
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -405,8 +424,8 @@ There are several ways how we can do this.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 688 ms, sys: 179 ms, total: 867 ms
-Wall time: 839 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 665 ms, sys: 166 ms, total: 831 ms
+Wall time: 819 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49999995000000
@@ -423,8 +442,8 @@ Instead, we can use NumPy to do the same operation much faster.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 23.5 ms, sys: 7.51 ms, total: 31 ms
-Wall time: 30.9 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 28.6 ms, sys: 22.5 ms, total: 51.1 ms
+Wall time: 50.9 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49999995000000
@@ -1103,9 +1122,6 @@ To do so, we can use slicing and dicing operations.</p>
  [ 51  69  97  87]]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>Here are a few examples.</p>
@@ -1300,8 +1316,8 @@ v^T w = v_{1}w_{1}+v_{2}w_{2}+\dots+v_{n}w_{n}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 47 µs, sys: 1e+03 ns, total: 48 µs
-Wall time: 52 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 43 µs, sys: 0 ns, total: 43 µs
+Wall time: 46.7 µs
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([44])
@@ -1318,8 +1334,8 @@ Instead, we can use numpy’s build in function to compute the inner product.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 15 µs, sys: 4 µs, total: 19 µs
-Wall time: 21 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 12 µs, sys: 4 µs, total: 16 µs
+Wall time: 16.9 µs
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[44]])
@@ -1511,6 +1527,9 @@ C:
  [5 6]
  [3 4]
  [7 8]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

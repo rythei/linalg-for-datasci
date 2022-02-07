@@ -321,7 +321,7 @@ As we see, once $p$ gets modestly large, it is essentially just giving us the $\
 
 That is, you get this norm by looking at the limit of the $p$-norms as $p\to\infty$!
 
-Notice also that this plot is strictly decreasing: this is due to the following additional property of norms:
+Notice also that this plot is strictly decreasing: this is due to the following additional property of $p$-norms:
 
 - If $1\leq p<q\leq \infty$, then for any vector $x\in \mathbb{R}^n$, we have that $\|\boldsymbol{x}\|_q \leq \|\boldsymbol{x}\|_p$. In other words, $p$-norms are ordered in 'reverse' order: larger $p$ gives a smaller norm.
 

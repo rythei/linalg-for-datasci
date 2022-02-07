@@ -36,4 +36,5 @@ content/python_chheader
 :caption: Basic Linear Algebra
 
 content/basicLA_1_chheader
+content/basicLA_2_chheader
 ```
