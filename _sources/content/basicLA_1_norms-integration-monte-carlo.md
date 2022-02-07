@@ -89,7 +89,7 @@ $$
 \int_{a}^b f(x)dx \approx \frac{b-a}{n}\sum_{i=1}^n f(x_i).
 $$
 
-This works because of the _law of large numbers_, which states that $\frac{1}{n}\sum_{i=1}^n f(x_i) \xrightarrow{n\to\infty} \mathbb{E}_{X\sim \text{Unif}[a,b]}[f(X)]$. Let's see an the example of $f(x) = 1/x$ again.
+This works because of the _law of large numbers_, which states that $\frac{1}{n}\sum_{i=1}^n f(x_i) \xrightarrow{n\to\infty} \mathbb{E}_{X\sim \text{Unif}[a,b]}[f(X)]$. Let's see the example of $f(x) = 1/x$ again.
 
 
 ```{code-cell}
