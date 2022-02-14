@@ -1,19 +1,33 @@
-# MatPlotLib
+#!/usr/bin/env python
+# coding: utf-8
 
-## Basic Plots
+# # MatPlotLib
+# 
+# ## Basic Plots
+# 
+# Plotting with MatPlotLib: we have to import another library.
 
-Plotting with MatPlotLib: we have to import another library.
+# In[1]:
+
 
 import numpy
 import matplotlib.pyplot as plt
-%matplotlib inline
+get_ipython().run_line_magic('matplotlib', 'inline')
 
-Define some points to plot
+
+# Define some points to plot
+
+# In[2]:
+
 
 x1 = [-2,-1,0,1,2]
 x2 = [4,1,0,1,4]
 
-Do a first plot.
+
+# Do a first plot.
+
+# In[3]:
+
 
 fig = plt.figure()
 plt.axhline(linewidth=1, color='black', linestyle='--')
@@ -21,18 +35,30 @@ plt.axvline(linewidth=1, color='black', linestyle='--')
 plt.plot(x1,x2, lw=2, color='red')
 plt.show()
 
-We can redefine our points using `np.linspace`. This allows us to get many more points.
+
+# We can redefine our points using `np.linspace`. This allows us to get many more points.
+
+# In[4]:
+
 
 import numpy as np
 x1_highres = np.linspace(-2,2,40)
 x2_highres = x1_highres**2
+
+
+# In[5]:
+
 
 fig = plt.figure()
 plt.plot(x1,x2)
 plt.plot(x1_highres,x2_highres)
 plt.show()
 
-Lots of arguments can be given to plotting functions.  It's worth knowing how to use them.
+
+# Lots of arguments can be given to plotting functions.  It's worth knowing how to use them.
+
+# In[6]:
+
 
 fig = plt.figure()
 
@@ -62,7 +88,11 @@ plt.plot(x1_highres,x2_highres,color="red",linestyle="dashed",linewidth=3,marker
 plt.plot(x1_highres,x2_highres,color="red",linestyle="dashed",linewidth=3,marker='o',markerfacecolor='blue',markersize=5)
 plt.show()
 
-You can also set titles and axis labels for plots.
+
+# You can also set titles and axis labels for plots.
+
+# In[7]:
+
 
 fig = plt.figure()
 
@@ -74,20 +104,24 @@ plt.xlabel("x-value")
 plt.ylabel("y-value")
 plt.show()
 
-The thing above between the dollar signs is [LaTeX](https://matplotlib.org/3.1.1/tutorials/text/usetex.html), which is nice for equations, but dont worry if you dont know it. You can use text only in your labels and titles if you like.
 
+# The thing above between the dollar signs is [LaTeX](https://matplotlib.org/3.1.1/tutorials/text/usetex.html), which is nice for equations, but dont worry if you dont know it. You can use text only in your labels and titles if you like.
+# 
+# 
+# 
+# 
+# ## Matplotlib Cheatsheet
+# 
+# This section will serve as a cheat sheet for `matplotlib`, in addition to the intro to `matplotlib` included in last week's lab. You've probably already seen a lot of these plots in last week's lab and homework, or even earlier in this lab.
+# 
+# Note: some of the functionality mentioned here was done in last week's lab using explicitly defined axes and figure objects. While this allows greater flexibility, often times it is more convenient to just plot using plt (which uses an implicit axes object in the background). This is enough if you just need one plot per cell. In future homeworks in labs, feel free to use whichever method feels more natural for you.
+# 
+# 
+# 
+# Simple $y$ vs $x$ line plot using `plt.plot`.
 
+# In[8]:
 
-
-## Matplotlib Cheatsheet
-
-This section will serve as a cheat sheet for `matplotlib`, in addition to the intro to `matplotlib` included in last week's lab. You've probably already seen a lot of these plots in last week's lab and homework, or even earlier in this lab.
-
-Note: some of the functionality mentioned here was done in last week's lab using explicitly defined axes and figure objects. While this allows greater flexibility, often times it is more convenient to just plot using plt (which uses an implicit axes object in the background). This is enough if you just need one plot per cell. In future homeworks in labs, feel free to use whichever method feels more natural for you.
-
-
-
-Simple $y$ vs $x$ line plot using `plt.plot`.
 
 xs = np.arange(-5, 6)
 ys = xs**2
@@ -99,7 +133,11 @@ plt.xlabel("x value")
 plt.ylabel("y value")
 plt.show()
 
-We can also do a scatterplot with `plt.scatter`.
+
+# We can also do a scatterplot with `plt.scatter`.
+
+# In[9]:
+
 
 xs = np.arange(-5, 6)
 ys = xs**2
@@ -111,7 +149,11 @@ plt.xlabel("x value")
 plt.ylabel("y value")
 plt.show()
 
-We can plot multiple functions on the same graph
+
+# We can plot multiple functions on the same graph
+
+# In[10]:
+
 
 xs = np.arange(20)
 y1 = np.sin(2*np.pi*xs/20)
@@ -125,7 +167,11 @@ plt.xlabel("x value")
 plt.ylabel("y value")
 plt.show()
 
-We can also create a legend using `plt.legend`.
+
+# We can also create a legend using `plt.legend`.
+
+# In[11]:
+
 
 xs = np.arange(20)
 y1 = np.sin(2*np.pi*xs/20)
@@ -140,7 +186,11 @@ plt.xlabel("x value")
 plt.ylabel("y value")
 plt.show()
 
-Label our axes and graph using `plt.xlabel`, `plt.ylabel`, and `plt.title`.
+
+# Label our axes and graph using `plt.xlabel`, `plt.ylabel`, and `plt.title`.
+
+# In[12]:
+
 
 xs = np.arange(20)
 y1 = np.sin(2*np.pi*xs/20)
@@ -155,7 +205,11 @@ plt.xlabel('$x$-axis') # We can use latex in between $$
 plt.title('Graph of $y=\sin(x)$ and $y=\cos(x)$')  # We can use latex in between $$.
 plt.show()
 
-Scale our axes using `plt.xlim` and `plt.ylim`
+
+# Scale our axes using `plt.xlim` and `plt.ylim`
+
+# In[13]:
+
 
 xs = np.arange(20)
 y1 = np.sin(2*np.pi*xs/20)
@@ -173,7 +227,11 @@ plt.xlim(-10, 30)
 plt.ylim(-5, 5)
 plt.show()
 
-Notice how the $x$-axis seems to be more stretched out than the $y$-axis? Most of the time this is fine, but if you want to plot something where the $x$-$y$ aspect ratio really matters, you can do the following:
+
+# Notice how the $x$-axis seems to be more stretched out than the $y$-axis? Most of the time this is fine, but if you want to plot something where the $x$-$y$ aspect ratio really matters, you can do the following:
+
+# In[14]:
+
 
 xs = np.arange(20)
 y1 = np.sin(2*np.pi*xs/20)
@@ -193,14 +251,22 @@ plt.ylim(-10, 30)
 plt.gca().set_aspect('equal')  # <--- do this to fix aspect ratio
 plt.show()
 
-We can also use `plt.scatter` to plot a bunch of 2D points. Let's first generate a bunch of 2D points between $[0, 1) \times [0, 1)$. Note that each column of this matrix is a 2-dimensional vector that contains the $x$- and $y$-coordinates of a point.
+
+# We can also use `plt.scatter` to plot a bunch of 2D points. Let's first generate a bunch of 2D points between $[0, 1) \times [0, 1)$. Note that each column of this matrix is a 2-dimensional vector that contains the $x$- and $y$-coordinates of a point.
+
+# In[15]:
+
 
 points = np.random.rand(2, 10)
 print('points:\n{}'.format(points))
 print()
 print('points has shape', points.shape)
 
-We can slice the first row of points to obtain all the $x$ coordinates. We can slice the second row of points to obtain all the $y$ coordinates.
+
+# We can slice the first row of points to obtain all the $x$ coordinates. We can slice the second row of points to obtain all the $y$ coordinates.
+
+# In[16]:
+
 
 xs = points[0,:]
 ys = points[1,:]
@@ -209,7 +275,11 @@ print('xs (shape: {}):\n{}'.format(xs.shape, xs))
 print()
 print('ys (shape: {}):\n{}'.format(ys.shape, ys))
 
-Once we have all the `xs` and `ys`, we can use `plt.scatter`. Note that `plt.scatter` will match the $i$th element of `xs` with the $i$th element of `ys`. So good thing we generated `xs` and `ys` together using matrix! This will ensure the coordinates are aligned.
+
+# Once we have all the `xs` and `ys`, we can use `plt.scatter`. Note that `plt.scatter` will match the $i$th element of `xs` with the $i$th element of `ys`. So good thing we generated `xs` and `ys` together using matrix! This will ensure the coordinates are aligned.
+
+# In[17]:
+
 
 plt.scatter(xs, ys)
 
@@ -217,3 +287,4 @@ plt.title("Our beautiful scatter plot")
 plt.xlabel("$x$ value")
 plt.ylabel("$y$ value")
 plt.show()
+
