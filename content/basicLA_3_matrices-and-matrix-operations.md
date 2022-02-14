@@ -100,7 +100,7 @@ print(x_dot_y)
 
 Note that here we didn't explicitly define that either $\boldsymbol{x}$ or $\boldsymbol{y}$ was a row or column vector; fortunately, `numpy` automatically handles the shaping of arrays for us in this problem.
 
-Now that we have defined the dot product, we can define the more general operation of matrix multiplication. Given matrices $\boldsymbol{A}\in \mathbb{R}^{m\times n}$, with rows $\boldsymbol{a}_{1:},\dots,\boldsymbol{a}_{m:}$, and  $\boldsymbol{B}\in \mathbb{R}^{n\times p}$, with columns $\boldsymbol{b}{:1},\dots, \boldsymbol{b}_{:p}$, we define the matrix product $\boldsymbol{AB}$ to be the $m\times p$ matrix whose $(i,j)^{th}$ entry is
+Now that we have defined the dot product, we can define the more general operation of matrix multiplication. Given matrices $\boldsymbol{A}\in \mathbb{R}^{m\times n}$, with rows $\boldsymbol{a}_{1:},\dots,\boldsymbol{a}_{m:}$, and  $\boldsymbol{B}\in \mathbb{R}^{n\times p}$, with columns $\boldsymbol{b}_{:1},\dots, \boldsymbol{b}_{:p}$, we define the matrix product $\boldsymbol{AB}$ to be the $m\times p$ matrix whose $(i,j)^{th}$ entry is
 
 $$
 [\boldsymbol{A}\boldsymbol{B}]_{ij} = \boldsymbol{a}_{i:}^\top \boldsymbol{b}_{:j}.

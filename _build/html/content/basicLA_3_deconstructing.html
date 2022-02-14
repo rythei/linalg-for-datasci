@@ -393,7 +393,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.006140708923339844
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.005491971969604492
 </pre></div>
 </div>
 </div>
@@ -402,15 +402,15 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 <p>Let’s write <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span> in block form, representing it in terms of its columns.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\boldsymbol{B} = \begin{pmatrix}|&amp; | &amp;&amp; |\\ \boldsymbol{B}[:,1]&amp;  \boldsymbol{B}[:,2]&amp; \cdots &amp; \boldsymbol{B}[:,p]\\ |&amp;|&amp;&amp;|\end{pmatrix}
+\boldsymbol{B} = \begin{bmatrix}|&amp; | &amp;&amp; |\\ \boldsymbol{b}_{:1}&amp;  \boldsymbol{b}_{:2}&amp; \cdots &amp; \boldsymbol{b}{:p}\\ |&amp;|&amp;&amp;|\end{bmatrix}
 \end{split}\]</div>
 <p>Then the product <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> can be written as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\boldsymbol{AB} = \boldsymbol{A}\begin{pmatrix}|&amp; | &amp;&amp; |\\ \boldsymbol{B}[:,1]&amp;  \boldsymbol{B}[:,2]&amp; \cdots &amp; \boldsymbol{B}[:,p]\\ |&amp;|&amp;&amp;|\end{pmatrix}
+\boldsymbol{AB} = \boldsymbol{A}\begin{bmatrix}|&amp; | &amp;&amp; |\\ \boldsymbol{b}_{:1}&amp;  \boldsymbol{b}_{:2}&amp; \cdots &amp; \boldsymbol{b}{:p}\\ |&amp;|&amp;&amp;|\end{bmatrix}
 \end{split}\]</div>
-<p>From this representation, we see that the <span class="math notranslate nohighlight">\(i^{th}\)</span> column of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> is really just <span class="math notranslate nohighlight">\(\boldsymbol{AB}_{:,i}\)</span> – or the matrix-vector product of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> with the <span class="math notranslate nohighlight">\(i^{th}\)</span> column of <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>.
-Therefore, we see that we can compute the <span class="math notranslate nohighlight">\(i^{th}\)</span> column of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> without having to compute the whole matrix <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> first: we can simply select the <span class="math notranslate nohighlight">\(i^{th}\)</span> column <span class="math notranslate nohighlight">\(\boldsymbol{B}[:,i]\)</span> of <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>, and then apply <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> to it.
+<p>From this representation, we see that the <span class="math notranslate nohighlight">\(i^{th}\)</span> column of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> is really just <span class="math notranslate nohighlight">\(\boldsymbol{A}\boldsymbol{b}_{:i}\)</span> – or the matrix-vector product of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> with the <span class="math notranslate nohighlight">\(i^{th}\)</span> column of <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>.
+Therefore, we see that we can compute the <span class="math notranslate nohighlight">\(i^{th}\)</span> column of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> without having to compute the whole matrix <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> first: we can simply select the <span class="math notranslate nohighlight">\(i^{th}\)</span> column <span class="math notranslate nohighlight">\(\boldsymbol{b}_{:i}\)</span> of <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>, and then apply <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> to it.
 Let’s try this method, and compare the time with the above method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -421,7 +421,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0002410411834716797
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.00042510032653808594
 </pre></div>
 </div>
 </div>
@@ -441,8 +441,8 @@ Let’s also verify that the two approaches give the same result.</p>
 </div>
 </div>
 </div>
-<p>This method is easily generalized to selecting a subset of the columns of <span class="math notranslate nohighlight">\(AB\)</span>.
-For example, suppose we wanted to select the <span class="math notranslate nohighlight">\(1^{st}\)</span> <span class="math notranslate nohighlight">\(5^{th}\)</span> and <span class="math notranslate nohighlight">\(11^{th}\)</span> columns of <span class="math notranslate nohighlight">\(AB\)</span>.
+<p>This method is easily generalized to selecting a subset of the columns of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span>.
+For example, suppose we wanted to select the <span class="math notranslate nohighlight">\(1^{st}\)</span>, <span class="math notranslate nohighlight">\(5^{th}\)</span> and <span class="math notranslate nohighlight">\(11^{th}\)</span> columns of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span>.
 Then we could multiply <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> by only the columns <span class="math notranslate nohighlight">\(1,5\)</span> and <span class="math notranslate nohighlight">\(11\)</span> of <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>.
 In Python, we can do this with the following code.</p>
 <div class="cell docutils container">
@@ -461,8 +461,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005403995513916016
-time taken to compute A*B[:,cols]:  0.00032401084899902344
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005625724792480469
+time taken to compute A*B[:,cols]:  0.0005171298980712891
 </pre></div>
 </div>
 </div>
@@ -487,15 +487,15 @@ time taken to compute A*B[:,cols]:  0.00032401084899902344
 To see this, let’s write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\boldsymbol{A} = \begin{pmatrix}- &amp; \boldsymbol{A}[1,:]^\top &amp; -\\ - &amp; \boldsymbol{A}[2,:]^\top &amp; -\\ &amp; \vdots&amp; \\ - &amp;\boldsymbol{A}[n,:]^\top&amp; -\end{pmatrix}  ,
+\boldsymbol{A} = \begin{bmatrix}- &amp; \boldsymbol{a}_{1:}^\top &amp; -\\ - &amp; \boldsymbol{a}_{2:}^\top &amp; -\\ &amp; \vdots&amp; \\ - &amp;\boldsymbol{a}_{n,:}^\top&amp; -\end{bmatrix}  ,
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\boldsymbol{A}[i,:]^\top\)</span> is the <span class="math notranslate nohighlight">\(i^{th}\)</span> row of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>.
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{a}_{i:}^\top\)</span> is the <span class="math notranslate nohighlight">\(i^{th}\)</span> row of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>.
 Then if we write out the matrix product <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\boldsymbol{AB} = \begin{pmatrix}- &amp;\boldsymbol{A}[1,:]^\top &amp; -\\ - &amp;\boldsymbol{A}[2,:]^\top &amp; -\\ &amp;\vdots&amp;\\ - &amp;\boldsymbol{A}[n,:]^\top&amp; -\end{pmatrix}\boldsymbol{B}
+\boldsymbol{AB} = \begin{bmatrix}- &amp; \boldsymbol{a}_{1:}^\top &amp; -\\ - &amp; \boldsymbol{a}_{2:}^\top &amp; -\\ &amp; \vdots&amp; \\ - &amp;\boldsymbol{a}_{n,:}^\top&amp; -\end{bmatrix} \boldsymbol{B}
 \end{split}\]</div>
-<p>we observe that the <span class="math notranslate nohighlight">\(i^{th}\)</span> row of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> is given by <span class="math notranslate nohighlight">\(\boldsymbol{A}[i,:]^\top \boldsymbol{B}\)</span>.
+<p>we observe that the <span class="math notranslate nohighlight">\(i^{th}\)</span> row of <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> is given by <span class="math notranslate nohighlight">\(\boldsymbol{a}_{i:}^\top \boldsymbol{B}\)</span>.
 Let’s compare this method to the naive approach of computing the full product <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> and then selecting the <span class="math notranslate nohighlight">\(i^{th}\)</span> row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -513,13 +513,13 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005295991897583008
-time taken to compute A[i,:]*B:  0.0001900196075439453
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005079030990600586
+time taken to compute A[i,:]*B:  0.0002040863037109375
 </pre></div>
 </div>
 </div>
 </div>
-<p>As expected, the method of computing <span class="math notranslate nohighlight">\(\boldsymbol{A}[i,:]^\top \boldsymbol{B}\)</span> is substantially faster than computing <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> and then extracting the <span class="math notranslate nohighlight">\(i^{th}\)</span> row.
+<p>As expected, the method of computing <span class="math notranslate nohighlight">\(\boldsymbol{a}_{i:}^\top \boldsymbol{B}\)</span> is substantially faster than computing <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> and then extracting the <span class="math notranslate nohighlight">\(i^{th}\)</span> row.
 Let’s verify that they do indeed give the same results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,8 +551,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.004900217056274414
-time taken to compute A[rows,:]*B:  0.0002999305725097656
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.004866838455200195
+time taken to compute A[rows,:]*B:  0.0002818107604980469
 </pre></div>
 </div>
 </div>

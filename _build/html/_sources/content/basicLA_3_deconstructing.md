@@ -54,7 +54,7 @@ Let's write $\boldsymbol{B}$ in block form, representing it in terms of its colu
 
 
 $$
-\boldsymbol{B} = \begin{pmatrix}|& | && |\\ \boldsymbol{B}[:,1]&  \boldsymbol{B}[:,2]& \cdots & \boldsymbol{B}[:,p]\\ |&|&&|\end{pmatrix}
+\boldsymbol{B} = \begin{bmatrix}|& | && |\\ \boldsymbol{b}_{:1}&  \boldsymbol{b}_{:2}& \cdots & \boldsymbol{b}{:p}\\ |&|&&|\end{bmatrix}
 $$
 
 
@@ -62,12 +62,12 @@ Then the product $\boldsymbol{AB}$ can be written as
 
 
 $$
-\boldsymbol{AB} = \boldsymbol{A}\begin{pmatrix}|& | && |\\ \boldsymbol{B}[:,1]&  \boldsymbol{B}[:,2]& \cdots & \boldsymbol{B}[:,p]\\ |&|&&|\end{pmatrix}
+\boldsymbol{AB} = \boldsymbol{A}\begin{bmatrix}|& | && |\\ \boldsymbol{b}_{:1}&  \boldsymbol{b}_{:2}& \cdots & \boldsymbol{b}{:p}\\ |&|&&|\end{bmatrix}
 $$
 
 
-From this representation, we see that the $i^{th}$ column of $\boldsymbol{AB}$ is really just $\boldsymbol{AB}_{:,i}$ -- or the matrix-vector product of $\boldsymbol{A}$ with the $i^{th}$ column of $\boldsymbol{B}$.
-Therefore, we see that we can compute the $i^{th}$ column of $\boldsymbol{AB}$ without having to compute the whole matrix $\boldsymbol{AB}$ first: we can simply select the $i^{th}$ column $\boldsymbol{B}[:,i]$ of $\boldsymbol{B}$, and then apply $\boldsymbol{A}$ to it.
+From this representation, we see that the $i^{th}$ column of $\boldsymbol{AB}$ is really just $\boldsymbol{A}\boldsymbol{b}_{:i}$ -- or the matrix-vector product of $\boldsymbol{A}$ with the $i^{th}$ column of $\boldsymbol{B}$.
+Therefore, we see that we can compute the $i^{th}$ column of $\boldsymbol{AB}$ without having to compute the whole matrix $\boldsymbol{AB}$ first: we can simply select the $i^{th}$ column $\boldsymbol{b}_{:i}$ of $\boldsymbol{B}$, and then apply $\boldsymbol{A}$ to it.
 Let's try this method, and compare the time with the above method.
 
 ```{code-cell}
@@ -84,8 +84,8 @@ Let's also verify that the two approaches give the same result.
 np.allclose(ith_column, ith_column_fast)
 ```
 
-This method is easily generalized to selecting a subset of the columns of $AB$.
-For example, suppose we wanted to select the $1^{st}$ $5^{th}$ and $11^{th}$ columns of $AB$.
+This method is easily generalized to selecting a subset of the columns of $\boldsymbol{AB}$.
+For example, suppose we wanted to select the $1^{st}$, $5^{th}$ and $11^{th}$ columns of $\boldsymbol{AB}$.
 Then we could multiply $\boldsymbol{A}$ by only the columns $1,5$ and $11$ of $\boldsymbol{B}$.
 In Python, we can do this with the following code.
 
@@ -114,17 +114,17 @@ Like in the above section with columns, we can also take advantage of the struct
 To see this, let's write
 
 $$
-\boldsymbol{A} = \begin{pmatrix}- & \boldsymbol{A}[1,:]^\top & -\\ - & \boldsymbol{A}[2,:]^\top & -\\ & \vdots& \\ - &\boldsymbol{A}[n,:]^\top& -\end{pmatrix}  ,
+\boldsymbol{A} = \begin{bmatrix}- & \boldsymbol{a}_{1:}^\top & -\\ - & \boldsymbol{a}_{2:}^\top & -\\ & \vdots& \\ - &\boldsymbol{a}_{n,:}^\top& -\end{bmatrix}  ,
 $$
 
-where $\boldsymbol{A}[i,:]^\top$ is the $i^{th}$ row of $\boldsymbol{A}$.
+where $\boldsymbol{a}_{i:}^\top$ is the $i^{th}$ row of $\boldsymbol{A}$.
 Then if we write out the matrix product $\boldsymbol{AB}$ as
 
 $$
-\boldsymbol{AB} = \begin{pmatrix}- &\boldsymbol{A}[1,:]^\top & -\\ - &\boldsymbol{A}[2,:]^\top & -\\ &\vdots&\\ - &\boldsymbol{A}[n,:]^\top& -\end{pmatrix}\boldsymbol{B}
+\boldsymbol{AB} = \begin{bmatrix}- & \boldsymbol{a}_{1:}^\top & -\\ - & \boldsymbol{a}_{2:}^\top & -\\ & \vdots& \\ - &\boldsymbol{a}_{n,:}^\top& -\end{bmatrix} \boldsymbol{B}
 $$
 
-we observe that the $i^{th}$ row of $\boldsymbol{AB}$ is given by $\boldsymbol{A}[i,:]^\top \boldsymbol{B}$.
+we observe that the $i^{th}$ row of $\boldsymbol{AB}$ is given by $\boldsymbol{a}_{i:}^\top \boldsymbol{B}$.
 Let's compare this method to the naive approach of computing the full product $\boldsymbol{AB}$ and then selecting the $i^{th}$ row.
 
 ```{code-cell}
@@ -140,7 +140,7 @@ ith_row_fast = np.dot(A[i,:],B)
 print('time taken to compute A[i,:]*B: ', time.time()- tic)
 ```
 
-As expected, the method of computing $\boldsymbol{A}[i,:]^\top \boldsymbol{B}$ is substantially faster than computing $\boldsymbol{AB}$ and then extracting the $i^{th}$ row.
+As expected, the method of computing $\boldsymbol{a}_{i:}^\top \boldsymbol{B}$ is substantially faster than computing $\boldsymbol{AB}$ and then extracting the $i^{th}$ row.
 Let's verify that they do indeed give the same results.
 
 ```{code-cell}
