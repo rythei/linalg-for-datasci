@@ -394,11 +394,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.6015456  -0.95067274  1.1856256 ]
- [-1.37545486  0.89442691  1.20684988]
- [-0.19988828  0.46140962  0.76221743]
- [-0.38962343  1.54694641 -0.01411921]
- [-0.45910472 -2.47322076  0.2147041 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2.11720033e+00 -9.50714983e-01 -1.35211903e-01]
+ [-5.73391349e-01 -3.22492017e-01  1.29912774e+00]
+ [-5.48664340e-01  6.82554925e-01  1.10618489e+00]
+ [ 7.14093261e-01 -7.08772827e-01  8.69275430e-04]
+ [-5.30621964e-01  1.16218404e+00 -9.82994705e-01]]
 </pre></div>
 </div>
 </div>
@@ -503,13 +503,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.6572652014587539
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2892133166890054
 </pre></div>
 </div>
 </div>
 </div>
 <p>Note that here we didn’t explicitly define that either <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> or <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> was a row or column vector; fortunately, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> automatically handles the shaping of arrays for us in this problem.</p>
-<p>Now that we have defined the dot product, we can define the more general operation of matrix multiplication. Given matrices <span class="math notranslate nohighlight">\(\boldsymbol{A}\in \mathbb{R}^{m\times n}\)</span>, with rows <span class="math notranslate nohighlight">\(\boldsymbol{a}_{1:},\dots,\boldsymbol{a}_{m:}\)</span>, and  <span class="math notranslate nohighlight">\(\boldsymbol{B}\in \mathbb{R}^{n\times p}\)</span>, with columns <span class="math notranslate nohighlight">\(\boldsymbol{b}{:1},\dots, \boldsymbol{b}_{:p}\)</span>, we define the matrix product <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> to be the <span class="math notranslate nohighlight">\(m\times p\)</span> matrix whose <span class="math notranslate nohighlight">\((i,j)^{th}\)</span> entry is</p>
+<p>Now that we have defined the dot product, we can define the more general operation of matrix multiplication. Given matrices <span class="math notranslate nohighlight">\(\boldsymbol{A}\in \mathbb{R}^{m\times n}\)</span>, with rows <span class="math notranslate nohighlight">\(\boldsymbol{a}_{1:},\dots,\boldsymbol{a}_{m:}\)</span>, and  <span class="math notranslate nohighlight">\(\boldsymbol{B}\in \mathbb{R}^{n\times p}\)</span>, with columns <span class="math notranslate nohighlight">\(\boldsymbol{b}_{:1},\dots, \boldsymbol{b}_{:p}\)</span>, we define the matrix product <span class="math notranslate nohighlight">\(\boldsymbol{AB}\)</span> to be the <span class="math notranslate nohighlight">\(m\times p\)</span> matrix whose <span class="math notranslate nohighlight">\((i,j)^{th}\)</span> entry is</p>
 <div class="math notranslate nohighlight">
 \[
 [\boldsymbol{A}\boldsymbol{B}]_{ij} = \boldsymbol{a}_{i:}^\top \boldsymbol{b}_{:j}.
@@ -605,8 +605,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.8059749603271484 seconds
-time using np.dot: 0.009829044342041016 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.8057868480682373 seconds
+time using np.dot: 0.0064640045166015625 seconds
 </pre></div>
 </div>
 </div>
