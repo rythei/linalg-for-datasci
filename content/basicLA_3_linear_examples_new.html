@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.1. Linear and Nonlinear Functions &#8212; Linear Algebra for Data Workbook</title>
+    <title>5.1. Linear and Nonlinear Functions &#8212; Linear Algebra for Data Workbook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2. Matrices and Linear Functions" href="basicLA_3_matrices_and_linear_functions.html" />
-    <link rel="prev" title="4. (CH5): Basics of matrices and transformations" href="basicLA_3_chheader.html" />
+    <link rel="next" title="5.2. Matrices and Linear Functions" href="basicLA_3_matrices_and_linear_functions.html" />
+    <link rel="prev" title="5. Matrices as transformations" href="basicLA_3B_chheader.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -194,44 +194,46 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="basicLA_3_chheader.html">
-   4. (CH5): Basics of matrices and transformations
+   4. Basics of matrices
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_matrices-and-matrix-operations.html">
+     4.1. Matrices and matrix operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_deconstructing.html">
+     4.2. Deconstructing Matrix Multiplication
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="basicLA_3B_chheader.html">
+   5. Matrices as transformations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.1. Linear and Nonlinear Functions
+     5.1. Linear and Nonlinear Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="basicLA_3_matrices_and_linear_functions.html">
-     4.2. Matrices and Linear Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basicLA_3_inverses.html">
-     4.3. Left Inverses, Right Inverses, and Inverses
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basicLA_3_changing_basis.html">
-     4.4. Changing Basis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basicLA_3_deconstructing.html">
-     4.5. Deconstructing Matrix Multiplication
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basicLA_3_powers_of_matrices.html">
-     4.6. Taking Powers of Matrices
+     5.2. Matrices and Linear Functions
     </a>
    </li>
   </ul>
@@ -329,49 +331,49 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizing-functions">
-   4.1.1. Visualizing Functions
+   5.1.1. Visualizing Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-neither-addition-nor-scalar-multiplication">
-     4.1.1.1. Functions that preserve neither addition nor scalar multiplication
+     5.1.1.1. Functions that preserve neither addition nor scalar multiplication
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-scalar-multiplication-but-not-addition">
-     4.1.1.2. Functions that preserve scalar multiplication, but not addition
+     5.1.1.2. Functions that preserve scalar multiplication, but not addition
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-addition-but-not-scalar-multiplication">
-     4.1.1.3. Functions that preserve addition, but not scalar multiplication
+     5.1.1.3. Functions that preserve addition, but not scalar multiplication
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-addition-and-scalar-multiplication-linear-functions">
-     4.1.1.4. Functions that preserve addition and scalar multiplication: linear functions
+     5.1.1.4. Functions that preserve addition and scalar multiplication: linear functions
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#an-example-rotation">
-       4.1.1.4.1. An example: Rotation
+       5.1.1.4.1. An example: Rotation
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#an-example-stretching">
-       4.1.1.4.2. An example: Stretching
+       5.1.1.4.2. An example: Stretching
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#an-example-projection">
-       4.1.1.4.3. An example: Projection
+       5.1.1.4.3. An example: Projection
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#composition-of-linear-functions">
-     4.1.1.5. Composition of linear functions
+     5.1.1.5. Composition of linear functions
     </a>
    </li>
   </ul>
@@ -398,49 +400,49 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizing-functions">
-   4.1.1. Visualizing Functions
+   5.1.1. Visualizing Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-neither-addition-nor-scalar-multiplication">
-     4.1.1.1. Functions that preserve neither addition nor scalar multiplication
+     5.1.1.1. Functions that preserve neither addition nor scalar multiplication
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-scalar-multiplication-but-not-addition">
-     4.1.1.2. Functions that preserve scalar multiplication, but not addition
+     5.1.1.2. Functions that preserve scalar multiplication, but not addition
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-addition-but-not-scalar-multiplication">
-     4.1.1.3. Functions that preserve addition, but not scalar multiplication
+     5.1.1.3. Functions that preserve addition, but not scalar multiplication
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions-that-preserve-addition-and-scalar-multiplication-linear-functions">
-     4.1.1.4. Functions that preserve addition and scalar multiplication: linear functions
+     5.1.1.4. Functions that preserve addition and scalar multiplication: linear functions
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#an-example-rotation">
-       4.1.1.4.1. An example: Rotation
+       5.1.1.4.1. An example: Rotation
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#an-example-stretching">
-       4.1.1.4.2. An example: Stretching
+       5.1.1.4.2. An example: Stretching
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#an-example-projection">
-       4.1.1.4.3. An example: Projection
+       5.1.1.4.3. An example: Projection
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#composition-of-linear-functions">
-     4.1.1.5. Composition of linear functions
+     5.1.1.5. Composition of linear functions
     </a>
    </li>
   </ul>
@@ -455,7 +457,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="linear-and-nonlinear-functions">
-<h1><span class="section-number">4.1. </span>Linear and Nonlinear Functions<a class="headerlink" href="#linear-and-nonlinear-functions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.1. </span>Linear and Nonlinear Functions<a class="headerlink" href="#linear-and-nonlinear-functions" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -465,21 +467,21 @@
 </div>
 </div>
 <div class="section" id="visualizing-functions">
-<h2><span class="section-number">4.1.1. </span>Visualizing Functions<a class="headerlink" href="#visualizing-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.1. </span>Visualizing Functions<a class="headerlink" href="#visualizing-functions" title="Permalink to this headline">¶</a></h2>
 <p>A linear function is a function that satisfies or respects or “preserves” or “commutes with” the two fundamental operations of vector spaces: addition and scalar multiplication.</p>
 <p>Specifically, if <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(W\)</span> are two vector spaces, then a function <span class="math notranslate nohighlight">\(f: V \to W\)</span> is a <em><strong>linear function</strong></em> if and only if:</p>
 <ul>
-<li><p>For any vector <span class="math notranslate nohighlight">\(\mathbf{v} \in V\)</span> and any (scalar) real number <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>, the function <span class="math notranslate nohighlight">\(f\)</span> “preserves” i.e., “commutes with” scalar multiplication:</p>
+<li><p>For any vector <span class="math notranslate nohighlight">\(\boldsymbol{v} \in V\)</span> and any (scalar) real number <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>, the function <span class="math notranslate nohighlight">\(f\)</span> “preserves” i.e., “commutes with” scalar multiplication:</p>
 <div class="math notranslate nohighlight">
-\[f (a \cdot \mathbf{v}) = a \cdot f (\mathbf{v})  \,.\]</div>
+\[f (a \cdot \boldsymbol{v}) = a \cdot f (\boldsymbol{v})  \,.\]</div>
 </li>
-<li><p>For any two vectors <span class="math notranslate nohighlight">\(\mathbf{v}_1, \mathbf{v}_2 \in V\)</span>, the function <span class="math notranslate nohighlight">\(f\)</span> “preserves” i.e., “commutes with” addition:</p>
+<li><p>For any two vectors <span class="math notranslate nohighlight">\(\boldsymbol{v}_1, \boldsymbol{v}_2 \in V\)</span>, the function <span class="math notranslate nohighlight">\(f\)</span> “preserves” i.e., “commutes with” addition:</p>
 <div class="math notranslate nohighlight">
-\[ f ( \mathbf{v}_1 + \mathbf{v}_2)  = f(\mathbf{v}_1) + f(\mathbf{v}_2) \,.\]</div>
+\[ f ( \boldsymbol{v}_1 + \boldsymbol{v}_2)  = f(\boldsymbol{v}_1) + f(\boldsymbol{v}_2) \,.\]</div>
 </li>
 </ul>
 <p>Here, we will try to visualize the effects that certain functions <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \to \mathbb{R}^2\)</span> have on vectors; what it looks like when they are linear functions; and what it looks like when they are not linear functions.</p>
-<p>To visualize the effect of linear functions on <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, we will see how these functions ‘act’ on or transform unit vectors <span class="math notranslate nohighlight">\(\mathbf{v} \in S = \{\mathbf{v} \mid \|\mathbf{v}\|_2 = 1\}\)</span>.  Below, we produce random points on the unit circle, first by drawing random points, and then normalizing them so that they are all unit vectors.</p>
+<p>To visualize the effect of linear functions on <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, we will see how these functions ‘act’ on or transform unit vectors <span class="math notranslate nohighlight">\(\boldsymbol{v} \in S = \{\boldsymbol{v} \mid \|\boldsymbol{v}\|_2 = 1\}\)</span>.  Below, we produce random points on the unit circle, first by drawing random points, and then normalizing them so that they are all unit vectors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">345</span><span class="p">)</span> <span class="c1">#set random seed</span>
@@ -498,8 +500,8 @@
 </div>
 </div>
 <div class="section" id="functions-that-preserve-neither-addition-nor-scalar-multiplication">
-<h3><span class="section-number">4.1.1.1. </span>Functions that preserve neither addition nor scalar multiplication<a class="headerlink" href="#functions-that-preserve-neither-addition-nor-scalar-multiplication" title="Permalink to this headline">¶</a></h3>
-<p>Let’s see what happens if we apply the function <span class="math notranslate nohighlight">\(\sin(x)\)</span> to the coordinates of <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> – i.e., we map <span class="math notranslate nohighlight">\(\mathbf{v} = (v_1,v_2) \mapsto (\sin(v_1), \sin(v_2))\)</span>. We can visualize how this mapping transforms points on the unit circle with the following:</p>
+<h3><span class="section-number">5.1.1.1. </span>Functions that preserve neither addition nor scalar multiplication<a class="headerlink" href="#functions-that-preserve-neither-addition-nor-scalar-multiplication" title="Permalink to this headline">¶</a></h3>
+<p>Let’s see what happens if we apply the function <span class="math notranslate nohighlight">\(\sin(x)\)</span> to the coordinates of <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> – i.e., we map <span class="math notranslate nohighlight">\(\boldsymbol{v} = (v_1,v_2) \mapsto (\sin(v_1), \sin(v_2))\)</span>. We can visualize how this mapping transforms points on the unit circle with the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
@@ -515,7 +517,7 @@
 </div>
 <p>This function transforms the unit disc into a shape which is symmetric about the origin. However, we will see that this function not only fails to preserve addition, it also fails to preserve multiplication too.
 So transforming the unit disc into a shape which is symmetric about the origin is not enough by itself to guarantee that either of the two operations is preserved.</p>
-<p>Let’s see what happens if we scale the input vectors <span class="math notranslate nohighlight">\(\bf v\)</span> by some value <span class="math notranslate nohighlight">\(\alpha\)</span>. We do this by plotting the values <span class="math notranslate nohighlight">\(\sin(\alpha\mathbf{v})\)</span> as well as <span class="math notranslate nohighlight">\(\alpha\cdot\sin(\mathbf{v})\)</span>. Here we use <span class="math notranslate nohighlight">\(\alpha=2\)</span>, but you can try different values as well.</p>
+<p>Let’s see what happens if we scale the input vectors <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> by some value <span class="math notranslate nohighlight">\(\alpha\)</span>. We do this by plotting the values <span class="math notranslate nohighlight">\(\sin(\alpha\boldsymbol{v})\)</span> as well as <span class="math notranslate nohighlight">\(\alpha\cdot\sin(\boldsymbol{v})\)</span>. Here we use <span class="math notranslate nohighlight">\(\alpha=2\)</span>, but you can try different values as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">2</span>
@@ -534,7 +536,7 @@ So transforming the unit disc into a shape which is symmetric about the origin i
 <img alt="../_images/basicLA_3_linear_examples_new_7_0.png" src="../_images/basicLA_3_linear_examples_new_7_0.png" />
 </div>
 </div>
-<p>As you can see, the condition <span class="math notranslate nohighlight">\(f(\alpha \mathbf{v}) = \alpha\cdot f(\mathbf{v})\)</span> does <em>not</em> hold for the function <span class="math notranslate nohighlight">\(f(\mathbf{v}) = \sin(\mathbf{v})\)</span>. Similarly, this function does not preserve addition: namely, for any vectors <span class="math notranslate nohighlight">\(\mathbf{v},\mathbf{u}\)</span>, it is not (in general) the case that <span class="math notranslate nohighlight">\(\sin(\mathbf{u} + \mathbf{v}) = \sin(\mathbf{u}) + \sin(\mathbf{v})\)</span>. Let’s see this by looking at what we get by adding the vector <span class="math notranslate nohighlight">\(\mathbf{u} = (\sqrt{2}, -\sqrt{2})\)</span> to each of the unit vectors <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> from before, and applying the <span class="math notranslate nohighlight">\(\sin\)</span> function to them.</p>
+<p>As you can see, the condition <span class="math notranslate nohighlight">\(f(\alpha \boldsymbol{v}) = \alpha\cdot f(\boldsymbol{v})\)</span> does <em>not</em> hold for the function <span class="math notranslate nohighlight">\(f(\boldsymbol{v}) = \sin(\boldsymbol{v})\)</span>. Similarly, this function does not preserve addition: namely, for any vectors <span class="math notranslate nohighlight">\(\boldsymbol{v},\boldsymbol{u}\)</span>, it is not (in general) the case that <span class="math notranslate nohighlight">\(\sin(\boldsymbol{u} + \boldsymbol{v}) = \sin(\boldsymbol{u}) + \sin(\boldsymbol{v})\)</span>. Let’s see this by looking at what we get by adding the vector <span class="math notranslate nohighlight">\(\boldsymbol{u} = (\sqrt{2}, -\sqrt{2})\)</span> to each of the unit vectors <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> from before, and applying the <span class="math notranslate nohighlight">\(\sin\)</span> function to them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
@@ -554,12 +556,12 @@ So transforming the unit disc into a shape which is symmetric about the origin i
 <img alt="../_images/basicLA_3_linear_examples_new_9_0.png" src="../_images/basicLA_3_linear_examples_new_9_0.png" />
 </div>
 </div>
-<p>We see clearly that <span class="math notranslate nohighlight">\(\sin(\mathbf{u} + \mathbf{v})\)</span> does <em>not</em> give the same value as <span class="math notranslate nohighlight">\(\sin(\mathbf{u}) + \sin(\mathbf{v})\)</span>. Therefore, the <span class="math notranslate nohighlight">\(\sin\)</span> function does not satisfy either of the required properties of a linear function.</p>
+<p>We see clearly that <span class="math notranslate nohighlight">\(\sin(\boldsymbol{u} + \boldsymbol{v})\)</span> does <em>not</em> give the same value as <span class="math notranslate nohighlight">\(\sin(\boldsymbol{u}) + \sin(\boldsymbol{v})\)</span>. Therefore, the <span class="math notranslate nohighlight">\(\sin\)</span> function does not satisfy either of the required properties of a linear function.</p>
 </div>
 <div class="section" id="functions-that-preserve-scalar-multiplication-but-not-addition">
-<h3><span class="section-number">4.1.1.2. </span>Functions that preserve scalar multiplication, but not addition<a class="headerlink" href="#functions-that-preserve-scalar-multiplication-but-not-addition" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.1.2. </span>Functions that preserve scalar multiplication, but not addition<a class="headerlink" href="#functions-that-preserve-scalar-multiplication-but-not-addition" title="Permalink to this headline">¶</a></h3>
 <p>There are also functions <span class="math notranslate nohighlight">\(f\)</span> which <em>do</em> preserve scalar multplication, but <em>not</em> addition. A function that preserves scalar multiplication but not addition “acts like a linear function” on every line through the origin, but it isn’t consistent about what it does to different lines. Therefore we need at least a two-dimensional vector space to find a counterexample, since a one-dimensional vector space only has one line through the origin.</p>
-<p>For the example we give here, it is easiest to work in polar coordinates, wherein we represent a vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> as <span class="math notranslate nohighlight">\((r\cos(\theta), r\sin(\theta))\)</span>. Then the function <span class="math notranslate nohighlight">\(f\)</span> defined by</p>
+<p>For the example we give here, it is easiest to work in polar coordinates, wherein we represent a vector <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> as <span class="math notranslate nohighlight">\((r\cos(\theta), r\sin(\theta))\)</span>. Then the function <span class="math notranslate nohighlight">\(f\)</span> defined by</p>
 <div class="math notranslate nohighlight">
 \[
 f(r\cos(\theta), r\sin(\theta)) = \left(\frac{r\cos(\theta)}{|\cos(\theta)|+|\sin(\theta)|}, \frac{r\sin(\theta)}{|\cos(\theta)|+|\sin(\theta)|}\right)
@@ -576,7 +578,7 @@ f(r\cos(\theta), r\sin(\theta)) = \left(\frac{r\cos(\theta)}{|\cos(\theta)|+|\si
 </div>
 </div>
 </div>
-<p>We can plot how this function acts on our vectors <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> with the following:</p>
+<p>We can plot how this function acts on our vectors <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span> with the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_vv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vv</span><span class="o">.</span><span class="n">T</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
@@ -614,7 +616,7 @@ f(r\cos(\theta), r\sin(\theta)) = \left(\frac{r\cos(\theta)}{|\cos(\theta)|+|\si
 <img alt="../_images/basicLA_3_linear_examples_new_15_0.png" src="../_images/basicLA_3_linear_examples_new_15_0.png" />
 </div>
 </div>
-<p>As we can see, the plot of <span class="math notranslate nohighlight">\(f(\alpha \mathbf{v})\)</span> completely overlaps the plot of <span class="math notranslate nohighlight">\(\alpha\cdot f(\mathbf{v})\)</span>, since the two are indeed equal.</p>
+<p>As we can see, the plot of <span class="math notranslate nohighlight">\(f(\alpha \boldsymbol{v})\)</span> completely overlaps the plot of <span class="math notranslate nohighlight">\(\alpha\cdot f(\boldsymbol{v})\)</span>, since the two are indeed equal.</p>
 <p>However, the function <span class="math notranslate nohighlight">\(f\)</span> is not additive. We can see this visually as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -638,24 +640,24 @@ f(r\cos(\theta), r\sin(\theta)) = \left(\frac{r\cos(\theta)}{|\cos(\theta)|+|\si
 <img alt="../_images/basicLA_3_linear_examples_new_17_0.png" src="../_images/basicLA_3_linear_examples_new_17_0.png" />
 </div>
 </div>
-<p>Indeed, <span class="math notranslate nohighlight">\(f(\mathbf{u} + \mathbf{v})\)</span> and <span class="math notranslate nohighlight">\(f(\mathbf{u}) + f(\mathbf{v})\)</span> do not give the same output.</p>
+<p>Indeed, <span class="math notranslate nohighlight">\(f(\boldsymbol{u} + \boldsymbol{v})\)</span> and <span class="math notranslate nohighlight">\(f(\boldsymbol{u}) + f(\boldsymbol{v})\)</span> do not give the same output.</p>
 </div>
 <div class="section" id="functions-that-preserve-addition-but-not-scalar-multiplication">
-<h3><span class="section-number">4.1.1.3. </span>Functions that preserve addition, but not scalar multiplication<a class="headerlink" href="#functions-that-preserve-addition-but-not-scalar-multiplication" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.1.3. </span>Functions that preserve addition, but not scalar multiplication<a class="headerlink" href="#functions-that-preserve-addition-but-not-scalar-multiplication" title="Permalink to this headline">¶</a></h3>
 <p>There are no continuous functions which have this property for real vector spaces (i.e. vector spaces whose scalars are real numbers). This is in fact due to a property of rational numbers, but what is important to note is that we will not encounter any such functions when working with real vector spaces.</p>
 <p>However, for fun, we give an example of a continuous function which preserves addition, but not scalar multiplication, for the complex plane <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> considered as a complex vector space, i.e., a vector space whose scalars are complex numbers.
 Specifically, the function:</p>
 <div class="math notranslate nohighlight">
 \[ f: a + bi \mapsto a - bi\]</div>
-<p>preserves addition, i.e., <span class="math notranslate nohighlight">\(f(\mathbf{z}_1 + \mathbf{z}_2) = f(\mathbf{z}_1) + f(\mathbf{z}_2)\)</span>, but it does not preserve scalar multiplication, e.g., if the scalar <span class="math notranslate nohighlight">\(c = i\)</span>, and the “vector” <span class="math notranslate nohighlight">\(\mathbf{z} = 2 + 3i\)</span>, then <span class="math notranslate nohighlight">\(f(\mathbf{z}) = 2 - 3i\)</span>, <span class="math notranslate nohighlight">\(c \cdot \mathbf{z} = -3 + 2i\)</span>, so that  <span class="math notranslate nohighlight">\(f(c \cdot \mathbf{z}) = -3 - 2i\)</span>, but <span class="math notranslate nohighlight">\(c \cdot f(\mathbf{z}) = 3 + 2i\)</span>.
+<p>preserves addition, i.e., <span class="math notranslate nohighlight">\(f(\boldsymbol{z}_1 + \boldsymbol{z}_2) = f(\boldsymbol{z}_1) + f(\boldsymbol{z}_2)\)</span>, but it does not preserve scalar multiplication, e.g., if the scalar <span class="math notranslate nohighlight">\(c = i\)</span>, and the “vector” <span class="math notranslate nohighlight">\(\boldsymbol{z} = 2 + 3i\)</span>, then <span class="math notranslate nohighlight">\(f(\boldsymbol{z}) = 2 - 3i\)</span>, <span class="math notranslate nohighlight">\(c \cdot \boldsymbol{z} = -3 + 2i\)</span>, so that  <span class="math notranslate nohighlight">\(f(c \cdot \boldsymbol{z}) = -3 - 2i\)</span>, but <span class="math notranslate nohighlight">\(c \cdot f(\boldsymbol{z}) = 3 + 2i\)</span>.
 This function is called taking the “conjugate” of the complex number.</p>
 </div>
 <div class="section" id="functions-that-preserve-addition-and-scalar-multiplication-linear-functions">
-<h3><span class="section-number">4.1.1.4. </span>Functions that preserve addition and scalar multiplication: linear functions<a class="headerlink" href="#functions-that-preserve-addition-and-scalar-multiplication-linear-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.1.4. </span>Functions that preserve addition and scalar multiplication: linear functions<a class="headerlink" href="#functions-that-preserve-addition-and-scalar-multiplication-linear-functions" title="Permalink to this headline">¶</a></h3>
 <p>Now that we’ve seen many examples of functions which <em>are not</em> linear, let’s move on to functions which are linear. Such functions are at the heart of linear algebra. In what follows, we plot examples of linear functions, and in the homework you will use scatter plots like the ones above to verify that the examples given here do indeed satisfy the two properties of linear functions.</p>
 <div class="section" id="an-example-rotation">
-<h4><span class="section-number">4.1.1.4.1. </span>An example: Rotation<a class="headerlink" href="#an-example-rotation" title="Permalink to this headline">¶</a></h4>
-<p>Let’s first consider the function <span class="math notranslate nohighlight">\(f(\mathbf{v})\)</span> which takes any vector <span class="math notranslate nohighlight">\(\mathbf{v} = (v_1,v_2)\)</span> and rotates it by <span class="math notranslate nohighlight">\(\theta\)</span> degrees. This function is given by the following:</p>
+<h4><span class="section-number">5.1.1.4.1. </span>An example: Rotation<a class="headerlink" href="#an-example-rotation" title="Permalink to this headline">¶</a></h4>
+<p>Let’s first consider the function <span class="math notranslate nohighlight">\(f(\boldsymbol{v})\)</span> which takes any vector <span class="math notranslate nohighlight">\(\boldsymbol{v} = (v_1,v_2)\)</span> and rotates it by <span class="math notranslate nohighlight">\(\theta\)</span> degrees. This function is given by the following:</p>
 <div class="math notranslate nohighlight">
 \[
 f(v_1, v_2) = \left(\cos(\theta)v_1 - \sin(\theta)v_2, \sin(\theta)v_1 + \cos(\theta)v_2\right)
@@ -697,8 +699,8 @@ f(v_1, v_2) = \left(\cos(\theta)v_1 - \sin(\theta)v_2, \sin(\theta)v_1 + \cos(\t
 <p>Notice how the resulting shape is symmetric about the origin, as it should be for any function that preserves scalar multiplication. You’ll verify this, as well as the fact that this function preserves addition, visually on the homework.</p>
 </div>
 <div class="section" id="an-example-stretching">
-<h4><span class="section-number">4.1.1.4.2. </span>An example: Stretching<a class="headerlink" href="#an-example-stretching" title="Permalink to this headline">¶</a></h4>
-<p>Next, let’s consider the function <span class="math notranslate nohighlight">\(f(\mathbf{v})\)</span> which takes a vector <span class="math notranslate nohighlight">\(\mathbf{v} = (v_1,v_2)\)</span> and ‘stretches’ it by a factor of <span class="math notranslate nohighlight">\(\alpha\)</span> along the x-axis and  <span class="math notranslate nohighlight">\(\beta\)</span> along the y-axes.
+<h4><span class="section-number">5.1.1.4.2. </span>An example: Stretching<a class="headerlink" href="#an-example-stretching" title="Permalink to this headline">¶</a></h4>
+<p>Next, let’s consider the function <span class="math notranslate nohighlight">\(f(\boldsymbol{v})\)</span> which takes a vector <span class="math notranslate nohighlight">\(\boldsymbol{v} = (v_1,v_2)\)</span> and ‘stretches’ it by a factor of <span class="math notranslate nohighlight">\(\alpha\)</span> along the x-axis and  <span class="math notranslate nohighlight">\(\beta\)</span> along the y-axes.
 The function which performs this operations is given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -729,14 +731,14 @@ f(v_1,v_2) = (\alpha v_1, \beta v_2)
 <p>This function again preserves scalar multiplication and addition, as you will verify visually on the homework.</p>
 </div>
 <div class="section" id="an-example-projection">
-<h4><span class="section-number">4.1.1.4.3. </span>An example: Projection<a class="headerlink" href="#an-example-projection" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.1.1.4.3. </span>An example: Projection<a class="headerlink" href="#an-example-projection" title="Permalink to this headline">¶</a></h4>
 <p>The last type of linear function which we will consider are special types of functions called <em>projections</em>. We’ll talk much more about projections later, but for now let’s look at an example.
 The function</p>
 <div class="math notranslate nohighlight">
 \[
 f(v_1,v_2) = \left(\frac{1}{2}(v_1 + v_2), \frac{1}{2}(v_1 + v_2)\right)
 \]</div>
-<p>takes any vector <span class="math notranslate nohighlight">\(\mathbf{v} = (v_1,v_2)\)</span>, and maps it to an element of the set <span class="math notranslate nohighlight">\(L = \{(x,y)\mid x=y\}\)</span>, which is just the <span class="math notranslate nohighlight">\(y=x\)</span> line in the plane. Let’s visualize this:</p>
+<p>takes any vector <span class="math notranslate nohighlight">\(\boldsymbol{v} = (v_1,v_2)\)</span>, and maps it to an element of the set <span class="math notranslate nohighlight">\(L = \{(x,y)\mid x=y\}\)</span>, which is just the <span class="math notranslate nohighlight">\(y=x\)</span> line in the plane. Let’s visualize this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">project_to_line</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
@@ -783,11 +785,11 @@ f(v_1,v_2) = \left(\frac{1}{2}(v_1 + v_2), \frac{1}{2}(v_1 + v_2)\right)
 </div>
 </div>
 <div class="section" id="composition-of-linear-functions">
-<h3><span class="section-number">4.1.1.5. </span>Composition of linear functions<a class="headerlink" href="#composition-of-linear-functions" title="Permalink to this headline">¶</a></h3>
-<p>An important property of linear functions is that their composition is also linear. To see this, suppose that <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are both linear functions, and let <span class="math notranslate nohighlight">\(\alpha\)</span> be a scalar, <span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span> be vectors. Then</p>
+<h3><span class="section-number">5.1.1.5. </span>Composition of linear functions<a class="headerlink" href="#composition-of-linear-functions" title="Permalink to this headline">¶</a></h3>
+<p>An important property of linear functions is that their composition is also linear. To see this, suppose that <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are both linear functions, and let <span class="math notranslate nohighlight">\(\alpha\)</span> be a scalar, <span class="math notranslate nohighlight">\(\boldsymbol{u},\boldsymbol{v}\)</span> be vectors. Then</p>
 <div class="math notranslate nohighlight">
 \[
-(g\circ f)(\mathbf{u} + \mathbf{v}) = g(f(\mathbf{u} + \mathbf{v})) = g(f(\mathbf{u}) + f(\mathbf{v})) = g(f(\mathbf{u})) + g(f(\mathbf{v})) = (g\circ f)(\mathbf{u}) + (g\circ f)(\mathbf{v})
+(g\circ f)(\boldsymbol{u} + \boldsymbol{v}) = g(f(\boldsymbol{u} + \boldsymbol{v})) = g(f(\boldsymbol{u}) + f(\boldsymbol{v})) = g(f(\boldsymbol{u})) + g(f(\boldsymbol{v})) = (g\circ f)(\boldsymbol{u}) + (g\circ f)(\boldsymbol{v})
 \]</div>
 <p>Indeed, let’s try composing two of the functions from the previous section. First, let’s try composing <code class="docutils literal notranslate"><span class="pre">rotate</span></code> with <code class="docutils literal notranslate"><span class="pre">stretch</span></code>.</p>
 <div class="cell docutils container">
@@ -857,17 +859,17 @@ f(v_1,v_2) = \left(\frac{1}{2}(v_1 + v_2), \frac{1}{2}(v_1 + v_2)\right)
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="basicLA_3_chheader.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="basicLA_3B_chheader.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>(CH5): Basics of matrices and transformations</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Matrices as transformations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="basicLA_3_matrices_and_linear_functions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>Matrices and Linear Functions</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Matrices and Linear Functions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

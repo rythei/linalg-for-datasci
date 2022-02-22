@@ -25,17 +25,17 @@ A linear function is a function that satisfies or respects or "preserves" or "co
 
 Specifically, if $V$ and $W$ are two vector spaces, then a function $f: V \to W$ is a _**linear function**_ if and only if:
 
-- For any vector $\mathbf{v} \in V$ and any (scalar) real number $a \in \mathbb{R}$, the function $f$ "preserves" i.e., "commutes with" scalar multiplication:
+- For any vector $\boldsymbol{v} \in V$ and any (scalar) real number $a \in \mathbb{R}$, the function $f$ "preserves" i.e., "commutes with" scalar multiplication:
 
-  $$f (a \cdot \mathbf{v}) = a \cdot f (\mathbf{v})  \,.$$
+  $$f (a \cdot \boldsymbol{v}) = a \cdot f (\boldsymbol{v})  \,.$$
 
-- For any two vectors $\mathbf{v}_1, \mathbf{v}_2 \in V$, the function $f$ "preserves" i.e., "commutes with" addition:
+- For any two vectors $\boldsymbol{v}_1, \boldsymbol{v}_2 \in V$, the function $f$ "preserves" i.e., "commutes with" addition:
 
-  $$ f ( \mathbf{v}_1 + \mathbf{v}_2)  = f(\mathbf{v}_1) + f(\mathbf{v}_2) \,.$$
+  $$ f ( \boldsymbol{v}_1 + \boldsymbol{v}_2)  = f(\boldsymbol{v}_1) + f(\boldsymbol{v}_2) \,.$$
 
 Here, we will try to visualize the effects that certain functions $f: \mathbb{R}^2 \to \mathbb{R}^2$ have on vectors; what it looks like when they are linear functions; and what it looks like when they are not linear functions.
 
-To visualize the effect of linear functions on $\mathbb{R}^2$, we will see how these functions 'act' on or transform unit vectors $\mathbf{v} \in S = \{\mathbf{v} \mid \|\mathbf{v}\|_2 = 1\}$.  Below, we produce random points on the unit circle, first by drawing random points, and then normalizing them so that they are all unit vectors.
+To visualize the effect of linear functions on $\mathbb{R}^2$, we will see how these functions 'act' on or transform unit vectors $\boldsymbol{v} \in S = \{\boldsymbol{v} \mid \|\boldsymbol{v}\|_2 = 1\}$.  Below, we produce random points on the unit circle, first by drawing random points, and then normalizing them so that they are all unit vectors.
 
 ```{code-cell} ipython3
 np.random.seed(345) #set random seed
@@ -51,7 +51,7 @@ plt.show()
 ### Functions that preserve neither addition nor scalar multiplication
 
 
-Let's see what happens if we apply the function $\sin(x)$ to the coordinates of $\mathbf{v}$ -- i.e., we map $\mathbf{v} = (v_1,v_2) \mapsto (\sin(v_1), \sin(v_2))$. We can visualize how this mapping transforms points on the unit circle with the following:
+Let's see what happens if we apply the function $\sin(x)$ to the coordinates of $\boldsymbol{v}$ -- i.e., we map $\boldsymbol{v} = (v_1,v_2) \mapsto (\sin(v_1), \sin(v_2))$. We can visualize how this mapping transforms points on the unit circle with the following:
 
 ```{code-cell} ipython3
 plt.scatter(np.sin(vv[0]), np.sin(vv[1]))
@@ -60,10 +60,10 @@ plt.axis('equal')
 plt.show()
 ```
 
-This function transforms the unit disc into a shape which is symmetric about the origin. However, we will see that this function not only fails to preserve addition, it also fails to preserve multiplication too. 
+This function transforms the unit disc into a shape which is symmetric about the origin. However, we will see that this function not only fails to preserve addition, it also fails to preserve multiplication too.
 So transforming the unit disc into a shape which is symmetric about the origin is not enough by itself to guarantee that either of the two operations is preserved.
 
-Let's see what happens if we scale the input vectors $\bf v$ by some value $\alpha$. We do this by plotting the values $\sin(\alpha\mathbf{v})$ as well as $\alpha\cdot\sin(\mathbf{v})$. Here we use $\alpha=2$, but you can try different values as well.
+Let's see what happens if we scale the input vectors $\boldsymbol{v}$ by some value $\alpha$. We do this by plotting the values $\sin(\alpha\boldsymbol{v})$ as well as $\alpha\cdot\sin(\boldsymbol{v})$. Here we use $\alpha=2$, but you can try different values as well.
 
 ```{code-cell} ipython3
 alpha = 2
@@ -77,7 +77,7 @@ ax2.set_title('alpha*sin(v)')
 plt.show()
 ```
 
-As you can see, the condition $f(\alpha \mathbf{v}) = \alpha\cdot f(\mathbf{v})$ does _not_ hold for the function $f(\mathbf{v}) = \sin(\mathbf{v})$. Similarly, this function does not preserve addition: namely, for any vectors $\mathbf{v},\mathbf{u}$, it is not (in general) the case that $\sin(\mathbf{u} + \mathbf{v}) = \sin(\mathbf{u}) + \sin(\mathbf{v})$. Let's see this by looking at what we get by adding the vector $\mathbf{u} = (\sqrt{2}, -\sqrt{2})$ to each of the unit vectors $\mathbf{v}$ from before, and applying the $\sin$ function to them.
+As you can see, the condition $f(\alpha \boldsymbol{v}) = \alpha\cdot f(\boldsymbol{v})$ does _not_ hold for the function $f(\boldsymbol{v}) = \sin(\boldsymbol{v})$. Similarly, this function does not preserve addition: namely, for any vectors $\boldsymbol{v},\boldsymbol{u}$, it is not (in general) the case that $\sin(\boldsymbol{u} + \boldsymbol{v}) = \sin(\boldsymbol{u}) + \sin(\boldsymbol{v})$. Let's see this by looking at what we get by adding the vector $\boldsymbol{u} = (\sqrt{2}, -\sqrt{2})$ to each of the unit vectors $\boldsymbol{v}$ from before, and applying the $\sin$ function to them.
 
 ```{code-cell} ipython3
 u = np.array([np.sqrt(2), -np.sqrt(2)])
@@ -92,13 +92,13 @@ ax2.set_title('sin(u)+ sin(v)')
 plt.show()
 ```
 
-We see clearly that $\sin(\mathbf{u} + \mathbf{v})$ does _not_ give the same value as $\sin(\mathbf{u}) + \sin(\mathbf{v})$. Therefore, the $\sin$ function does not satisfy either of the required properties of a linear function.
+We see clearly that $\sin(\boldsymbol{u} + \boldsymbol{v})$ does _not_ give the same value as $\sin(\boldsymbol{u}) + \sin(\boldsymbol{v})$. Therefore, the $\sin$ function does not satisfy either of the required properties of a linear function.
 
 ### Functions that preserve scalar multiplication, but not addition
 
 There are also functions $f$ which _do_ preserve scalar multplication, but _not_ addition. A function that preserves scalar multiplication but not addition "acts like a linear function" on every line through the origin, but it isn't consistent about what it does to different lines. Therefore we need at least a two-dimensional vector space to find a counterexample, since a one-dimensional vector space only has one line through the origin.
 
-For the example we give here, it is easiest to work in polar coordinates, wherein we represent a vector $\mathbf{v}$ as $(r\cos(\theta), r\sin(\theta))$. Then the function $f$ defined by 
+For the example we give here, it is easiest to work in polar coordinates, wherein we represent a vector $\boldsymbol{v}$ as $(r\cos(\theta), r\sin(\theta))$. Then the function $f$ defined by
 
 
 $$
@@ -116,7 +116,7 @@ def f(v):
     return fv
 ```
 
-We can plot how this function acts on our vectors $\mathbf{v}$ with the following:
+We can plot how this function acts on our vectors $\boldsymbol{v}$ with the following:
 
 ```{code-cell} ipython3
 f_vv = np.array([f(v) for v in vv.T]).T
@@ -127,7 +127,7 @@ plt.axis('equal')
 plt.show()
 ```
 
-As expected, this function transforms the unit circle into a diamond shape. 
+As expected, this function transforms the unit circle into a diamond shape.
 
 Now, as promised, let's verify that this function preserves scalar multiplication.
 
@@ -145,7 +145,7 @@ ax2.set_title('f(alpha*v)')
 plt.show()
 ```
 
-As we can see, the plot of $f(\alpha \mathbf{v})$ completely overlaps the plot of $\alpha\cdot f(\mathbf{v})$, since the two are indeed equal. 
+As we can see, the plot of $f(\alpha \boldsymbol{v})$ completely overlaps the plot of $\alpha\cdot f(\boldsymbol{v})$, since the two are indeed equal.
 
 However, the function $f$ is not additive. We can see this visually as well.
 
@@ -165,31 +165,31 @@ ax2.set_title('f(u) + f(v)')
 plt.show()
 ```
 
-Indeed, $f(\mathbf{u} + \mathbf{v})$ and $f(\mathbf{u}) + f(\mathbf{v})$ do not give the same output.
+Indeed, $f(\boldsymbol{u} + \boldsymbol{v})$ and $f(\boldsymbol{u}) + f(\boldsymbol{v})$ do not give the same output.
 
 ### Functions that preserve addition, but not scalar multiplication
 
 
 There are no continuous functions which have this property for real vector spaces (i.e. vector spaces whose scalars are real numbers). This is in fact due to a property of rational numbers, but what is important to note is that we will not encounter any such functions when working with real vector spaces.
 
-However, for fun, we give an example of a continuous function which preserves addition, but not scalar multiplication, for the complex plane $\mathbb{C}$ considered as a complex vector space, i.e., a vector space whose scalars are complex numbers. 
+However, for fun, we give an example of a continuous function which preserves addition, but not scalar multiplication, for the complex plane $\mathbb{C}$ considered as a complex vector space, i.e., a vector space whose scalars are complex numbers.
 Specifically, the function:
 
 $$ f: a + bi \mapsto a - bi$$
 
-preserves addition, i.e., $f(\mathbf{z}_1 + \mathbf{z}_2) = f(\mathbf{z}_1) + f(\mathbf{z}_2)$, but it does not preserve scalar multiplication, e.g., if the scalar $c = i$, and the "vector" $\mathbf{z} = 2 + 3i$, then $f(\mathbf{z}) = 2 - 3i$, $c \cdot \mathbf{z} = -3 + 2i$, so that  $f(c \cdot \mathbf{z}) = -3 - 2i$, but $c \cdot f(\mathbf{z}) = 3 + 2i$. 
+preserves addition, i.e., $f(\boldsymbol{z}_1 + \boldsymbol{z}_2) = f(\boldsymbol{z}_1) + f(\boldsymbol{z}_2)$, but it does not preserve scalar multiplication, e.g., if the scalar $c = i$, and the "vector" $\boldsymbol{z} = 2 + 3i$, then $f(\boldsymbol{z}) = 2 - 3i$, $c \cdot \boldsymbol{z} = -3 + 2i$, so that  $f(c \cdot \boldsymbol{z}) = -3 - 2i$, but $c \cdot f(\boldsymbol{z}) = 3 + 2i$.
 This function is called taking the "conjugate" of the complex number.
 
 
 ### Functions that preserve addition and scalar multiplication: linear functions
 
 
-Now that we've seen many examples of functions which _are not_ linear, let's move on to functions which are linear. Such functions are at the heart of linear algebra. In what follows, we plot examples of linear functions, and in the homework you will use scatter plots like the ones above to verify that the examples given here do indeed satisfy the two properties of linear functions. 
+Now that we've seen many examples of functions which _are not_ linear, let's move on to functions which are linear. Such functions are at the heart of linear algebra. In what follows, we plot examples of linear functions, and in the homework you will use scatter plots like the ones above to verify that the examples given here do indeed satisfy the two properties of linear functions.
 
 
 #### An example: Rotation
 
-Let's first consider the function $f(\mathbf{v})$ which takes any vector $\mathbf{v} = (v_1,v_2)$ and rotates it by $\theta$ degrees. This function is given by the following:
+Let's first consider the function $f(\boldsymbol{v})$ which takes any vector $\boldsymbol{v} = (v_1,v_2)$ and rotates it by $\theta$ degrees. This function is given by the following:
 
 $$
 f(v_1, v_2) = \left(\cos(\theta)v_1 - \sin(\theta)v_2, \sin(\theta)v_1 + \cos(\theta)v_2\right)
@@ -226,7 +226,7 @@ Notice how the resulting shape is symmetric about the origin, as it should be fo
 
 #### An example: Stretching
 
-Next, let's consider the function $f(\mathbf{v})$ which takes a vector $\mathbf{v} = (v_1,v_2)$ and 'stretches' it by a factor of $\alpha$ along the x-axis and  $\beta$ along the y-axes. 
+Next, let's consider the function $f(\boldsymbol{v})$ which takes a vector $\boldsymbol{v} = (v_1,v_2)$ and 'stretches' it by a factor of $\alpha$ along the x-axis and  $\beta$ along the y-axes.
 The function which performs this operations is given by
 
 $$
@@ -254,7 +254,7 @@ This function again preserves scalar multiplication and addition, as you will ve
 
 #### An example: Projection
 
-The last type of linear function which we will consider are special types of functions called _projections_. We'll talk much more about projections later, but for now let's look at an example. 
+The last type of linear function which we will consider are special types of functions called _projections_. We'll talk much more about projections later, but for now let's look at an example.
 The function
 
 
@@ -263,7 +263,7 @@ f(v_1,v_2) = \left(\frac{1}{2}(v_1 + v_2), \frac{1}{2}(v_1 + v_2)\right)
 $$
 
 
-takes any vector $\mathbf{v} = (v_1,v_2)$, and maps it to an element of the set $L = \{(x,y)\mid x=y\}$, which is just the $y=x$ line in the plane. Let's visualize this:
+takes any vector $\boldsymbol{v} = (v_1,v_2)$, and maps it to an element of the set $L = \{(x,y)\mid x=y\}$, which is just the $y=x$ line in the plane. Let's visualize this:
 
 ```{code-cell} ipython3
 def project_to_line(v):
@@ -300,11 +300,11 @@ You will again verify visually in the homework that this map preserves scalar mu
 
 ### Composition of linear functions
 
-An important property of linear functions is that their composition is also linear. To see this, suppose that $f$ and $g$ are both linear functions, and let $\alpha$ be a scalar, $\mathbf{u},\mathbf{v}$ be vectors. Then
+An important property of linear functions is that their composition is also linear. To see this, suppose that $f$ and $g$ are both linear functions, and let $\alpha$ be a scalar, $\boldsymbol{u},\boldsymbol{v}$ be vectors. Then
 
 
 $$
-(g\circ f)(\mathbf{u} + \mathbf{v}) = g(f(\mathbf{u} + \mathbf{v})) = g(f(\mathbf{u}) + f(\mathbf{v})) = g(f(\mathbf{u})) + g(f(\mathbf{v})) = (g\circ f)(\mathbf{u}) + (g\circ f)(\mathbf{v})
+(g\circ f)(\boldsymbol{u} + \boldsymbol{v}) = g(f(\boldsymbol{u} + \boldsymbol{v})) = g(f(\boldsymbol{u}) + f(\boldsymbol{v})) = g(f(\boldsymbol{u})) + g(f(\boldsymbol{v})) = (g\circ f)(\boldsymbol{u}) + (g\circ f)(\boldsymbol{v})
 $$
 
 
