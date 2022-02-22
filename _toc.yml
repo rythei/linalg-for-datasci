@@ -25,8 +25,10 @@ parts:
     sections:
     - file: content/basicLA_3_matrices-and-matrix-operations
     - file: content/basicLA_3_deconstructing
-    # - file: content/basicLA_3_linear_examples_new
-    # - file: content/basicLA_3_matrices_and_linear_functions
-    # - file: content/basicLA_3_inverses
-    #- file: content/basicLA_3_changing_basis
+  - file: content/basicLA_3B_chheader
+    sections:
+    - file: content/basicLA_3_linear_examples_new
+    - file: content/basicLA_3_matrices_and_linear_functions
+     #- file: content/basicLA_3_inverses
+     #- file: content/basicLA_3_changing_basis
     #- file: content/basicLA_3_powers_of_matrices
