@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Matrices as transformations" href="basicLA_3B_chheader.html" />
+    <link rel="next" title="4.3. Taking Powers of Matrices" href="basicLA_3_powers_of_matrices.html" />
     <link rel="prev" title="4.1. Matrices and matrix operations" href="basicLA_3_matrices-and-matrix-operations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -214,6 +214,11 @@
      4.2. Deconstructing Matrix Multiplication
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_powers_of_matrices.html">
+     4.3. Taking Powers of Matrices
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -234,6 +239,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="basicLA_3_matrices_and_linear_functions.html">
      5.2. Matrices and Linear Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_injective-and-surjective-functions.html">
+     5.3. Injective, surjective and invertible functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_inverses.html">
+     5.4. Left Inverses, Right Inverses, and Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_changing_basis.html">
+     5.5. Changing Basis
     </a>
    </li>
   </ul>
@@ -416,7 +436,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.005772590637207031
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.03563284873962402
 </pre></div>
 </div>
 </div>
@@ -444,7 +464,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0006582736968994141
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.010104894638061523
 </pre></div>
 </div>
 </div>
@@ -484,8 +504,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005509853363037109
-time taken to compute A*B[:,cols]:  0.00045490264892578125
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.03455996513366699
+time taken to compute A*B[:,cols]:  0.01023101806640625
 </pre></div>
 </div>
 </div>
@@ -536,8 +556,8 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005137920379638672
-time taken to compute A[i,:]*B:  0.00024199485778808594
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.038095712661743164
+time taken to compute A[i,:]*B:  0.010099172592163086
 </pre></div>
 </div>
 </div>
@@ -574,8 +594,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0062410831451416016
-time taken to compute A[rows,:]*B:  0.0002639293670654297
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.029886245727539062
+time taken to compute A[rows,:]*B:  0.010091066360473633
 </pre></div>
 </div>
 </div>
@@ -632,10 +652,10 @@ In data science, we often encounter very large matrices when working with big da
             <p class="prev-next-title"><span class="section-number">4.1. </span>Matrices and matrix operations</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="basicLA_3B_chheader.html" title="next page">
+    <a class='right-next' id="next-link" href="basicLA_3_powers_of_matrices.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Matrices as transformations</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Taking Powers of Matrices</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
