@@ -53,7 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="4.2. Changing Basis" href="basicLA_3_changing_basis.html" />
+    <link rel="next" title="5. Matrices as transformations" href="basicLA_3B_chheader.html" />
+    <link rel="prev" title="4.2. Deconstructing Matrix Multiplication" href="basicLA_3_deconstructing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -204,18 +205,55 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="basicLA_3_deconstructing.html">
-     4.1. Deconstructing Matrix Multiplication
+    <a class="reference internal" href="basicLA_3_matrices-and-matrix-operations.html">
+     4.1. Matrices and matrix operations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="basicLA_3_changing_basis.html">
-     4.2. Changing Basis
+    <a class="reference internal" href="basicLA_3_deconstructing.html">
+     4.2. Deconstructing Matrix Multiplication
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      4.3. Taking Powers of Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="basicLA_3B_chheader.html">
+   5. Matrices as transformations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_linear_examples_new.html">
+     5.1. Linear and Nonlinear Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_matrices_and_linear_functions.html">
+     5.2. Matrices and Linear Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_injective-and-surjective-functions.html">
+     5.3. Injective, surjective and invertible functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_inverses.html">
+     5.4. Left Inverses, Right Inverses, and Inverses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_3_changing_basis.html">
+     5.5. Changing Basis
     </a>
    </li>
   </ul>
@@ -403,19 +441,19 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="taking-powers-of-matrices">
 <h1><span class="section-number">4.3. </span>Taking Powers of Matrices<a class="headerlink" href="#taking-powers-of-matrices" title="Permalink to this headline">¶</a></h1>
 <p>Taking powers of matrices refers to multiplying a matrix by itself multiple times.</p>
-<p>Given an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span>, we can multiply it by itself to get <span class="math notranslate nohighlight">\( AA \)</span>, and this can be denoted <span class="math notranslate nohighlight">\(A^2\)</span>.
-Then, since <span class="math notranslate nohighlight">\(A^2\)</span> is an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix, we can multiply it to get <span class="math notranslate nohighlight">\(A^3\)</span>, and so on</p>
+<p>Given an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, we can multiply it by itself to get <span class="math notranslate nohighlight">\(\boldsymbol{AA}\)</span>, and this can be denoted <span class="math notranslate nohighlight">\(\boldsymbol{A}^2\)</span>.
+Then, since <span class="math notranslate nohighlight">\(\boldsymbol{A}^2\)</span> is an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix, we can multiply it to get <span class="math notranslate nohighlight">\(\boldsymbol{A}^3\)</span>, and so on</p>
 <div class="math notranslate nohighlight">
 \[
-A^k = A \cdots A  ,
+\boldsymbol{A}^k = \boldsymbol{A} \cdots \boldsymbol{A}  ,
 \]</div>
-<p>where there are <span class="math notranslate nohighlight">\(k\)</span> copies of <span class="math notranslate nohighlight">\(A\)</span> in this product.
+<p>where there are <span class="math notranslate nohighlight">\(k\)</span> copies of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> in this product.
 Taking powers of matrices is very common.
 Here, we will explore some of the properties of this operation.</p>
 <p>There are two (related) ways to view this.</p>
 <ul class="simple">
-<li><p>First, we can simply multiply <span class="math notranslate nohighlight">\(A\)</span> by itself multiple times and see what happens.</p></li>
-<li><p>Second, we can think of <span class="math notranslate nohighlight">\(A\)</span> as multiplying a vector <span class="math notranslate nohighlight">\(x\)</span>, as in <span class="math notranslate nohighlight">\(Ax\)</span>, and see what happens if we do this multiple times, i.e., what is <span class="math notranslate nohighlight">\(A(A(\cdots(A(x))))\)</span>.</p></li>
+<li><p>First, we can simply multiply <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> by itself multiple times and see what happens.</p></li>
+<li><p>Second, we can think of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> as multiplying a vector <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>, as in <span class="math notranslate nohighlight">\(\boldsymbol{Ax}\)</span>, and see what happens if we do this multiple times, i.e., what is <span class="math notranslate nohighlight">\(\boldsymbol{A}(\boldsymbol{A}(\cdots(\boldsymbol{A}(\boldsymbol{x}))))\)</span>.</p></li>
 </ul>
 <p>We are interested in both of these views.</p>
 <div class="section" id="powers-of-a-diagonal-matrix">
@@ -424,16 +462,16 @@ Here, we will explore some of the properties of this operation.</p>
 <p>Consider a diagonal matrix <span class="math notranslate nohighlight">\(A\)</span> of the form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-A = \begin{pmatrix}a_1 &amp; 0 &amp;\cdots &amp;0\\
+\boldsymbol{A} = \begin{pmatrix}a_1 &amp; 0 &amp;\cdots &amp;0\\
 									 0   &amp; a_2 &amp; \cdots &amp;0\\
                    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
                    0 &amp;\cdots &amp;0&amp;a_n
 		\end{pmatrix}
 \end{split}\]</div>
-<p>If we take the second power of this matrix, i.e. <span class="math notranslate nohighlight">\(A^2 = AA\)</span>, the resulting matrix is</p>
+<p>If we take the second power of this matrix, i.e. <span class="math notranslate nohighlight">\(\boldsymbol{A}^2 = \boldsymbol{AA}\)</span>, the resulting matrix is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-A^2 = AA = \begin{pmatrix}a_1 &amp; 0 &amp;\cdots &amp;0\\
+\boldsymbol{A}^2 = \boldsymbol{AA} = \begin{pmatrix}a_1 &amp; 0 &amp;\cdots &amp;0\\
 									 0   &amp; a_2 &amp; \cdots &amp;0\\
                    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
                    0 &amp;\cdots &amp;0&amp;a_n
@@ -451,14 +489,14 @@ A^2 = AA = \begin{pmatrix}a_1 &amp; 0 &amp;\cdots &amp;0\\
 More generally, the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of a diagonal matrix can be seen to be</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-A^k = \begin{pmatrix}a_1^k &amp; 0 &amp;\cdots &amp;0\\
+\boldsymbol{A}^k = \begin{pmatrix}a_1^k &amp; 0 &amp;\cdots &amp;0\\
 									 0   &amp; a_2^k &amp; \cdots &amp;0\\
                    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
                    0 &amp;\cdots &amp;0&amp;a_n^k
 		\end{pmatrix}
 \end{split}\]</div>
 <p>Let’s verify this in Python.
-First, we define a diagonal matrix <span class="math notranslate nohighlight">\(A\)</span> using the <code class="docutils literal notranslate"><span class="pre">np.diag</span></code> function.</p>
+First, we define a diagonal matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> using the <code class="docutils literal notranslate"><span class="pre">np.diag</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -557,23 +595,23 @@ Let’s verify this.</p>
 </div>
 </div>
 <p>This is a very special property of diagonal matrices.
-In general, the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of a matrix <span class="math notranslate nohighlight">\(A\)</span> will not be the same as taking the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of each entry of <span class="math notranslate nohighlight">\(A\)</span>, as we will see later on.</p>
+In general, the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of a matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> will not be the same as taking the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of each entry of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, as we will see later on.</p>
 <div class="section" id="powers-of-a-diagonal-matrix-as-k-to-infty">
 <h3><span class="section-number">4.3.1.1. </span>Powers of a diagonal matrix as <span class="math notranslate nohighlight">\(k\to \infty\)</span><a class="headerlink" href="#powers-of-a-diagonal-matrix-as-k-to-infty" title="Permalink to this headline">¶</a></h3>
-<p>A natural question to ask when taking power of a matrix is what happens to the matrix <span class="math notranslate nohighlight">\(A^k\)</span> when we let <span class="math notranslate nohighlight">\(k\)</span> get large.
-Does the matrix <span class="math notranslate nohighlight">\(A^k\)</span> converge to a finite matrix <span class="math notranslate nohighlight">\(A_\infty\)</span>?
+<p>A natural question to ask when taking power of a matrix is what happens to the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> when we let <span class="math notranslate nohighlight">\(k\)</span> get large.
+Does the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> converge to a finite matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}_\infty\)</span>?
 Or do the entries diverge?</p>
-<p>In the case of a diagonal matrix <span class="math notranslate nohighlight">\(A\)</span>, this question is easy to answer, since we know that <span class="math notranslate nohighlight">\(A^k\)</span> corresponds to taking the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of each of the diagonal entries of <span class="math notranslate nohighlight">\(A\)</span>.
+<p>In the case of a diagonal matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, this question is easy to answer, since we know that <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> corresponds to taking the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of each of the diagonal entries of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>.
 Thus, our question can be answered by asking what happens to the scalar <span class="math notranslate nohighlight">\(x^k\)</span> as <span class="math notranslate nohighlight">\(k\to\infty\)</span>.
 Indeed, we know the following are true:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \lim_{k\to\infty}x^k = \begin{cases} \infty &amp; \text{if } x&gt;1\\ 1 &amp; \text{if } x=1\\ 0 &amp; \text{if } -1 &lt; x &lt; 1\\ \text{does not exist} &amp; \text{if } x\leq -1\end{cases}
 \end{split}\]</div>
-<p>Hence, we can expect to have a finite limit <span class="math notranslate nohighlight">\(A^k\)</span> as <span class="math notranslate nohighlight">\(k\to \infty\)</span> if the diagonal entries of <span class="math notranslate nohighlight">\(a_1,\dots,a_n\)</span> of <span class="math notranslate nohighlight">\(A\)</span> satisfy <span class="math notranslate nohighlight">\(|a_i|&lt;1\)</span> or <span class="math notranslate nohighlight">\(a_i = 1\)</span> for all <span class="math notranslate nohighlight">\(i=1,\dots,n\)</span>.
-Otherwise, the matrix <span class="math notranslate nohighlight">\(A^k\)</span> will either oscillate or diverge as <span class="math notranslate nohighlight">\(k\to\infty\)</span>.
-Let’s see an example with our matrix <span class="math notranslate nohighlight">\(A\)</span> from above.</p>
-<p>To get an idea of what <span class="math notranslate nohighlight">\(A^k\)</span> is as <span class="math notranslate nohighlight">\(k\to\infty\)</span>, let’s try computing <span class="math notranslate nohighlight">\(A^{10}\)</span>.</p>
+<p>Hence, we can expect to have a finite limit <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> as <span class="math notranslate nohighlight">\(k\to \infty\)</span> if the diagonal entries of <span class="math notranslate nohighlight">\(a_1,\dots,a_n\)</span> of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> satisfy <span class="math notranslate nohighlight">\(|a_i|&lt;1\)</span> or <span class="math notranslate nohighlight">\(a_i = 1\)</span> for all <span class="math notranslate nohighlight">\(i=1,\dots,n\)</span>.
+Otherwise, the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> will either oscillate or diverge as <span class="math notranslate nohighlight">\(k\to\infty\)</span>.
+Let’s see an example with our matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> from above.</p>
+<p>To get an idea of what <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> is as <span class="math notranslate nohighlight">\(k\to\infty\)</span>, let’s try computing <span class="math notranslate nohighlight">\(\boldsymbol{A}^{10}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>
@@ -609,8 +647,8 @@ Let’s see an example with our matrix <span class="math notranslate nohighlight
 </div>
 </div>
 <p>As would expect based on our discussion above, the entries are growing very quickly.
-On the other hand, let’s see what happens when we <em>rescale</em> the matrix <span class="math notranslate nohighlight">\(A\)</span> between each successive multiplication.
-In this case, a natural quantity to rescale a matrix <span class="math notranslate nohighlight">\(A\)</span> by is the reciprocal of its largest diagonal entry, which in this case is <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span>.</p>
+On the other hand, let’s see what happens when we <em>rescale</em> the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> between each successive multiplication.
+In this case, a natural quantity to rescale a matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> by is the reciprocal of its largest diagonal entry, which in this case is <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_rescaled</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="n">A</span>
@@ -671,16 +709,16 @@ Let’s try what happens with <span class="math notranslate nohighlight">\(k=100
 </div>
 </div>
 </div>
-<p>Here it is easy to see that the matrix <span class="math notranslate nohighlight">\(A^k\)</span> converges to the matrix of all zeros except the last diagonal entry, which is still <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Here it is easy to see that the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> converges to the matrix of all zeros except the last diagonal entry, which is still <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>This probably seems like a special situation, but it is very common—if you view the matrix the right way.</p>
 </div>
 </div>
 <div class="section" id="powers-of-a-genenal-symmetric-matrix">
 <h2><span class="section-number">4.3.2. </span>Powers of a genenal (symmetric) matrix<a class="headerlink" href="#powers-of-a-genenal-symmetric-matrix" title="Permalink to this headline">¶</a></h2>
 <p>Let’s now consider how taking powers of matrices is similar/different when considering powers of a general (symmetric) matrix.</p>
-<p>Let’s define a symmetric matrix <span class="math notranslate nohighlight">\(A\)</span> to use in this section.
-Here we use a trick to do this: for any matrix <span class="math notranslate nohighlight">\(B\)</span>, the matrix <span class="math notranslate nohighlight">\(B+B^\top\)</span> is always symmetric.
-(If we wanted, we could take advantage of the fact that for any matrix <span class="math notranslate nohighlight">\(B\)</span>, the matrix <span class="math notranslate nohighlight">\(BB^\top\)</span> is always symmetric; or we could use any symmetric matrix.)</p>
+<p>Let’s define a symmetric matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> to use in this section.
+Here we use a trick to do this: for any matrix <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>, the matrix <span class="math notranslate nohighlight">\(\boldsymbol{B}+\boldsymbol{B}^\top\)</span> is always symmetric.
+(If we wanted, we could take advantage of the fact that for any matrix <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>, the matrix <span class="math notranslate nohighlight">\(\boldsymbol{BB}^\top\)</span> is always symmetric; or we could use any symmetric matrix.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
@@ -699,9 +737,9 @@ Here we use a trick to do this: for any matrix <span class="math notranslate noh
 </div>
 </div>
 </div>
-<p>The first fact about general symmetric matrices which we verify here is that for non-symmetric <span class="math notranslate nohighlight">\(A\)</span>, it is emphatically <em>not</em> the case that <span class="math notranslate nohighlight">\(A^k\)</span> is the same as taking the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of each of the entries of <span class="math notranslate nohighlight">\(A\)</span>.
+<p>The first fact about general symmetric matrices which we verify here is that for non-symmetric <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, it is emphatically <em>not</em> the case that <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> is the same as taking the <span class="math notranslate nohighlight">\(k^{th}\)</span> power of each of the entries of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>.
 Let’s check this for our case.</p>
-<p>The entry-wise <span class="math notranslate nohighlight">\(k^{th}\)</span> power of <span class="math notranslate nohighlight">\(A\)</span> is</p>
+<p>The entry-wise <span class="math notranslate nohighlight">\(k^{th}\)</span> power of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
@@ -720,7 +758,7 @@ Let’s check this for our case.</p>
 </div>
 </div>
 </div>
-<p>While the <span class="math notranslate nohighlight">\(A^k\)</span> is given by</p>
+<p>While the <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> is given by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
@@ -738,12 +776,12 @@ Let’s check this for our case.</p>
 </div>
 </div>
 <p>Indeed, these two matrices are very much not the same.
-If we think about what matrix multiplication does, this of course makes sense: the <span class="math notranslate nohighlight">\((i,j)\)</span>th entry of the product <span class="math notranslate nohighlight">\(AA\)</span> depends on the entire <span class="math notranslate nohighlight">\(i^{th}\)</span> row and <span class="math notranslate nohighlight">\(j^{th}\)</span> column of <span class="math notranslate nohighlight">\(A\)</span>, whereas the <span class="math notranslate nohighlight">\((i,j)^{th}\)</span> entry of the entry-wise square of <span class="math notranslate nohighlight">\(A\)</span> only requires calculating <span class="math notranslate nohighlight">\(a_{ij}^2\)</span>.</p>
+If we think about what matrix multiplication does, this of course makes sense: the <span class="math notranslate nohighlight">\((i,j)^{th}\)</span> entry of the product <span class="math notranslate nohighlight">\(\boldsymbol{AA}\)</span> depends on the entire <span class="math notranslate nohighlight">\(i^{th}\)</span> row and <span class="math notranslate nohighlight">\(j^{th}\)</span> column of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, whereas the <span class="math notranslate nohighlight">\((i,j)^{th}\)</span> entry of the entry-wise square of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> only requires calculating <span class="math notranslate nohighlight">\(a_{ij}^2\)</span>.</p>
 <div class="section" id="powers-of-a-genenal-symmetric-matrix-as-k-to-infty">
 <h3><span class="section-number">4.3.2.1. </span>Powers of a genenal (symmetric) matrix as <span class="math notranslate nohighlight">\(k\to \infty\)</span><a class="headerlink" href="#powers-of-a-genenal-symmetric-matrix-as-k-to-infty" title="Permalink to this headline">¶</a></h3>
-<p>For diagonal matrices, we saw that the power <span class="math notranslate nohighlight">\(A^k\)</span> converges to a finite matrix only if we rescale things correctly.
+<p>For diagonal matrices, we saw that the power <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> converges to a finite matrix only if we rescale things correctly.
 Here, we will see that this is also true for general symmetric matrices, but that we need to be a bit careful about how we rescale them.</p>
-<p>First, let’s verify that without rescaling, the matrix <span class="math notranslate nohighlight">\(A^k\)</span> will diverge as <span class="math notranslate nohighlight">\(k\to\infty\)</span>.</p>
+<p>First, let’s verify that without rescaling, the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> will diverge as <span class="math notranslate nohighlight">\(k\to\infty\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>
@@ -768,11 +806,11 @@ Here, we will see that this is also true for general symmetric matrices, but tha
 </div>
 </div>
 </div>
-<p>Here, <span class="math notranslate nohighlight">\(A^k\)</span> diverges due to the specific matrix <span class="math notranslate nohighlight">\(A\)</span>.  For other matrices, <span class="math notranslate nohighlight">\(A^k\)</span> would converge to the all-zeros matrix.</p>
+<p>Here, <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> diverges due to the specific matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>.  For other matrices, <span class="math notranslate nohighlight">\(\boldsymbol{A}^k\)</span> would converge to the all-zeros matrix.</p>
 <p>Indeed, even for <span class="math notranslate nohighlight">\(k=10\)</span>, the matrix entries blow up.
-So how should we rescale <span class="math notranslate nohighlight">\(A\)</span> so that this doesn’t happen?
-We might be inspired by the diagonal case and rescale the matrix by the reciprocal of the largest entry of <span class="math notranslate nohighlight">\(A\)</span>, which in this case would be <span class="math notranslate nohighlight">\(\frac{1}{25}\)</span>.
-Let’s see if this works by looking at <span class="math notranslate nohighlight">\((\frac{1}{25}A)^k\)</span> for <span class="math notranslate nohighlight">\(k=20\)</span>.</p>
+So how should we rescale <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> so that this doesn’t happen?
+We might be inspired by the diagonal case and rescale the matrix by the reciprocal of the largest entry of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, which in this case would be <span class="math notranslate nohighlight">\(\frac{1}{25}\)</span>.
+Let’s see if this works by looking at <span class="math notranslate nohighlight">\((\frac{1}{25}\boldsymbol{A})^k\)</span> for <span class="math notranslate nohighlight">\(k=20\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">20</span>
@@ -843,7 +881,7 @@ However, let’s try rescaling by the constant <span class="math notranslate noh
 </div>
 <p>Indeed, taking higher powers doesn’t seem to be changing the matrix anymore, so this rescaling works to guarantee convergence of the matrix powers.
 So, how did we come up with the mysterious constant <span class="math notranslate nohighlight">\(\lambda = 71.3104367\)</span>?
-This turns out to be a special number which is the largest <em>eigenvalue</em> of <span class="math notranslate nohighlight">\(A\)</span>.
+This turns out to be a special number which is the largest <em>eigenvalue</em> of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>.
 We won’t be discussing the topic of eigenvalues until a bit later in the semester, but consider this some interesting motivation for the topics that we’ll study later on.
 When we get to this topic later on, it will be more clear where this constant came from, and why rescaling by its reciprocal works.</p>
 </div>
@@ -875,12 +913,19 @@ When we get to this topic later on, it will be more clear where this constant ca
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="basicLA_3_changing_basis.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="basicLA_3_deconstructing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.2. </span>Changing Basis</p>
+            <p class="prev-next-title"><span class="section-number">4.2. </span>Deconstructing Matrix Multiplication</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="basicLA_3B_chheader.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Matrices as transformations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
