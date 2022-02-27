@@ -26,7 +26,9 @@ There are two special properties that a function $f:A\to B$ may or may not satis
 |<b>Figure 1: Examples of injective, surjective and bijective functions.</b>|
 ## Injective functions and left inverses
 
-The first property that we will discuss is injectivity. A function $f:A\to B$ is said to be **injective** if for every $a, a' \in A$ with $a\neq a'$, we have $f(a)\neq f(a')$. Equivalently, a function $f$ is injective if $f(a) = f(a')$ implies that $a=a'$. In words, a function is injective if for any two distinct inputs, we obtain two distinct outputs. Let's see a simple example of such a function. Consider the sets $A = \{a,b,c,d\}$ and $B = \{1,2,3,4,5\}$, and define the function (input-output mapping) as follows (illustrated in the top-left of Figure 1):
+The first property that we will discuss is injectivity. A function $f:A\to B$ is said to be **injective** if for every $a, a' \in A$ with $a\neq a'$, we have $f(a)\neq f(a')$. Equivalently, a function $f$ is injective if $f(a) = f(a')$ implies that $a=a'$. In words, a function is injective if for any two distinct inputs, we obtain two distinct outputs. Let's see a simple example of such a function. Intuitively, the existence of an injective map from $A\to B$ means that $A$ is "smaller" (or no bigger than) $B$, since we need at least as many elements in $B$ as in $A$ in order for each $a\in A$ to get mapped to a distinct output.
+
+Consider the sets $A = \{a,b,c,d\}$ and $B = \{1,2,3,4,5\}$, and define the function (input-output mapping) as follows (illustrated in the top-left of Figure 1):
 
 $$
 \begin{align*}
@@ -148,7 +150,9 @@ plt.show()
 The reason for the redundancy is that the range of $f$ is not equal to all of $\mathbb{R}$: all we required out of a left inverse is that for every value of $x$, $g$ maps $f(x)$ back to $x$. For any values of $y$ that are not in the range of $f$, the function $g$ can do anything. This redundancy can be resolved by requiring that the function $f$ has another property -- called _surjectivity_ -- which we discuss next.
 
 ## Surjective functions and right inverses
-A function $f:A\to B$ is said to be **surjective** if for every $b \in B$ there exists $a\in A$ such that $f(a) = B$. Equivalently, a function $f:A\to B$ is surjective if $\text{range}(f) = B$. For example, see the function $f:A\to B$ defined in the top-right of Figure 1: this function is clearly surjective, as every point in $B = \{1,2,3,4\}$ is mapped to by some point in $A = \{a,b,c,d,e\}$. Let's see a more realistic example. Consider the function $f:\mathbb{R}\to \mathbb{R}$ defined by
+A function $f:A\to B$ is said to be **surjective** if for every $b \in B$ there exists $a\in A$ such that $f(a) = B$. Equivalently, a function $f:A\to B$ is surjective if $\text{range}(f) = B$. Intuitively, a surjective function from $A$ to $B$ means that $A$ is "bigger" (or no smaller) than $B$.
+
+For example, see the function $f:A\to B$ defined in the top-right of Figure 1: this function is clearly surjective, as every point in $B = \{1,2,3,4\}$ is mapped to by some point in $A = \{a,b,c,d,e\}$. Let's see a more realistic example. Consider the function $f:\mathbb{R}\to \mathbb{R}$ defined by
 
 $$
 f(x) = \begin{cases}-2x-4 & \text{if } x\leq -2\\
