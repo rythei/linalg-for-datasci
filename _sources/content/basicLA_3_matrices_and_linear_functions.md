@@ -114,7 +114,7 @@ Indeed, this is what we would expect: if we take the vector $(1,0)$ and rotate $
 
 
 $$
-f(e_1) = \begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix},\;\;\; f(e_2) = \begin{bmatrix}-\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}
+f(\boldsymbol{e}_1) = \begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix},\;\;\; f(\boldsymbol{e}_2) = \begin{bmatrix}-\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}
 $$
 
 
