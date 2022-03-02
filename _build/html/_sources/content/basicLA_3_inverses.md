@@ -324,7 +324,7 @@ We also saw that the function $f(\boldsymbol{x}) = \boldsymbol{Ax}$ is injective
 Combining these two facts, a linear function can only be bijective if $m=n$, or in other words if the matrix $\boldsymbol{A}$ is square.
 Therefore, we can characterize bijective linear functions with the following.
 
-> _For an $m\times n$ matrix $\boldsymbol{A}$, the linear function $f(\boldsymbol{x}) = \boldsymbol{Ax}$ is bijective if and only if $\boldsymbol{A}$ is a square matrix, and the columns of $\boldsymbol{A}$ are linearly independent and span $\mathbb{R}^m$._
+> _For an $m\times n$ matrix $\boldsymbol{A}$, the linear function $f(\boldsymbol{x}) = \boldsymbol{Ax}$ is bijective if and only if $\boldsymbol{A}$ is a square matrix, and the columns of $\boldsymbol{A}$ are linearly independent and span $\mathbb{R}^m$. That is, $f(\boldsymbol{x}) = \boldsymbol{Ax}$ is bijective if and only if the columns of $\boldsymbol{A}$ form a basis for $\mathbb{R}^m$._
 
 Recall that bijective functions have a unique complementary function $f^{-1}$ called an _inverse_ function.
 In the case of a linear function $f(\boldsymbol{x}) = \boldsymbol{Ax}$, an inverse is a function  $f^{-1}(\boldsymbol{x}) = \boldsymbol{A}^{-1}\boldsymbol{x}$, where $\boldsymbol{A}^{-1}$ is a square matrix such that
@@ -408,8 +408,8 @@ n = 10
 A = np.random.normal(size = (n,n))
 A_inv = np.linalg.inv(A)
 
-print('A\boldsymbol{A}^{-1} = ')
+print('AA^{-1} = ')
 print(np.round(np.dot(A, A_inv)))
-print('\boldsymbol{A}^{-1}A = ')
+print('A^{-1}A = ')
 print(np.round(np.dot(A, A_inv)))
 ```
