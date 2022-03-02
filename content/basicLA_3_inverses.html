@@ -791,7 +791,7 @@ Such functions are called <em>bijective</em>.</p>
 Combining these two facts, a linear function can only be bijective if <span class="math notranslate nohighlight">\(m=n\)</span>, or in other words if the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> is square.
 Therefore, we can characterize bijective linear functions with the following.</p>
 <blockquote>
-<div><p><em>For an <span class="math notranslate nohighlight">\(m\times n\)</span> matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, the linear function <span class="math notranslate nohighlight">\(f(\boldsymbol{x}) = \boldsymbol{Ax}\)</span> is bijective if and only if <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> is a square matrix, and the columns of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> are linearly independent and span <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</em></p>
+<div><p><em>For an <span class="math notranslate nohighlight">\(m\times n\)</span> matrix <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>, the linear function <span class="math notranslate nohighlight">\(f(\boldsymbol{x}) = \boldsymbol{Ax}\)</span> is bijective if and only if <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> is a square matrix, and the columns of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> are linearly independent and span <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>. That is, <span class="math notranslate nohighlight">\(f(\boldsymbol{x}) = \boldsymbol{Ax}\)</span> is bijective if and only if the columns of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> form a basis for <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</em></p>
 </div></blockquote>
 <p>Recall that bijective functions have a unique complementary function <span class="math notranslate nohighlight">\(f^{-1}\)</span> called an <em>inverse</em> function.
 In the case of a linear function <span class="math notranslate nohighlight">\(f(\boldsymbol{x}) = \boldsymbol{Ax}\)</span>, an inverse is a function  <span class="math notranslate nohighlight">\(f^{-1}(\boldsymbol{x}) = \boldsymbol{A}^{-1}\boldsymbol{x}\)</span>, where <span class="math notranslate nohighlight">\(\boldsymbol{A}^{-1}\)</span> is a square matrix such that</p>
@@ -941,36 +941,36 @@ A^{-1}A =
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
 <span class="n">A_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A</span><span class="se">\b</span><span class="s1">oldsymbol</span><span class="si">{A}</span><span class="s1">^{-1} = &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AA^{-1} = &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_inv</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\b</span><span class="s1">oldsymbol</span><span class="si">{A}</span><span class="s1">^{-1}A = &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A^{-1}A = &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_inv</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aoldsymbol{A}^{-1} = 
-[[ 1.  0. -0.  0.  0.  0.  0. -0.  0.  0.]
- [-0.  1.  0. -0. -0.  0. -0. -0. -0.  0.]
- [-0.  0.  1. -0. -0.  0.  0. -0. -0.  0.]
- [-0.  0.  0.  1.  0.  0.  0. -0.  0.  0.]
- [-0. -0.  0.  0.  1.  0.  0. -0. -0.  0.]
- [-0.  0. -0. -0.  0.  1.  0.  0. -0.  0.]
- [-0. -0.  0. -0.  0.  0.  1.  0.  0. -0.]
- [ 0. -0.  0. -0. -0. -0. -0.  1. -0.  0.]
- [ 0.  0. -0. -0. -0. -0.  0.  0.  1. -0.]
- [ 0. -0. -0.  0. -0. -0.  0.  0.  0.  1.]]
-oldsymbol{A}^{-1}A = 
-[[ 1.  0. -0.  0.  0.  0.  0. -0.  0.  0.]
- [-0.  1.  0. -0. -0.  0. -0. -0. -0.  0.]
- [-0.  0.  1. -0. -0.  0.  0. -0. -0.  0.]
- [-0.  0.  0.  1.  0.  0.  0. -0.  0.  0.]
- [-0. -0.  0.  0.  1.  0.  0. -0. -0.  0.]
- [-0.  0. -0. -0.  0.  1.  0.  0. -0.  0.]
- [-0. -0.  0. -0.  0.  0.  1.  0.  0. -0.]
- [ 0. -0.  0. -0. -0. -0. -0.  1. -0.  0.]
- [ 0.  0. -0. -0. -0. -0.  0.  0.  1. -0.]
- [ 0. -0. -0.  0. -0. -0.  0.  0.  0.  1.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AA^{-1} = 
+[[ 1.  0.  0.  0.  0. -0.  0.  0. -0. -0.]
+ [-0.  1.  0. -0.  0. -0. -0. -0. -0. -0.]
+ [-0. -0.  1. -0.  0. -0. -0. -0. -0. -0.]
+ [ 0. -0. -0.  1.  0. -0. -0.  0.  0. -0.]
+ [ 0.  0.  0. -0.  1. -0.  0.  0.  0. -0.]
+ [ 0.  0. -0.  0.  0.  1.  0. -0. -0. -0.]
+ [-0. -0.  0. -0.  0. -0.  1. -0. -0. -0.]
+ [-0. -0.  0. -0.  0. -0.  0.  1.  0.  0.]
+ [-0.  0.  0. -0. -0.  0.  0. -0.  1.  0.]
+ [-0. -0.  0. -0.  0.  0. -0. -0.  0.  1.]]
+A^{-1}A = 
+[[ 1.  0.  0.  0.  0. -0.  0.  0. -0. -0.]
+ [-0.  1.  0. -0.  0. -0. -0. -0. -0. -0.]
+ [-0. -0.  1. -0.  0. -0. -0. -0. -0. -0.]
+ [ 0. -0. -0.  1.  0. -0. -0.  0.  0. -0.]
+ [ 0.  0.  0. -0.  1. -0.  0.  0.  0. -0.]
+ [ 0.  0. -0.  0.  0.  1.  0. -0. -0. -0.]
+ [-0. -0.  0. -0.  0. -0.  1. -0. -0. -0.]
+ [-0. -0.  0. -0.  0. -0.  0.  1.  0.  0.]
+ [-0.  0.  0. -0. -0.  0.  0. -0.  1.  0.]
+ [-0. -0.  0. -0.  0.  0. -0. -0.  0.  1.]]
 </pre></div>
 </div>
 </div>
