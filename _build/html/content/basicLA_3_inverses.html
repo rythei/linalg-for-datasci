@@ -895,10 +895,11 @@ When we try to apply the function <code class="docutils literal notranslate"><sp
 This is because <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> has lineary depdenent columns, and therefore is not invertible.
 Thus we see that numpy requires us to pass the <code class="docutils literal notranslate"><span class="pre">np.linalg.inv()</span></code> function a valid, invertible matrix.
 Let’s see an example of doing this.
-Consider the matrix
-$<span class="math notranslate nohighlight">\(
-\boldsymbol{A} = \begin{bmatrix} 1 &amp; 2\\ 0 &amp;3 \end{bmatrix}  .
-\)</span>$</p>
+Consider the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boldsymbol{A} = \begin{bmatrix} 1 &amp; 2\\ 0 &amp;3 \end{bmatrix}.
+\end{split}\]</div>
 <p>This matrix is square and indeed has linearly independent columns/columns which span <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.
 Let’s try finding its inverse in Python.</p>
 <div class="cell docutils container">
@@ -913,18 +914,18 @@ Let’s try finding its inverse in Python.</p>
 Moreover, we can check that <code class="docutils literal notranslate"><span class="pre">A_inv</span></code> is indeed an inverse by computing <span class="math notranslate nohighlight">\(\boldsymbol{A}\boldsymbol{A}^{-1}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{A}^{-1}\boldsymbol{A}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A</span><span class="se">\b</span><span class="s1">oldsymbol</span><span class="si">{A}</span><span class="s1">^{-1} = &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;AA^{-1} = &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_inv</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\b</span><span class="s1">oldsymbol</span><span class="si">{A}</span><span class="s1">^{-1}A = &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A^{-1}A = &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_inv</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aoldsymbol{A}^{-1} = 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AA^{-1} = 
 [[1. 0.]
  [0. 1.]]
-oldsymbol{A}^{-1}A = 
+A^{-1}A = 
 [[1. 0.]
  [0. 1.]]
 </pre></div>
@@ -949,27 +950,27 @@ Moreover, we can check that <code class="docutils literal notranslate"><span cla
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aoldsymbol{A}^{-1} = 
-[[ 1.  0. -0. -0.  0.  0.  0. -0.  0.  0.]
- [-0.  1. -0.  0.  0.  0. -0. -0. -0. -0.]
- [-0. -0.  1.  0. -0.  0.  0.  0.  0. -0.]
- [ 0.  0.  0.  1.  0. -0.  0. -0.  0.  0.]
- [-0. -0.  0.  0.  1.  0.  0.  0.  0. -0.]
- [-0. -0.  0.  0. -0.  1. -0.  0.  0. -0.]
- [-0. -0. -0.  0. -0. -0.  1.  0. -0. -0.]
- [-0.  0. -0.  0.  0.  0. -0.  1.  0. -0.]
- [ 0. -0. -0. -0. -0. -0. -0. -0.  1.  0.]
- [-0.  0.  0.  0. -0. -0.  0.  0.  0.  1.]]
+[[ 1.  0. -0.  0.  0.  0.  0. -0.  0.  0.]
+ [-0.  1.  0. -0. -0.  0. -0. -0. -0.  0.]
+ [-0.  0.  1. -0. -0.  0.  0. -0. -0.  0.]
+ [-0.  0.  0.  1.  0.  0.  0. -0.  0.  0.]
+ [-0. -0.  0.  0.  1.  0.  0. -0. -0.  0.]
+ [-0.  0. -0. -0.  0.  1.  0.  0. -0.  0.]
+ [-0. -0.  0. -0.  0.  0.  1.  0.  0. -0.]
+ [ 0. -0.  0. -0. -0. -0. -0.  1. -0.  0.]
+ [ 0.  0. -0. -0. -0. -0.  0.  0.  1. -0.]
+ [ 0. -0. -0.  0. -0. -0.  0.  0.  0.  1.]]
 oldsymbol{A}^{-1}A = 
-[[ 1.  0. -0. -0.  0.  0.  0. -0.  0.  0.]
- [-0.  1. -0.  0.  0.  0. -0. -0. -0. -0.]
- [-0. -0.  1.  0. -0.  0.  0.  0.  0. -0.]
- [ 0.  0.  0.  1.  0. -0.  0. -0.  0.  0.]
- [-0. -0.  0.  0.  1.  0.  0.  0.  0. -0.]
- [-0. -0.  0.  0. -0.  1. -0.  0.  0. -0.]
- [-0. -0. -0.  0. -0. -0.  1.  0. -0. -0.]
- [-0.  0. -0.  0.  0.  0. -0.  1.  0. -0.]
- [ 0. -0. -0. -0. -0. -0. -0. -0.  1.  0.]
- [-0.  0.  0.  0. -0. -0.  0.  0.  0.  1.]]
+[[ 1.  0. -0.  0.  0.  0.  0. -0.  0.  0.]
+ [-0.  1.  0. -0. -0.  0. -0. -0. -0.  0.]
+ [-0.  0.  1. -0. -0.  0.  0. -0. -0.  0.]
+ [-0.  0.  0.  1.  0.  0.  0. -0.  0.  0.]
+ [-0. -0.  0.  0.  1.  0.  0. -0. -0.  0.]
+ [-0.  0. -0. -0.  0.  1.  0.  0. -0.  0.]
+ [-0. -0.  0. -0.  0.  0.  1.  0.  0. -0.]
+ [ 0. -0.  0. -0. -0. -0. -0.  1. -0.  0.]
+ [ 0.  0. -0. -0. -0. -0.  0.  0.  1. -0.]
+ [ 0. -0. -0.  0. -0. -0.  0.  0.  0.  1.]]
 </pre></div>
 </div>
 </div>

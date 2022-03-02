@@ -386,8 +386,9 @@ np.linalg.inv(A)
 # Thus we see that numpy requires us to pass the `np.linalg.inv()` function a valid, invertible matrix.
 # Let's see an example of doing this.
 # Consider the matrix
+# 
 # $$
-# \boldsymbol{A} = \begin{bmatrix} 1 & 2\\ 0 &3 \end{bmatrix}  .
+# \boldsymbol{A} = \begin{bmatrix} 1 & 2\\ 0 &3 \end{bmatrix}.
 # $$
 # 
 # This matrix is square and indeed has linearly independent columns/columns which span $\mathbb{R}^2$.
@@ -406,9 +407,9 @@ A_inv = np.linalg.inv(A)
 # In[13]:
 
 
-print('A\boldsymbol{A}^{-1} = ')
+print(r'AA^{-1} = ')
 print(np.round(np.dot(A, A_inv)))
-print('\boldsymbol{A}^{-1}A = ')
+print('A^{-1}A = ')
 print(np.round(np.dot(A, A_inv)))
 
 
