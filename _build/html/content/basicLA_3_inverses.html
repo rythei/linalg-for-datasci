@@ -258,6 +258,28 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="basicLA_4_chheader.html">
+   6. (CH6): Geometry: angles, orthogonality, and projections
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_4_dot-products-and-angles.html">
+     6.1. Dot products, angles, and orthogonality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_4_QR.html">
+     6.2. Gram–Schmidt and the QR Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -677,7 +699,7 @@ Here, this translates to the fact that if <span class="math notranslate nohighli
 In the case of linear functions of the form <span class="math notranslate nohighlight">\(f(\boldsymbol{x}) = \boldsymbol{Ax}\)</span>, a right inverse is another linear function <span class="math notranslate nohighlight">\(g(\boldsymbol{y}) = \boldsymbol{By}\)</span> where <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span> is an <span class="math notranslate nohighlight">\(n\times m\)</span> matrix such that</p>
 <div class="math notranslate nohighlight">
 \[
-\boldsymbol{y} = (f\circ g)(\boldsymbol{y}) = f(g(\boldsymbol{y})) = f(\boldsymbol{By}) = A\boldsymbol{By}   .
+\boldsymbol{y} = (f\circ g)(\boldsymbol{y}) = f(g(\boldsymbol{y})) = f(\boldsymbol{By}) = \boldsymbol{A}\boldsymbol{By}   .
 \]</div>
 <p>In other words <span class="math notranslate nohighlight">\(g(\boldsymbol{y}) = \boldsymbol{By}\)</span> is a right inverse if and only if <span class="math notranslate nohighlight">\(\boldsymbol{AB} = \boldsymbol{I}\)</span> is the identity matrix on <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.
 Like in the previous section, the condition <span class="math notranslate nohighlight">\(\boldsymbol{AB} = \boldsymbol{I}\)</span> constitutes a linear system of equations, with <span class="math notranslate nohighlight">\(m^2\)</span> constraints and <span class="math notranslate nohighlight">\(n\cdot m\)</span> unknown variables (the entries of the matrix <span class="math notranslate nohighlight">\(\boldsymbol{B}\)</span>).
@@ -950,27 +972,27 @@ A^{-1}A =
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AA^{-1} = 
-[[ 1.  0.  0.  0.  0. -0.  0.  0. -0. -0.]
- [-0.  1.  0. -0.  0. -0. -0. -0. -0. -0.]
- [-0. -0.  1. -0.  0. -0. -0. -0. -0. -0.]
- [ 0. -0. -0.  1.  0. -0. -0.  0.  0. -0.]
- [ 0.  0.  0. -0.  1. -0.  0.  0.  0. -0.]
- [ 0.  0. -0.  0.  0.  1.  0. -0. -0. -0.]
- [-0. -0.  0. -0.  0. -0.  1. -0. -0. -0.]
- [-0. -0.  0. -0.  0. -0.  0.  1.  0.  0.]
- [-0.  0.  0. -0. -0.  0.  0. -0.  1.  0.]
- [-0. -0.  0. -0.  0.  0. -0. -0.  0.  1.]]
+[[ 1. -0.  0. -0. -0. -0. -0.  0. -0.  0.]
+ [-0.  1.  0.  0.  0. -0.  0.  0. -0.  0.]
+ [ 0. -0.  1.  0.  0.  0. -0. -0.  0.  0.]
+ [ 0.  0. -0.  1. -0. -0.  0.  0. -0.  0.]
+ [-0.  0.  0.  0.  1.  0.  0.  0. -0. -0.]
+ [-0. -0. -0.  0.  0.  1.  0. -0.  0. -0.]
+ [ 0. -0. -0. -0. -0.  0.  1.  0.  0.  0.]
+ [-0.  0. -0. -0. -0.  0. -0.  1. -0. -0.]
+ [ 0. -0. -0.  0. -0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0. -0. -0.  0.  0.  0.  0.  1.]]
 A^{-1}A = 
-[[ 1.  0.  0.  0.  0. -0.  0.  0. -0. -0.]
- [-0.  1.  0. -0.  0. -0. -0. -0. -0. -0.]
- [-0. -0.  1. -0.  0. -0. -0. -0. -0. -0.]
- [ 0. -0. -0.  1.  0. -0. -0.  0.  0. -0.]
- [ 0.  0.  0. -0.  1. -0.  0.  0.  0. -0.]
- [ 0.  0. -0.  0.  0.  1.  0. -0. -0. -0.]
- [-0. -0.  0. -0.  0. -0.  1. -0. -0. -0.]
- [-0. -0.  0. -0.  0. -0.  0.  1.  0.  0.]
- [-0.  0.  0. -0. -0.  0.  0. -0.  1.  0.]
- [-0. -0.  0. -0.  0.  0. -0. -0.  0.  1.]]
+[[ 1. -0.  0. -0. -0. -0. -0.  0. -0.  0.]
+ [-0.  1.  0.  0.  0. -0.  0.  0. -0.  0.]
+ [ 0. -0.  1.  0.  0.  0. -0. -0.  0.  0.]
+ [ 0.  0. -0.  1. -0. -0.  0.  0. -0.  0.]
+ [-0.  0.  0.  0.  1.  0.  0.  0. -0. -0.]
+ [-0. -0. -0.  0.  0.  1.  0. -0.  0. -0.]
+ [ 0. -0. -0. -0. -0.  0.  1.  0.  0.  0.]
+ [-0.  0. -0. -0. -0.  0. -0.  1. -0. -0.]
+ [ 0. -0. -0.  0. -0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0. -0. -0.  0.  0.  0.  0.  1.]]
 </pre></div>
 </div>
 </div>

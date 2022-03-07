@@ -227,7 +227,7 @@ print(np.round(np.dot(B3, A),4))
 # In the case of linear functions of the form $f(\boldsymbol{x}) = \boldsymbol{Ax}$, a right inverse is another linear function $g(\boldsymbol{y}) = \boldsymbol{By}$ where $\boldsymbol{B}$ is an $n\times m$ matrix such that
 # 
 # $$
-# \boldsymbol{y} = (f\circ g)(\boldsymbol{y}) = f(g(\boldsymbol{y})) = f(\boldsymbol{By}) = A\boldsymbol{By}   .
+# \boldsymbol{y} = (f\circ g)(\boldsymbol{y}) = f(g(\boldsymbol{y})) = f(\boldsymbol{By}) = \boldsymbol{A}\boldsymbol{By}   .
 # $$
 # 
 # In other words $g(\boldsymbol{y}) = \boldsymbol{By}$ is a right inverse if and only if $\boldsymbol{AB} = \boldsymbol{I}$ is the identity matrix on $\mathbb{R}^m$.

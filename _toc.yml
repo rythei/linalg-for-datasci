@@ -33,3 +33,9 @@ parts:
     - file: content/basicLA_3_injective-and-surjective-functions
     - file: content/basicLA_3_inverses
     - file: content/basicLA_3_changing_basis
+  - file: content/basicLA_4_chheader
+    sections:
+    - file: content/basicLA_4_dot-products-and-angles
+    - file: content/basicLA_4_QR
+    # - file: 20_BasicLA/basicLA_4_projections
+    # - file: 20_BasicLA/basicLA_4_inverses-revisited
