@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Basics of vectors and vector spaces &#8212; Linear Algebra for Data Workbook</title>
+    <title>6. Geometry: angles, orthogonality, and projections &#8212; Linear Algebra for Data Workbook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.1. Vectors and vector spaces" href="basicLA_2A_vectorspaces.html" />
-    <link rel="prev" title="2.4. An application: classifying data points using norms" href="basicLA_1_classification-with-norms.html" />
+    <link rel="next" title="6.1. Dot products, angles, and orthogonality" href="basicLA_4_dot-products-and-angles.html" />
+    <link rel="prev" title="5.5. Changing Basis" href="basicLA_3_changing_basis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -175,11 +175,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="basicLA_2_chheader.html">
    3. Basics of vectors and vector spaces
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
@@ -256,11 +256,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="basicLA_4_chheader.html">
-   6. (CH6): Geometry: angles, orthogonality, and projections
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   6. Geometry: angles, orthogonality, and projections
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
@@ -318,11 +318,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/content/basicLA_2_chheader.ipynb"><button type="button"
+            href="../_sources/content/basicLA_4_chheader.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/basicLA_2_chheader.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/basicLA_4_chheader.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -347,7 +347,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/erichson/LinearAlgebra/master?urlpath=tree/content/basicLA_2_chheader.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erichson/LinearAlgebra/master?urlpath=tree/content/basicLA_4_chheader.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -371,7 +371,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Basics of vectors and vector spaces</h1>
+                <h1>Geometry: angles, orthogonality, and projections</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -382,8 +382,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="basics-of-vectors-and-vector-spaces">
-<h1><span class="section-number">3. </span>Basics of vectors and vector spaces<a class="headerlink" href="#basics-of-vectors-and-vector-spaces" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="geometry-angles-orthogonality-and-projections">
+<h1><span class="section-number">6. </span>Geometry: angles, orthogonality, and projections<a class="headerlink" href="#geometry-angles-orthogonality-and-projections" title="Permalink to this headline">¶</a></h1>
 <p>============================</p>
 <p>Here is some placeholder text that I’m putting in.</p>
 <div class="toctree-wrapper compound">
@@ -415,17 +415,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="basicLA_1_classification-with-norms.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="basicLA_3_changing_basis.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.4. </span>An application: classifying data points using norms</p>
+            <p class="prev-next-title"><span class="section-number">5.5. </span>Changing Basis</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="basicLA_2A_vectorspaces.html" title="next page">
+    <a class='right-next' id="next-link" href="basicLA_4_dot-products-and-angles.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Vectors and vector spaces</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>Dot products, angles, and orthogonality</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
