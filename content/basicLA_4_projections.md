@@ -413,7 +413,7 @@ $$
 $$
 
 
-So $\boldsymbol{P}_{V,\boldsymbol{C}}$ is in fact a valid projection. Let's first look at an example with the matrix $A = \begin{bmatrix} 1 & 0\\ 1 & 1 \\ 0 &1\end{bmatrix}$ that we used above. There are many valid examples of matrices $C$ that we can use to define an oblique projection $P_{V,C}$; indeed, for most matrices $C$ we will have that $C^\top A$ is invertible. Let's try choosing $C$ to be a random matrix.
+So $\boldsymbol{P}_{V,\boldsymbol{C}}$ is in fact a valid projection. Let's first look at an example with the matrix $\boldsymbol{A} = \begin{bmatrix} 1 & 0\\ 1 & 1 \\ 0 &1\end{bmatrix}$ that we used above. There are many valid examples of matrices $\boldsymbol{C}$ that we can use to define an oblique projection $\boldsymbol{P}_{V,\boldsymbol{C}}$; indeed, for most matrices $\boldsymbol{C}$ we will have that $\boldsymbol{C^\top A}$ is invertible. Let's try choosing $\boldsymbol{C}$ to be a random matrix.
 
 ```{code-cell}
 k = 2
@@ -422,7 +422,7 @@ n = 3
 C = np.random.normal(size = (n,k))
 ```
 
-Let's check that $C^\top A$ is invertible.
+Let's check that $\boldsymbol{C^\top A}$ is invertible.
 
 ```{code-cell}
 CTA_inv = np.linalg.inv(np.dot(C.T, A))
@@ -430,20 +430,20 @@ CTA_inv = np.linalg.inv(np.dot(C.T, A))
 
 Indeed, computing the inverse works without error.
 
-Now, let's use this to compute $P_{V,C}$.
+Now, let's use this to compute $\boldsymbol{P}_{V,\boldsymbol{C}}$.
 
 ```{code-cell}
 PVC = np.dot(A, np.dot(CTA_inv, C.T))
 ```
 
-We can check numerically that $P_{V,C}^2 = P_{V,C}$:
+We can check numerically that $\boldsymbol{P}_{V,\boldsymbol{C}}^2 = \boldsymbol{P}_{V,\boldsymbol{C}}$:
 
 ```{code-cell}
 PVC2 = np.dot(PVC, PVC)
 np.allclose(PVC2, PVC)
 ```
 
-So $P_{V,C}$ is in fact idempotent, and thus a valid projection. However, it is not orthogonal; we can check this by computing $A^\top (b - P_{V,C}b)$, and verifying that it is not equal to zero (as it was in the orthogonal case). Let's do this for the same vector $b = \begin{bmatrix}1\\ 2\\ 3\end{bmatrix}$ that we used before.
+So $\boldsymbol{P}_{V,\boldsymbol{C}}$ is in fact idempotent, and thus a valid projection. However, it is not orthogonal; we can check this by computing $\boldsymbol{A}^\top (\boldsymbol{b} - \boldsymbol{P}_{V,\boldsymbol{C}}\boldsymbol{b})$, and verifying that it is not equal to zero (as it was in the orthogonal case). Let's do this for the same vector $\boldsymbol{b} = \begin{bmatrix}1\\ 2\\ 3\end{bmatrix}$ that we used before.
 
 ```{code-cell}
 proj_VC_b = np.dot(PVC, b)
@@ -451,7 +451,7 @@ residuals = b - proj_VC_b
 np.dot(A.T, residuals)
 ```
 
- Our answer is clearly not zero, and so the projection $P_{V,C}$ is _not_ an orthogonal projection, but rather an _oblique_ projection.
+ Our answer is clearly not zero, and so the projection $\boldsymbol{P}_{V,\boldsymbol{C}}$ is _not_ an orthogonal projection, but rather an _oblique_ projection.
 
 ## Projecting onto the orthogonal complement of a subspace
 
@@ -459,24 +459,24 @@ The last type of projection we will discuss is the projection onto the _orthogon
 
 
 $$
-V^\perp = \{w\in \mathbb{R}^n : w^\top v = 0\text{ for all } v\in V\}
+V^\perp = \{\boldsymbol{w}\in \mathbb{R}^n : \boldsymbol{w^\top v} = 0\text{ for all } \boldsymbol{v}\in V\}
 $$
 
 
-That is, the orthogonal complement of $V$ is the set of all vectors which are orthogonal to all vectors in $V$. It turns out that the projection onto the orthogonal complement is easy to find given the orthogonal projection onto $V$. If $P_V$ is the orthogonal projection onto $V$, then the orthogonal projection onto $V^\perp$ is just
+That is, the orthogonal complement of $V$ is the set of all vectors which are orthogonal to all vectors in $V$. It turns out that the projection onto the orthogonal complement is easy to find given the orthogonal projection onto $V$. If $\boldsymbol{P}_V$ is the orthogonal projection onto $V$, then the orthogonal projection onto $V^\perp$ is just
 
 
 $$
-P_{V^\perp} = I - P_V
+\boldsymbol{P}_{V^\perp} = \boldsymbol{I} - \boldsymbol{P}_V
 $$
 
 
-Given $P_V = A(A^\top A)^{-1}A^\top$ or $P_V = QQ^\top$ (where $Q$ comes from the $QR$ factorization of $A$), this means $P_{V^\perp} = I- A(A^\top A)^{-1}A^\top$ or $P_{V^\perp} = I- QQ^\top$. Since the range of $P_V$ is $V$, and the range of $P_{V^\perp}$ is $V^\perp$, we should always have that $P_V x$ is orthogonal to $P_{V^\perp}y$ for any vectors $x$ and $y$. Let's check that this is in fact true. We have
+Given $\boldsymbol{P}_V = \boldsymbol{A}(\boldsymbol{A^\top A})^{-1}\boldsymbol{A}^\top$ or $\boldsymbol{P}_V = \boldsymbol{QQ}^\top$ (where $\boldsymbol{Q}$ comes from the QR factorization of $\boldsymbol{A}$), this means $\boldsymbol{P}_{V^\perp} = \boldsymbol{I}- \boldsymbol{A}(\boldsymbol{A^\top A})^{-1}\boldsymbol{A}^\top$ or $\boldsymbol{P}_{V^\perp} = \boldsymbol{I}- \boldsymbol{QQ}^\top$. Since the range of $\boldsymbol{P}_V$ is $V$, and the range of $\boldsymbol{P}_{V^\perp}$ is $V^\perp$, we should always have that $\boldsymbol{P}_V \boldsymbol{x}$ is orthogonal to $\boldsymbol{P}_{V^\perp}\boldsymbol{y}$ for any vectors $\boldsymbol{x}$ and $\boldsymbol{y}$. Let's check that this is in fact true. We have
 
 
 $$
-(P_{V^\perp}y)^\top P_{V}x = y^\top P_{V^\perp}P_Vx = y^\top (I-P_V)P_Vx = y^\top P_Vx - y^\top P_V^2x = y^\top P_Vx - y^\top P_V x = 0
+(\boldsymbol{P}_{V^\perp}\boldsymbol{y})^\top \boldsymbol{P}_{V}\boldsymbol{x} = \boldsymbol{y}^\top \boldsymbol{P}_{V^\perp}\boldsymbol{P}_V\boldsymbol{x} = \boldsymbol{y}^\top (\boldsymbol{I}-\boldsymbol{P}_V)\boldsymbol{P}_V\boldsymbol{x} = \boldsymbol{y}^\top \boldsymbol{P}_V\boldsymbol{x} - \boldsymbol{y}^\top \boldsymbol{P}_V^2\boldsymbol{x} = \boldsymbol{y}^\top \boldsymbol{P}_V\boldsymbol{x} - \boldsymbol{y}^\top \boldsymbol{P}_V \boldsymbol{x} = 0
 $$
 
 
-where we used the fact that $P_V$ is a projection, so $P_V^2 = P_V$.
+where we used the fact that $\boldsymbol{P}_V$ is a projection, so $\boldsymbol{P}_V^2 = \boldsymbol{P}_V$.

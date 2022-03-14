@@ -867,7 +867,7 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 \[
 \boldsymbol{P}_{V,\boldsymbol{C}}^2 = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\underbrace{\boldsymbol{C^\top A}(\boldsymbol{C^\top A})^{-1}}_{\boldsymbol{I}}\boldsymbol{C}^\top = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^\top = \boldsymbol{P}_{V,\boldsymbol{C}}
 \]</div>
-<p>So <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V,\boldsymbol{C}}\)</span> is in fact a valid projection. Let’s first look at an example with the matrix <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; 0\\ 1 &amp; 1 \\ 0 &amp;1\end{bmatrix}\)</span> that we used above. There are many valid examples of matrices <span class="math notranslate nohighlight">\(C\)</span> that we can use to define an oblique projection <span class="math notranslate nohighlight">\(P_{V,C}\)</span>; indeed, for most matrices <span class="math notranslate nohighlight">\(C\)</span> we will have that <span class="math notranslate nohighlight">\(C^\top A\)</span> is invertible. Let’s try choosing <span class="math notranslate nohighlight">\(C\)</span> to be a random matrix.</p>
+<p>So <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V,\boldsymbol{C}}\)</span> is in fact a valid projection. Let’s first look at an example with the matrix <span class="math notranslate nohighlight">\(\boldsymbol{A} = \begin{bmatrix} 1 &amp; 0\\ 1 &amp; 1 \\ 0 &amp;1\end{bmatrix}\)</span> that we used above. There are many valid examples of matrices <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> that we can use to define an oblique projection <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V,\boldsymbol{C}}\)</span>; indeed, for most matrices <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> we will have that <span class="math notranslate nohighlight">\(\boldsymbol{C^\top A}\)</span> is invertible. Let’s try choosing <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> to be a random matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
@@ -878,7 +878,7 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 </div>
 </div>
 </div>
-<p>Let’s check that <span class="math notranslate nohighlight">\(C^\top A\)</span> is invertible.</p>
+<p>Let’s check that <span class="math notranslate nohighlight">\(\boldsymbol{C^\top A}\)</span> is invertible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CTA_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">A</span><span class="p">))</span>
@@ -887,7 +887,7 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 </div>
 </div>
 <p>Indeed, computing the inverse works without error.</p>
-<p>Now, let’s use this to compute <span class="math notranslate nohighlight">\(P_{V,C}\)</span>.</p>
+<p>Now, let’s use this to compute <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V,\boldsymbol{C}}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PVC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">CTA_inv</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
@@ -895,7 +895,7 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 </div>
 </div>
 </div>
-<p>We can check numerically that <span class="math notranslate nohighlight">\(P_{V,C}^2 = P_{V,C}\)</span>:</p>
+<p>We can check numerically that <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V,\boldsymbol{C}}^2 = \boldsymbol{P}_{V,\boldsymbol{C}}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PVC2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">PVC</span><span class="p">,</span> <span class="n">PVC</span><span class="p">)</span>
@@ -909,7 +909,7 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 </div>
 </div>
 </div>
-<p>So <span class="math notranslate nohighlight">\(P_{V,C}\)</span> is in fact idempotent, and thus a valid projection. However, it is not orthogonal; we can check this by computing <span class="math notranslate nohighlight">\(A^\top (b - P_{V,C}b)\)</span>, and verifying that it is not equal to zero (as it was in the orthogonal case). Let’s do this for the same vector <span class="math notranslate nohighlight">\(b = \begin{bmatrix}1\\ 2\\ 3\end{bmatrix}\)</span> that we used before.</p>
+<p>So <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V,\boldsymbol{C}}\)</span> is in fact idempotent, and thus a valid projection. However, it is not orthogonal; we can check this by computing <span class="math notranslate nohighlight">\(\boldsymbol{A}^\top (\boldsymbol{b} - \boldsymbol{P}_{V,\boldsymbol{C}}\boldsymbol{b})\)</span>, and verifying that it is not equal to zero (as it was in the orthogonal case). Let’s do this for the same vector <span class="math notranslate nohighlight">\(\boldsymbol{b} = \begin{bmatrix}1\\ 2\\ 3\end{bmatrix}\)</span> that we used before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proj_VC_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">PVC</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -919,12 +919,12 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-4.88739242, -7.00676827])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([12.99261368, 18.86717224])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Our answer is clearly not zero, and so the projection <span class="math notranslate nohighlight">\(P_{V,C}\)</span> is <em>not</em> an orthogonal projection, but rather an <em>oblique</em> projection.</p>
+<p>Our answer is clearly not zero, and so the projection <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V,\boldsymbol{C}}\)</span> is <em>not</em> an orthogonal projection, but rather an <em>oblique</em> projection.</p>
 </div>
 </div>
 <div class="section" id="projecting-onto-the-orthogonal-complement-of-a-subspace">
@@ -932,19 +932,19 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 <p>The last type of projection we will discuss is the projection onto the <em>orthogonal complement</em> of a subspace <span class="math notranslate nohighlight">\(V\subseteq \mathbb{R}^n\)</span>. The orthogonal complement is the subspace <span class="math notranslate nohighlight">\(V^\perp\)</span> which is defined as follows:</p>
 <div class="math notranslate nohighlight">
 \[
-V^\perp = \{w\in \mathbb{R}^n : w^\top v = 0\text{ for all } v\in V\}
+V^\perp = \{\boldsymbol{w}\in \mathbb{R}^n : \boldsymbol{w^\top v} = 0\text{ for all } \boldsymbol{v}\in V\}
 \]</div>
-<p>That is, the orthogonal complement of <span class="math notranslate nohighlight">\(V\)</span> is the set of all vectors which are orthogonal to all vectors in <span class="math notranslate nohighlight">\(V\)</span>. It turns out that the projection onto the orthogonal complement is easy to find given the orthogonal projection onto <span class="math notranslate nohighlight">\(V\)</span>. If <span class="math notranslate nohighlight">\(P_V\)</span> is the orthogonal projection onto <span class="math notranslate nohighlight">\(V\)</span>, then the orthogonal projection onto <span class="math notranslate nohighlight">\(V^\perp\)</span> is just</p>
+<p>That is, the orthogonal complement of <span class="math notranslate nohighlight">\(V\)</span> is the set of all vectors which are orthogonal to all vectors in <span class="math notranslate nohighlight">\(V\)</span>. It turns out that the projection onto the orthogonal complement is easy to find given the orthogonal projection onto <span class="math notranslate nohighlight">\(V\)</span>. If <span class="math notranslate nohighlight">\(\boldsymbol{P}_V\)</span> is the orthogonal projection onto <span class="math notranslate nohighlight">\(V\)</span>, then the orthogonal projection onto <span class="math notranslate nohighlight">\(V^\perp\)</span> is just</p>
 <div class="math notranslate nohighlight">
 \[
-P_{V^\perp} = I - P_V
+\boldsymbol{P}_{V^\perp} = \boldsymbol{I} - \boldsymbol{P}_V
 \]</div>
-<p>Given <span class="math notranslate nohighlight">\(P_V = A(A^\top A)^{-1}A^\top\)</span> or <span class="math notranslate nohighlight">\(P_V = QQ^\top\)</span> (where <span class="math notranslate nohighlight">\(Q\)</span> comes from the <span class="math notranslate nohighlight">\(QR\)</span> factorization of <span class="math notranslate nohighlight">\(A\)</span>), this means <span class="math notranslate nohighlight">\(P_{V^\perp} = I- A(A^\top A)^{-1}A^\top\)</span> or <span class="math notranslate nohighlight">\(P_{V^\perp} = I- QQ^\top\)</span>. Since the range of <span class="math notranslate nohighlight">\(P_V\)</span> is <span class="math notranslate nohighlight">\(V\)</span>, and the range of <span class="math notranslate nohighlight">\(P_{V^\perp}\)</span> is <span class="math notranslate nohighlight">\(V^\perp\)</span>, we should always have that <span class="math notranslate nohighlight">\(P_V x\)</span> is orthogonal to <span class="math notranslate nohighlight">\(P_{V^\perp}y\)</span> for any vectors <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Let’s check that this is in fact true. We have</p>
+<p>Given <span class="math notranslate nohighlight">\(\boldsymbol{P}_V = \boldsymbol{A}(\boldsymbol{A^\top A})^{-1}\boldsymbol{A}^\top\)</span> or <span class="math notranslate nohighlight">\(\boldsymbol{P}_V = \boldsymbol{QQ}^\top\)</span> (where <span class="math notranslate nohighlight">\(\boldsymbol{Q}\)</span> comes from the QR factorization of <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span>), this means <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V^\perp} = \boldsymbol{I}- \boldsymbol{A}(\boldsymbol{A^\top A})^{-1}\boldsymbol{A}^\top\)</span> or <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V^\perp} = \boldsymbol{I}- \boldsymbol{QQ}^\top\)</span>. Since the range of <span class="math notranslate nohighlight">\(\boldsymbol{P}_V\)</span> is <span class="math notranslate nohighlight">\(V\)</span>, and the range of <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V^\perp}\)</span> is <span class="math notranslate nohighlight">\(V^\perp\)</span>, we should always have that <span class="math notranslate nohighlight">\(\boldsymbol{P}_V \boldsymbol{x}\)</span> is orthogonal to <span class="math notranslate nohighlight">\(\boldsymbol{P}_{V^\perp}\boldsymbol{y}\)</span> for any vectors <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span>. Let’s check that this is in fact true. We have</p>
 <div class="math notranslate nohighlight">
 \[
-(P_{V^\perp}y)^\top P_{V}x = y^\top P_{V^\perp}P_Vx = y^\top (I-P_V)P_Vx = y^\top P_Vx - y^\top P_V^2x = y^\top P_Vx - y^\top P_V x = 0
+(\boldsymbol{P}_{V^\perp}\boldsymbol{y})^\top \boldsymbol{P}_{V}\boldsymbol{x} = \boldsymbol{y}^\top \boldsymbol{P}_{V^\perp}\boldsymbol{P}_V\boldsymbol{x} = \boldsymbol{y}^\top (\boldsymbol{I}-\boldsymbol{P}_V)\boldsymbol{P}_V\boldsymbol{x} = \boldsymbol{y}^\top \boldsymbol{P}_V\boldsymbol{x} - \boldsymbol{y}^\top \boldsymbol{P}_V^2\boldsymbol{x} = \boldsymbol{y}^\top \boldsymbol{P}_V\boldsymbol{x} - \boldsymbol{y}^\top \boldsymbol{P}_V \boldsymbol{x} = 0
 \]</div>
-<p>where we used the fact that <span class="math notranslate nohighlight">\(P_V\)</span> is a projection, so <span class="math notranslate nohighlight">\(P_V^2 = P_V\)</span>.</p>
+<p>where we used the fact that <span class="math notranslate nohighlight">\(\boldsymbol{P}_V\)</span> is a projection, so <span class="math notranslate nohighlight">\(\boldsymbol{P}_V^2 = \boldsymbol{P}_V\)</span>.</p>
 </div>
 </div>
 
