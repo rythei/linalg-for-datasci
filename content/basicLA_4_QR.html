@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.3. Solving linear systems with the QR decomposition" href="basicLA_4_QR_linear_systems.html" />
     <link rel="prev" title="6.1. Dot products, angles, and orthogonality" href="basicLA_4_dot-products-and-angles.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -275,6 +276,16 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      6.2. Gram–Schmidt and the QR Decomposition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_4_QR_linear_systems.html">
+     6.3. Solving linear systems with the QR decomposition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_4_projections.html">
+     6.4. Projections
     </a>
    </li>
   </ul>
@@ -534,11 +545,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1., -0., -0.,  0., -0.],
-       [-0.,  1.,  0.,  0.,  0.],
-       [-0.,  0.,  1.,  0.,  0.],
-       [ 0.,  0.,  0.,  1., -0.],
-       [-0.,  0.,  0., -0.,  1.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.,  0., -0.,  0., -0.],
+       [ 0.,  1.,  0., -0.,  0.],
+       [-0.,  0.,  1.,  0., -0.],
+       [ 0., -0.,  0.,  1.,  0.],
+       [-0.,  0., -0.,  0.,  1.]])
 </pre></div>
 </div>
 </div>
@@ -630,11 +641,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.36318123,  0.37303504, -1.38662203, -0.24577235,  0.53926291],
-       [-0.        ,  3.24164902,  0.63836801,  0.78920669, -0.25864173],
-       [ 0.        , -0.        ,  2.73321029, -1.08307076, -1.4534757 ],
-       [ 0.        , -0.        , -0.        ,  1.49343854,  0.61772343],
-       [-0.        , -0.        , -0.        ,  0.        ,  2.0777165 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2.11669026, -1.06584389, -0.5808965 ,  1.80554402,  3.41741617],
+       [ 0.        ,  3.08499488, -0.20816366, -1.10658103,  0.25076846],
+       [-0.        , -0.        ,  3.09878231, -0.34058964, -1.11021128],
+       [-0.        ,  0.        ,  0.        ,  2.06832712, -1.2108868 ],
+       [-0.        , -0.        , -0.        , -0.        ,  2.04410046]])
 </pre></div>
 </div>
 </div>
@@ -688,6 +699,13 @@
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">6.1. </span>Dot products, angles, and orthogonality</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="basicLA_4_QR_linear_systems.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Solving linear systems with the QR decomposition</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
