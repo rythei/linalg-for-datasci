@@ -37,5 +37,6 @@ parts:
     sections:
     - file: content/basicLA_4_dot-products-and-angles
     - file: content/basicLA_4_QR
-    # - file: 20_BasicLA/basicLA_4_projections
-    # - file: 20_BasicLA/basicLA_4_inverses-revisited
+    - file: content/basicLA_4_QR_linear_systems
+    - file: content/basicLA_4_projections
+    #- file: 20_BasicLA/basicLA_4_inverses-revisited

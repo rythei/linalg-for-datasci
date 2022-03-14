@@ -260,7 +260,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="basicLA_4_chheader.html">
-   6. (CH6): Geometry: angles, orthogonality, and projections
+   6. Geometry: angles, orthogonality, and projections
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -276,6 +276,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="basicLA_4_QR.html">
      6.2. Gram–Schmidt and the QR Decomposition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_4_QR_linear_systems.html">
+     6.3. Solving linear systems with the QR decomposition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basicLA_4_projections.html">
+     6.4. Projections
     </a>
    </li>
   </ul>
@@ -458,7 +468,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.005028724670410156
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.0054509639739990234
 </pre></div>
 </div>
 </div>
@@ -486,7 +496,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0003399848937988281
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0010178089141845703
 </pre></div>
 </div>
 </div>
@@ -526,8 +536,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005175113677978516
-time taken to compute A*B[:,cols]:  0.0003218650817871094
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005378007888793945
+time taken to compute A*B[:,cols]:  0.0005707740783691406
 </pre></div>
 </div>
 </div>
@@ -578,8 +588,8 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.004972934722900391
-time taken to compute A[i,:]*B:  0.0002257823944091797
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005321979522705078
+time taken to compute A[i,:]*B:  0.000244140625
 </pre></div>
 </div>
 </div>
@@ -616,8 +626,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.005334138870239258
-time taken to compute A[rows,:]*B:  0.00027298927307128906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0032629966735839844
+time taken to compute A[rows,:]*B:  0.00035691261291503906
 </pre></div>
 </div>
 </div>
