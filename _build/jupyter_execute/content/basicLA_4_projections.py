@@ -9,7 +9,7 @@
 # 
 # We begin by considering perhaps the simplest possible projection: a projection onto a single vector. Intuitively, this is probably something you've already seen in high school math. The usual diagram given for this concept is below.
 # 
-# <img src="figs/projection_2d.png" style="zoom:50%;" />
+# <img src="img/projection_2d.png" style="zoom:50%;" />
 # 
 # In the above figure, we are projecting a vector $\boldsymbol{a}$ onto a vector $\boldsymbol{b}$. The resulting projection is the vector $\text{proj}_\boldsymbol{b}(\boldsymbol{a}) = \boldsymbol{a}_1$, which is always parallel to $\boldsymbol{b}$. The vector $\boldsymbol{a}_2$ is the "residual" of the projection, which is  $\boldsymbol{a}_2 = \boldsymbol{a} - \boldsymbol{a}_1 = \boldsymbol{a} - \text{proj}_\boldsymbol{b}(\boldsymbol{a})$. Note that visually from the diagram, we have that $\boldsymbol{a} = \boldsymbol{a}_1 + \boldsymbol{a}_2$, which is of course obvious from the definitions of $\boldsymbol{a}_1$ and $\boldsymbol{a}_2$. We will see below that this diagram is in fact representing a special case of projection onto a vector -- namely, it represents an _orthogonal_ projection.
 # 

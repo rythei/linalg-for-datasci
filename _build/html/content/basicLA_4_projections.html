@@ -507,7 +507,7 @@
 <div class="section" id="projections-onto-a-vector">
 <h2><span class="section-number">6.4.1. </span>Projections onto a vector<a class="headerlink" href="#projections-onto-a-vector" title="Permalink to this headline">¶</a></h2>
 <p>We begin by considering perhaps the simplest possible projection: a projection onto a single vector. Intuitively, this is probably something you’ve already seen in high school math. The usual diagram given for this concept is below.</p>
-<img src="figs/projection_2d.png" style="zoom:50%;" />
+<img src="img/projection_2d.png" style="zoom:50%;" />
 <p>In the above figure, we are projecting a vector <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> onto a vector <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span>. The resulting projection is the vector <span class="math notranslate nohighlight">\(\text{proj}_\boldsymbol{b}(\boldsymbol{a}) = \boldsymbol{a}_1\)</span>, which is always parallel to <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span>. The vector <span class="math notranslate nohighlight">\(\boldsymbol{a}_2\)</span> is the “residual” of the projection, which is  <span class="math notranslate nohighlight">\(\boldsymbol{a}_2 = \boldsymbol{a} - \boldsymbol{a}_1 = \boldsymbol{a} - \text{proj}_\boldsymbol{b}(\boldsymbol{a})\)</span>. Note that visually from the diagram, we have that <span class="math notranslate nohighlight">\(\boldsymbol{a} = \boldsymbol{a}_1 + \boldsymbol{a}_2\)</span>, which is of course obvious from the definitions of <span class="math notranslate nohighlight">\(\boldsymbol{a}_1\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{a}_2\)</span>. We will see below that this diagram is in fact representing a special case of projection onto a vector – namely, it represents an <em>orthogonal</em> projection.</p>
 <div class="section" id="orthogonal-projections-onto-a-vector">
 <h3><span class="section-number">6.4.1.1. </span>Orthogonal projections onto a vector<a class="headerlink" href="#orthogonal-projections-onto-a-vector" title="Permalink to this headline">¶</a></h3>
@@ -919,7 +919,7 @@ P_{V,\boldsymbol{C}} = \boldsymbol{A}(\boldsymbol{C^\top A})^{-1}\boldsymbol{C}^
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([12.99261368, 18.86717224])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3.31895814, 2.98822654])
 </pre></div>
 </div>
 </div>
