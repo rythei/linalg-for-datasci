@@ -40,3 +40,10 @@ parts:
     - file: content/basicLA_4_QR_linear_systems
     - file: content/basicLA_4_projections
     #- file: 20_BasicLA/basicLA_4_inverses-revisited
+- caption: Eigenthings, the spectral theorem, and the singular value decomposition
+  numbered: true
+  chapters:
+  - file: content/eigenstuff_chheader
+    sections:
+    - file: content/eigenstuff_quadratic-forms
+    - file: content/eigenstuff_eigenthings

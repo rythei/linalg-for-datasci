@@ -290,6 +290,28 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="eigenstuff_chheader.html">
+   7. Eigenstuff
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_quadratic-forms.html">
+     7.1. Quadratic forms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_eigenthings.html">
+     7.2. Eigenvalues and eigenvectors
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -468,7 +490,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.0054509639739990234
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.005120038986206055
 </pre></div>
 </div>
 </div>
@@ -496,7 +518,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0010178089141845703
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0005159378051757812
 </pre></div>
 </div>
 </div>
@@ -536,8 +558,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005378007888793945
-time taken to compute A*B[:,cols]:  0.0005707740783691406
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.0052030086517333984
+time taken to compute A*B[:,cols]:  0.0003771781921386719
 </pre></div>
 </div>
 </div>
@@ -588,8 +610,8 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005321979522705078
-time taken to compute A[i,:]*B:  0.000244140625
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005076885223388672
+time taken to compute A[i,:]*B:  0.0004451274871826172
 </pre></div>
 </div>
 </div>
@@ -626,8 +648,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0032629966735839844
-time taken to compute A[rows,:]*B:  0.00035691261291503906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0054171085357666016
+time taken to compute A[rows,:]*B:  0.0005540847778320312
 </pre></div>
 </div>
 </div>
