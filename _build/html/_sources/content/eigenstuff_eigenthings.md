@@ -217,7 +217,7 @@ $$
 $$
 
 
-In particular then, if $\boldsymbol{A} = \begin{pmatrix}a_{11} & a_{12}\\ a_{21}&a_{22}\end{pmatrix}$, then
+In particular, if $\boldsymbol{A} = \begin{pmatrix}a_{11} & a_{12}\\ a_{21}&a_{22}\end{pmatrix}$, then
 
 
 $$
@@ -270,7 +270,7 @@ More generally, we can use the following approach to find the eigenvalue/eigenve
 - Find the eigenvalues $\lambda_1,\dots, \lambda_n$ by finding the roots of the polynomial $p(\lambda) = \det(\boldsymbol{A}-\lambda \boldsymbol{I})$.
 - Find the eigenvectors $\boldsymbol{u}_1,\dots,\boldsymbol{u}_n$ by solving the $n$ systems of $n$ linear constraints $\boldsymbol{Au}_i = \lambda_i \boldsymbol{u}_i$ for $i=1,\dots,n$.
 
-(In practice, this approach is highly impractical. Later on, we will introduce algorithms which can be used to solve the eigenvalue problem much more efficiently. Normally we will simply find eigenvalues/vectors using Python functions that come with `numpy`.) Given the $n$ eigenvalues $\lambda_1,\dots, \lambda_n$ and $n$ eigenvectors $\boldsymbol{u}_1,\dots, \boldsymbol{u}_n$ of an $n\times n$ matrix $\boldsymbol{A}$, we can write the equations $\boldsymbol{Au}_i = \lambda_i \boldsymbol{u}_i$ simultaneously as follows. Let $\boldsymbol{U} = \begin{pmatrix} \boldsymbol{u}_1 & \cdots &\boldsymbol{u}_n\end{pmatrix}$ be the matrix whose columns are the eigenvectors, and let $\Lambda = \text{diag}(\lambda_1,\dots, \lambda_n)$ be the diagonal matrix with the eigenvalues on the diagonal. Then
+(In practice, this approach is highly impractical. Later on, we will introduce algorithms which can be used to solve the eigenvalue problem much more efficiently most commonly we will simply find eigenvalues/vectors using Python functions that come with `numpy`.) Given the $n$ eigenvalues $\lambda_1,\dots, \lambda_n$ and $n$ eigenvectors $\boldsymbol{u}_1,\dots, \boldsymbol{u}_n$ of an $n\times n$ matrix $\boldsymbol{A}$, we can write the equations $\boldsymbol{Au}_i = \lambda_i \boldsymbol{u}_i$ simultaneously as follows. Let $\boldsymbol{U} = \begin{pmatrix} \boldsymbol{u}_1 & \cdots &\boldsymbol{u}_n\end{pmatrix}$ be the matrix whose columns are the eigenvectors, and let $\Lambda = \text{diag}(\lambda_1,\dots, \lambda_n)$ be the diagonal matrix with the eigenvalues on the diagonal. Then
 
 
 $$
