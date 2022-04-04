@@ -61,14 +61,12 @@ for i in range(10):
     print(A)
 ```
 
-As we can see, the lower triangular portion of $\boldsymbol{A}$ is becoming closer and closer to zero after more iterations. Hence, since the eigenvalues are unchanged at each iteration, we can read of the eigenvalues of $\boldsymbol{A}$ from the eigenvalues of the (approximately) triangular matrix that we get after several iterations. Let's now implement our own `eigenvalue_decomposition_qr` function which uses the QR algorthm to find the eigenvalues, and then finds the eigenvectors.
+As we can see, the lower triangular portion of $\boldsymbol{A}$ is becoming closer and closer to zero after more iterations. Hence, since the eigenvalues are unchanged at each iteration, we can read of the eigenvalues of $\boldsymbol{A}$ from the eigenvalues of the (approximately) triangular matrix that we get after several iterations. Let's now implement our own `eigenvalue_decomposition_qr` function which uses the QR algorthm to find the eigenvalues of a matrix $\boldsymbol{A}$.
 
 ```{code-cell}
-from scipy.linalg import solve_triangular
-
 def eigenvalue_decomposition_qr(A):
     '''
-    find the eigenvalues and eigenvectors of a matrix using the QR decomposition
+    find the eigenvalues of a matrix using the QR decomposition
     '''
     A0 = A
 
@@ -78,20 +76,7 @@ def eigenvalue_decomposition_qr(A):
         A0 = np.dot(R, Q)
 
     values = np.diag(A0)
-
-    # next, find the eigenvectors
-    vectors = []
-
-    # use the QR decomposition to solve (A-\lambda I)v = 0
-    for i in range(A.shape[0]):
-        M = A - values[i]*np.eye(A.shape[0])
-        Q, R = np.linalg.qr(M)
-        vi = solve_triangular(R, np.zeros(A.shape[0]))
-        vectors.append(vi)
-
-    # shape the vectors into a matrix
-    vectors = np.array(vectors).T
-    return values, vectors
+    return values
 ```
 
 Now let's test our implementation against the usual numpy `eig` function.
@@ -100,7 +85,7 @@ Now let's test our implementation against the usual numpy `eig` function.
 A = np.random.normal(size=(5,5))
 A = np.dot(A.T, A)
 
-values_qr, vectors_qr = eigenvalue_decomposition_qr(A)
+values_qr = eigenvalue_decomposition_qr(A)
 print(values_qr)
 
 values, vectors = np.linalg.eig(A)
