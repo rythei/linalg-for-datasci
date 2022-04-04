@@ -38,7 +38,7 @@ $$
 \boldsymbol{A}' = \boldsymbol{RQ} = \boldsymbol{Q^\top Q R Q} = \boldsymbol{Q}^\top \boldsymbol{AQ}
 $$
 
-where $\boldsymbol{Q}$ is an orthogonal matrix. Because the matrices $\boldsymbol{A}$ and $\boldsymbol{A}'$ differ only by an orthogonal transformation on either side, they are what we call _similar_ matrices. It turns out that similar matrices always have the same eigenvalues. To see this, let $(\lambda, \boldsymbol{v})$ be an eigenvalue/eigenvector pair for $\boldsymbol{A}'$, and let $\boldsymbol{A} = \boldsymbol{Q\boldsymbol{A}'\boldsymbol{Q}}$ be defined as above. Then
+where $\boldsymbol{Q}$ is an orthogonal matrix. Because the matrices $\boldsymbol{A}$ and $\boldsymbol{A}'$ differ only by an orthogonal transformation on either side, they are what we call _similar_ matrices. It turns out that similar matrices always have the same eigenvalues. To see this, let $(\lambda, \boldsymbol{v})$ be an eigenvalue/eigenvector pair for $\boldsymbol{A}'$, and let $\boldsymbol{A} = \boldsymbol{Q^\top\boldsymbol{A}'\boldsymbol{Q}}$ be defined as above. Then
 
 $$
 \lambda\boldsymbol{v} = \boldsymbol{A}'\boldsymbol{v} = \boldsymbol{QA Q^\top v} \iff \lambda \boldsymbol{Q^\top v} = \boldsymbol{A Q^\top v}.

@@ -456,7 +456,7 @@
 \[
 \boldsymbol{A}' = \boldsymbol{RQ} = \boldsymbol{Q^\top Q R Q} = \boldsymbol{Q}^\top \boldsymbol{AQ}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\boldsymbol{Q}\)</span> is an orthogonal matrix. Because the matrices <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{A}'\)</span> differ only by an orthogonal transformation on either side, they are what we call <em>similar</em> matrices. It turns out that similar matrices always have the same eigenvalues. To see this, let <span class="math notranslate nohighlight">\((\lambda, \boldsymbol{v})\)</span> be an eigenvalue/eigenvector pair for <span class="math notranslate nohighlight">\(\boldsymbol{A}'\)</span>, and let <span class="math notranslate nohighlight">\(\boldsymbol{A} = \boldsymbol{Q\boldsymbol{A}'\boldsymbol{Q}}\)</span> be defined as above. Then</p>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{Q}\)</span> is an orthogonal matrix. Because the matrices <span class="math notranslate nohighlight">\(\boldsymbol{A}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{A}'\)</span> differ only by an orthogonal transformation on either side, they are what we call <em>similar</em> matrices. It turns out that similar matrices always have the same eigenvalues. To see this, let <span class="math notranslate nohighlight">\((\lambda, \boldsymbol{v})\)</span> be an eigenvalue/eigenvector pair for <span class="math notranslate nohighlight">\(\boldsymbol{A}'\)</span>, and let <span class="math notranslate nohighlight">\(\boldsymbol{A} = \boldsymbol{Q^\top\boldsymbol{A}'\boldsymbol{Q}}\)</span> be defined as above. Then</p>
 <div class="math notranslate nohighlight">
 \[
 \lambda\boldsymbol{v} = \boldsymbol{A}'\boldsymbol{v} = \boldsymbol{QA Q^\top v} \iff \lambda \boldsymbol{Q^\top v} = \boldsymbol{A Q^\top v}.
@@ -480,45 +480,45 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A at iteration i = 0 is
-[[ 6.54692594 -0.27819042 -0.68443768]
- [-0.27819042  2.04182238 -0.85855699]
- [-0.68443768 -0.85855699  2.0744191 ]]
+[[ 2.87024658 -1.35464846 -0.38777904]
+ [-1.35464846  0.96933605  0.2735415 ]
+ [-0.38777904  0.2735415   0.16911072]]
 A at iteration i = 1 is
-[[6.64774699 0.07424497 0.15272573]
- [0.07424497 2.67689747 0.5885506 ]
- [0.15272573 0.5885506  1.33852296]]
+[[ 3.63222975 -0.14297718  0.0107467 ]
+ [-0.14297718  0.29100923 -0.02083912]
+ [ 0.0107467  -0.02083912  0.08545437]]
 A at iteration i = 2 is
-[[ 6.65342362  0.05030546 -0.0270566 ]
- [ 0.05030546  2.85923335 -0.25195376]
- [-0.0270566  -0.25195376  1.15051044]]
+[[ 3.63833662e+00 -1.13229445e-02 -2.47592719e-04]
+ [-1.13229445e-02  2.86822242e-01  5.97091643e-03]
+ [-2.47592719e-04  5.97091643e-03  8.35344881e-02]]
 A at iteration i = 3 is
-[[6.65411192e+00 2.31274576e-02 4.57014868e-03]
- [2.31274576e-02 2.88951836e+00 9.85534702e-02]
- [4.57014868e-03 9.85534702e-02 1.11953713e+00]]
+[[ 3.63837466e+00 -8.93225127e-04  5.67489602e-06]
+ [-8.93225127e-04  2.86944637e-01 -1.73561781e-03]
+ [ 5.67489602e-06 -1.73561781e-03  8.33740574e-02]]
 A at iteration i = 4 is
-[[ 6.65423135e+00  1.01422712e-02 -7.66155249e-04]
- [ 1.01422712e-02  2.89405942e+00 -3.80178434e-02]
- [-7.66155249e-04 -3.80178434e-02  1.11487664e+00]]
+[[ 3.63837489e+00 -7.04499598e-05 -1.30022581e-07]
+ [-7.04499598e-05  2.86957948e-01  5.04215643e-04]
+ [-1.30022581e-07  5.04215643e-04  8.33605095e-02]]
 A at iteration i = 5 is
-[[6.65425365e+00 4.41748787e-03 1.28295998e-04]
- [4.41748787e-03 2.89472888e+00 1.46359520e-02]
- [1.28295998e-04 1.46359520e-02 1.11418489e+00]]
+[[ 3.63837489e+00 -5.55640698e-06  2.97897218e-09]
+ [-5.55640698e-06  2.86959090e-01 -1.46471274e-04]
+ [ 2.97897193e-09 -1.46471274e-04  8.33593662e-02]]
 A at iteration i = 6 is
-[[ 6.65425786e+00  1.92210512e-03 -2.14801114e-05]
- [ 1.92210512e-03  2.89482715e+00 -5.63283857e-03]
- [-2.14801114e-05 -5.63283857e-03  1.11408240e+00]]
+[[ 3.63837489e+00 -4.38234737e-07 -6.82518659e-11]
+ [-4.38234737e-07  2.86959187e-01  4.25487077e-05]
+ [-6.82516134e-11  4.25487077e-05  8.33592697e-02]]
 A at iteration i = 7 is
-[[6.65425866e+00 8.36207246e-04 3.59624361e-06]
- [8.36207246e-04 2.89484153e+00 2.16778137e-03]
- [3.59624361e-06 2.16778137e-03 1.11406722e+00]]
+[[ 3.63837489e+00 -3.45636428e-08  1.56397366e-12]
+ [-3.45636424e-08  2.86959195e-01 -1.23600464e-05]
+ [ 1.56372126e-12 -1.23600464e-05  8.33592616e-02]]
 A at iteration i = 8 is
-[[ 6.65425881e+00  3.63781893e-04 -6.02088129e-07]
- [ 3.63781893e-04  2.89484363e+00 -8.34259376e-04]
- [-6.02088130e-07 -8.34259376e-04  1.11406498e+00]]
+[[ 3.63837489e+00 -2.72604031e-09 -3.60789984e-14]
+ [-2.72603987e-09  2.86959196e-01  3.59049074e-06]
+ [-3.58266127e-14  3.59049074e-06  8.33592609e-02]]
 A at iteration i = 9 is
-[[6.65425884e+00 1.58258411e-04 1.00802379e-07]
- [1.58258411e-04 2.89484393e+00 3.21060115e-04]
- [1.00802380e-07 3.21060115e-04 1.11406464e+00]]
+[[ 3.63837489e+00 -2.15003628e-10  1.07320822e-15]
+ [-2.15003190e-10  2.86959196e-01 -1.04300771e-06]
+ [ 8.20827991e-16 -1.04300771e-06  8.33592609e-02]]
 </pre></div>
 </div>
 </div>
@@ -558,10 +558,10 @@ A at iteration i = 9 is
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.94303070e+01 8.33538967e+00 2.08369449e+00 1.23372237e+00
- 3.64309674e-03]
-[1.94303070e+01 8.33538967e+00 3.64309674e-03 2.08369449e+00
- 1.23372237e+00]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7.97967959e+00 5.00039847e+00 2.31802664e+00 5.93721729e-01
+ 4.11825540e-03]
+[7.97967959e+00 5.00039847e+00 2.31802664e+00 4.11825540e-03
+ 5.93721729e-01]
 </pre></div>
 </div>
 </div>
