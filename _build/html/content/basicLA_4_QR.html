@@ -290,6 +290,13 @@
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Eigenthings, the spectral theorem, and the singular value decomposition
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="eigenstuff_chheader.html">
    7. Eigenstuff
@@ -308,6 +315,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="eigenstuff_eigenthings.html">
      7.2. Eigenvalues and eigenvectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_eigenthings-special-matrices.html">
+     7.3. The Eigenvalue decomposition for special types of matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_qr-algorithm.html">
+     7.4. The QR algorithm for finding eigenvalues and eigenvectors
     </a>
    </li>
   </ul>
@@ -567,11 +584,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1., -0.,  0., -0., -0.],
-       [-0.,  1., -0., -0., -0.],
-       [ 0., -0.,  1.,  0.,  0.],
-       [-0., -0.,  0.,  1., -0.],
-       [-0., -0.,  0., -0.,  1.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.,  0.,  0.,  0., -0.],
+       [ 0.,  1., -0., -0., -0.],
+       [ 0., -0.,  1.,  0., -0.],
+       [ 0., -0.,  0.,  1., -0.],
+       [-0., -0., -0., -0.,  1.]])
 </pre></div>
 </div>
 </div>
@@ -663,11 +680,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.41386014, -0.74835106,  0.73761112, -0.38201877,  0.3187851 ],
-       [-0.        ,  3.32277202, -1.95903857, -0.85134985,  1.09202571],
-       [-0.        , -0.        ,  3.09508714, -1.07934533, -0.62227703],
-       [-0.        ,  0.        , -0.        ,  2.53279138, -0.40111312],
-       [-0.        ,  0.        , -0.        ,  0.        ,  3.0052849 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2.10271679, -0.60387404,  0.1430312 ,  0.25006784, -0.04244757],
+       [ 0.        ,  2.71090518,  1.56861097,  0.32498411,  0.42099201],
+       [ 0.        , -0.        ,  2.92655108, -0.13753479, -0.10001752],
+       [ 0.        ,  0.        ,  0.        ,  1.70446892, -0.24246167],
+       [ 0.        ,  0.        ,  0.        ,  0.        ,  2.53048888]])
 </pre></div>
 </div>
 </div>

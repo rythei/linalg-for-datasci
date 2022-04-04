@@ -290,6 +290,13 @@
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Eigenthings, the spectral theorem, and the singular value decomposition
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="eigenstuff_chheader.html">
    7. Eigenstuff
@@ -308,6 +315,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="eigenstuff_eigenthings.html">
      7.2. Eigenvalues and eigenvectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_eigenthings-special-matrices.html">
+     7.3. The Eigenvalue decomposition for special types of matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_qr-algorithm.html">
+     7.4. The QR algorithm for finding eigenvalues and eigenvectors
     </a>
    </li>
   </ul>
@@ -490,11 +507,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.92867652  0.44523113 -0.64541736]
- [-0.44089432  1.58541779 -0.05328134]
- [-0.10884919 -0.05418488 -1.07033634]
- [ 0.1275226   0.56330614  0.13152394]
- [ 1.57285175  0.38729448  0.20993225]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.91612064 -0.36014844  1.25262156]
+ [ 0.43150756  0.38961894  1.1867131 ]
+ [-0.18994339  1.02627696  0.55433392]
+ [-0.55274159 -0.41154615  0.56047979]
+ [-1.62464764  0.26987996  0.8799889 ]]
 </pre></div>
 </div>
 </div>
@@ -599,7 +616,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.3058740496100025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8821364226434227
 </pre></div>
 </div>
 </div>
@@ -701,8 +718,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.8343307971954346 seconds
-time using np.dot: 0.008094310760498047 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.7992117404937744 seconds
+time using np.dot: 0.00810098648071289 seconds
 </pre></div>
 </div>
 </div>

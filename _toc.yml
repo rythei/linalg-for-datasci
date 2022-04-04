@@ -47,3 +47,5 @@ parts:
     sections:
     - file: content/eigenstuff_quadratic-forms
     - file: content/eigenstuff_eigenthings
+    - file: content/eigenstuff_eigenthings-special-matrices
+    - file: content/eigenstuff_qr-algorithm

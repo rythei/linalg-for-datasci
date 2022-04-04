@@ -290,6 +290,13 @@
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Eigenthings, the spectral theorem, and the singular value decomposition
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="eigenstuff_chheader.html">
    7. Eigenstuff
@@ -308,6 +315,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="eigenstuff_eigenthings.html">
      7.2. Eigenvalues and eigenvectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_eigenthings-special-matrices.html">
+     7.3. The Eigenvalue decomposition for special types of matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_qr-algorithm.html">
+     7.4. The QR algorithm for finding eigenvalues and eigenvectors
     </a>
    </li>
   </ul>
@@ -742,10 +759,10 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>points:
-[[0.82727554 0.0618782  0.92711605 0.00312866 0.21597826 0.40310269
-  0.7465381  0.15129015 0.38171312 0.39580139]
- [0.59990562 0.61003409 0.64475137 0.14744103 0.38444353 0.07949585
-  0.53028893 0.49429476 0.18488875 0.72300164]]
+[[0.50232207 0.64080034 0.86243762 0.45967343 0.69888717 0.76660416
+  0.66747453 0.8486903  0.78241243 0.11362788]
+ [0.66681891 0.2414892  0.85703311 0.97897772 0.5450511  0.12456928
+  0.88164386 0.85596343 0.97994761 0.3551009 ]]
 
 points has shape (2, 10)
 </pre></div>
@@ -766,12 +783,12 @@ points has shape (2, 10)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>xs (shape: (10,)):
-[0.82727554 0.0618782  0.92711605 0.00312866 0.21597826 0.40310269
- 0.7465381  0.15129015 0.38171312 0.39580139]
+[0.50232207 0.64080034 0.86243762 0.45967343 0.69888717 0.76660416
+ 0.66747453 0.8486903  0.78241243 0.11362788]
 
 ys (shape: (10,)):
-[0.59990562 0.61003409 0.64475137 0.14744103 0.38444353 0.07949585
- 0.53028893 0.49429476 0.18488875 0.72300164]
+[0.66681891 0.2414892  0.85703311 0.97897772 0.5450511  0.12456928
+ 0.88164386 0.85596343 0.97994761 0.3551009 ]
 </pre></div>
 </div>
 </div>
