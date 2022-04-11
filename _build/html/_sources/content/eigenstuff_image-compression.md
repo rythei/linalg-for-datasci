@@ -32,13 +32,13 @@ Note that each of the terms in the sum is a matrix, $\boldsymbol{u}_i\boldsymbol
 
 $$
 \begin{aligned}
-\min_{\widehat{\boldsymbol{A}}}&\;\;\;\; \|\boldsymbol{A} - \widehat{\boldsymbol{A}}\|_F && (3)\\
+\min_{\widehat{\boldsymbol{A}}}&\;\;\;\; \|\boldsymbol{A} - \widehat{\boldsymbol{A}}\|_F && (1)\\
 \text{subject to}&\;\;\;\; \text{rank}(\widehat{\boldsymbol{A}}) \leq k
 \end{aligned}
 $$
 
 
-Low rank matrices are useful for a variety of reasons, but two important reasons are that 1) they can require less memory to store and 2) we can do faster matrix computations with low rank matrices. It turns out that the solution to the low-rank approximation problem (3) can be exactly constructed from the singular value decomposition. The famous [Eckart–Young–Mirsky theorem](https://en.wikipedia.org/wiki/Low-rank_approximation) states that the solution to the problem (3) is explicitly given by the matrix:
+Low rank matrices are useful for a variety of reasons, but two important reasons are that 1) they can require less memory to store and 2) we can do faster matrix computations with low rank matrices. It turns out that the solution to the low-rank approximation problem (1) can be exactly constructed from the singular value decomposition. The famous [Eckart–Young–Mirsky theorem](https://en.wikipedia.org/wiki/Low-rank_approximation) states that the solution to the problem (1) is explicitly given by the matrix:
 
 
 $$
