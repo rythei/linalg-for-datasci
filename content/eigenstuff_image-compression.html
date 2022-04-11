@@ -493,11 +493,11 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\min_{\widehat{\boldsymbol{A}}}&amp;\;\;\;\; \|\boldsymbol{A} - \widehat{\boldsymbol{A}}\|_F &amp;&amp; (3)\\
+\min_{\widehat{\boldsymbol{A}}}&amp;\;\;\;\; \|\boldsymbol{A} - \widehat{\boldsymbol{A}}\|_F &amp;&amp; (1)\\
 \text{subject to}&amp;\;\;\;\; \text{rank}(\widehat{\boldsymbol{A}}) \leq k
 \end{aligned}
 \end{split}\]</div>
-<p>Low rank matrices are useful for a variety of reasons, but two important reasons are that 1) they can require less memory to store and 2) we can do faster matrix computations with low rank matrices. It turns out that the solution to the low-rank approximation problem (3) can be exactly constructed from the singular value decomposition. The famous <a class="reference external" href="https://en.wikipedia.org/wiki/Low-rank_approximation">Eckart–Young–Mirsky theorem</a> states that the solution to the problem (3) is explicitly given by the matrix:</p>
+<p>Low rank matrices are useful for a variety of reasons, but two important reasons are that 1) they can require less memory to store and 2) we can do faster matrix computations with low rank matrices. It turns out that the solution to the low-rank approximation problem (1) can be exactly constructed from the singular value decomposition. The famous <a class="reference external" href="https://en.wikipedia.org/wiki/Low-rank_approximation">Eckart–Young–Mirsky theorem</a> states that the solution to the problem (1) is explicitly given by the matrix:</p>
 <div class="math notranslate nohighlight">
 \[
 \widehat{\boldsymbol{A}}_k = \sum_{i=1}^k \sigma_i \boldsymbol{u}_i\boldsymbol{v}_i^\top.
