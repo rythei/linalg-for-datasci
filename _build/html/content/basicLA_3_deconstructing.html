@@ -327,6 +327,11 @@
      7.4. The QR algorithm for finding eigenvalues and eigenvectors
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_SVD.html">
+     7.5. The Singular Value Decomposition
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -507,7 +512,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.005142927169799805
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.0067708492279052734
 </pre></div>
 </div>
 </div>
@@ -535,7 +540,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0002551078796386719
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0006451606750488281
 </pre></div>
 </div>
 </div>
@@ -575,8 +580,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005548238754272461
-time taken to compute A*B[:,cols]:  0.00028204917907714844
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.007628917694091797
+time taken to compute A*B[:,cols]:  0.0005040168762207031
 </pre></div>
 </div>
 </div>
@@ -627,8 +632,8 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.004783153533935547
-time taken to compute A[i,:]*B:  0.00019884109497070312
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.007109165191650391
+time taken to compute A[i,:]*B:  0.0002818107604980469
 </pre></div>
 </div>
 </div>
@@ -665,8 +670,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.005905866622924805
-time taken to compute A[rows,:]*B:  0.00021195411682128906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.005872964859008789
+time taken to compute A[rows,:]*B:  0.0010981559753417969
 </pre></div>
 </div>
 </div>

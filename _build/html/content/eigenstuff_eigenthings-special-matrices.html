@@ -327,6 +327,11 @@
      7.4. The QR algorithm for finding eigenvalues and eigenvectors
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_SVD.html">
+     7.5. The Singular Value Decomposition
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -574,16 +579,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1., -0.,  0.,  0.,  0., -0., -0.,  0.,  0.,  0.],
-       [-0.,  1., -0., -0.,  0.,  0., -0., -0.,  0.,  0.],
-       [ 0., -0.,  1.,  0.,  0.,  0.,  0., -0.,  0., -0.],
-       [ 0., -0.,  0.,  1., -0.,  0., -0.,  0., -0.,  0.],
-       [ 0.,  0.,  0., -0.,  1., -0., -0.,  0.,  0.,  0.],
-       [-0.,  0.,  0.,  0., -0.,  1., -0.,  0., -0., -0.],
-       [-0., -0.,  0., -0., -0., -0.,  1.,  0., -0.,  0.],
-       [ 0., -0., -0.,  0.,  0.,  0.,  0.,  1., -0.,  0.],
-       [ 0.,  0.,  0., -0.,  0., -0., -0., -0.,  1.,  0.],
-       [ 0.,  0., -0.,  0.,  0., -0.,  0.,  0.,  0.,  1.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1., -0., -0.,  0., -0.,  0., -0., -0.,  0., -0.],
+       [-0.,  1.,  0., -0.,  0., -0., -0.,  0., -0.,  0.],
+       [-0.,  0.,  1., -0.,  0.,  0., -0.,  0., -0.,  0.],
+       [ 0., -0., -0.,  1., -0., -0., -0., -0.,  0., -0.],
+       [-0.,  0.,  0., -0.,  1.,  0.,  0.,  0., -0.,  0.],
+       [ 0., -0.,  0., -0.,  0.,  1.,  0., -0., -0., -0.],
+       [-0., -0., -0., -0.,  0.,  0.,  1., -0.,  0., -0.],
+       [-0.,  0.,  0., -0.,  0., -0., -0.,  1.,  0., -0.],
+       [ 0., -0., -0.,  0., -0., -0.,  0.,  0.,  1.,  0.],
+       [-0.,  0.,  0., -0.,  0., -0., -0., -0.,  0.,  1.]])
 </pre></div>
 </div>
 </div>
@@ -661,8 +666,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the diagonal entries of R are  [-3.89787574  2.1606734   3.32281119  2.97157776 -1.97824896]
-the eigenvalues of R are  [-3.89787574  2.1606734   3.32281119  2.97157776 -1.97824896]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the diagonal entries of R are  [ 1.81757908  3.34918329  2.058394   -2.19253988  2.25582827]
+the eigenvalues of R are  [ 1.81757908  3.34918329  2.058394   -2.19253988  2.25582827]
 </pre></div>
 </div>
 </div>

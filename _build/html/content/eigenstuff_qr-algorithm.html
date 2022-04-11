@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.5. The Singular Value Decomposition" href="eigenstuff_SVD.html" />
     <link rel="prev" title="7.3. The Eigenvalue decomposition for special types of matrices" href="eigenstuff_eigenthings-special-matrices.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -326,6 +327,11 @@
      7.4. The QR algorithm for finding eigenvalues and eigenvectors
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_SVD.html">
+     7.5. The Singular Value Decomposition
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -480,45 +486,45 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A at iteration i = 0 is
-[[ 2.87024658 -1.35464846 -0.38777904]
- [-1.35464846  0.96933605  0.2735415 ]
- [-0.38777904  0.2735415   0.16911072]]
+[[11.10202236 -0.19822354  0.08290293]
+ [-0.19822354  5.85629379  0.01511667]
+ [ 0.08290293  0.01511667  0.06995689]]
 A at iteration i = 1 is
-[[ 3.63222975 -0.14297718  0.0107467 ]
- [-0.14297718  0.29100923 -0.02083912]
- [ 0.0107467  -0.02083912  0.08545437]]
+[[ 1.11080452e+01 -1.04338131e-01 -5.17306275e-04]
+ [-1.04338131e-01  5.85094156e+00 -2.05739620e-04]
+ [-5.17306275e-04 -2.05739620e-04  6.92862839e-02]]
 A at iteration i = 2 is
-[[ 3.63833662e+00 -1.13229445e-02 -2.47592719e-04]
- [-1.13229445e-02  2.86822242e-01  5.97091643e-03]
- [-2.47592719e-04  5.97091643e-03  8.35344881e-02]]
+[[ 1.11095414e+01 -5.49439692e-02  3.22654717e-06]
+ [-5.49439692e-02  5.84944542e+00  2.52472304e-06]
+ [ 3.22654717e-06  2.52472304e-06  6.92862520e-02]]
 A at iteration i = 3 is
-[[ 3.63837466e+00 -8.93225127e-04  5.67489602e-06]
- [-8.93225127e-04  2.86944637e-01 -1.73561781e-03]
- [ 5.67489602e-06 -1.73561781e-03  8.33740574e-02]]
+[[ 1.11099562e+01 -2.89272930e-02 -2.01225783e-08]
+ [-2.89272930e-02  5.84903063e+00 -3.01954585e-08]
+ [-2.01225792e-08 -3.01954588e-08  6.92862520e-02]]
 A at iteration i = 4 is
-[[ 3.63837489e+00 -7.04499598e-05 -1.30022581e-07]
- [-7.04499598e-05  2.86957948e-01  5.04215643e-04]
- [-1.30022581e-07  5.04215643e-04  8.33605095e-02]]
+[[ 1.11100711e+01 -1.52289797e-02  1.25491295e-10]
+ [-1.52289797e-02  5.84891565e+00  3.58641318e-10]
+ [ 1.25492248e-10  3.58641579e-10  6.92862520e-02]]
 A at iteration i = 5 is
-[[ 3.63837489e+00 -5.55640698e-06  2.97897218e-09]
- [-5.55640698e-06  2.86959090e-01 -1.46471274e-04]
- [ 2.97897193e-09 -1.46471274e-04  8.33593662e-02]]
+[[ 1.11101030e+01 -8.01727833e-03 -7.81660711e-13]
+ [-8.01727833e-03  5.84888379e+00 -4.25133527e-12]
+ [-7.82612389e-13 -4.25159760e-12  6.92862520e-02]]
 A at iteration i = 6 is
-[[ 3.63837489e+00 -4.38234737e-07 -6.82518659e-11]
- [-4.38234737e-07  2.86959187e-01  4.25487077e-05]
- [-6.82516134e-11  4.25487077e-05  8.33592697e-02]]
+[[ 1.11101118e+01 -4.22066820e-03  3.92913871e-15]
+ [-4.22066820e-03  5.84887496e+00  5.01119571e-14]
+ [ 4.88062667e-15  5.03749724e-14  6.92862520e-02]]
 A at iteration i = 7 is
-[[ 3.63837489e+00 -3.45636428e-08  1.56397366e-12]
- [-3.45636424e-08  2.86959195e-01 -1.23600464e-05]
- [ 1.56372126e-12 -1.23600464e-05  8.33592616e-02]]
+[[ 1.11101143e+01 -2.22195335e-03  9.20950816e-16]
+ [-2.22195335e-03  5.84887251e+00 -3.33403068e-16]
+ [-3.04371648e-17 -5.96779784e-16  6.92862520e-02]]
 A at iteration i = 8 is
-[[ 3.63837489e+00 -2.72604031e-09 -3.60789984e-14]
- [-2.72603987e-09  2.86959196e-01  3.59049074e-06]
- [-3.58266127e-14  3.59049074e-06  8.33592609e-02]]
+[[ 1.11101150e+01 -1.16973778e-03 -9.51145472e-16]
+ [-1.16973778e-03  5.84887183e+00 -2.56497366e-16]
+ [ 1.89815962e-19  7.06961592e-18  6.92862520e-02]]
 A at iteration i = 9 is
-[[ 3.63837489e+00 -2.15003628e-10  1.07320822e-15]
- [-2.15003190e-10  2.86959196e-01 -1.04300771e-06]
- [ 8.20827991e-16 -1.04300771e-06  8.33592609e-02]]
+[[ 1.11101151e+01 -6.15803359e-04  9.51306349e-16]
+ [-6.15803359e-04  5.84887164e+00  2.63583395e-16]
+ [-1.18375341e-21 -8.37476578e-20  6.92862520e-02]]
 </pre></div>
 </div>
 </div>
@@ -558,10 +564,10 @@ A at iteration i = 9 is
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7.97967959e+00 5.00039847e+00 2.31802664e+00 5.93721729e-01
- 4.11825540e-03]
-[7.97967959e+00 5.00039847e+00 2.31802664e+00 4.11825540e-03
- 5.93721729e-01]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7.70983421e+00 5.56262307e+00 2.14875044e+00 8.69582478e-01
+ 1.42604943e-03]
+[7.70983421e+00 5.56262307e+00 2.14875044e+00 8.69582478e-01
+ 1.42604943e-03]
 </pre></div>
 </div>
 </div>
@@ -600,6 +606,13 @@ A at iteration i = 9 is
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">7.3. </span>The Eigenvalue decomposition for special types of matrices</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="eigenstuff_SVD.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7.5. </span>The Singular Value Decomposition</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
