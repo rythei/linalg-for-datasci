@@ -41,7 +41,7 @@ $$
 \boldsymbol{S}_{ij} = \mathsf{sim}(\boldsymbol{x}_i,\boldsymbol{s}_j).
 $$
 
-Typically we assume that $\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \mathsf{sim}(\boldsymbol{x}',\boldsymbol{x})$ so that the matrix $\boldsymbol{S}$ is symmetric. 
+Typically we assume that $\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \mathsf{sim}(\boldsymbol{x}',\boldsymbol{x})$ so that the matrix $\boldsymbol{S}$ is symmetric.
 
 Next, it is common practice to normalize this matrix in a few ways. First, we define a diagonal matrix $\boldsymbol{D} = \text{diag}(d_1,\dots, d_n)$ where
 
@@ -52,7 +52,7 @@ $$
 i.e. the total amount of similarity between $\boldsymbol{x}_i$ and the rest of the datapoints. Next, we use this to normalize the similarity matrix to obtain
 
 $$
-\widetilde{\boldsymbol{S}} = \boldsymbol{D}^{-1}\boldsymbol{S}.
+\widetilde{\boldsymbol{S}} = \boldsymbol{D}^{-1/2}\boldsymbol{S}\boldsymbol{D}^{-1/2}.
 $$
 
-This really amounts to dividing each column $i$ of the similarity matrix $\boldsymbol{S}$ by it's total "output" of similarity, so that they are on a consistent scale. Finally, we
+This really amounts to dividing each row/column $i$ of the similarity matrix $\boldsymbol{S}$ by it's total "output" of similarity, so that they are on a consistent scale. Note that $\widetilde{\boldsymbol{S}}$ will also be a symmetric matrix, and therefore it has a unique eigenvalue decomposition $\widetilde{\boldsymbol{S}} = \boldsymbol{V\Lambda V}^\top$.

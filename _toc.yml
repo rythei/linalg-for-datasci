@@ -50,3 +50,4 @@ parts:
     - file: content/eigenstuff_eigenthings-special-matrices
     - file: content/eigenstuff_qr-algorithm
     - file: content/eigenstuff_SVD
+    - file: content/eigenstuff_image-compression
