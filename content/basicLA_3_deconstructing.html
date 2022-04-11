@@ -332,6 +332,11 @@
      7.5. The Singular Value Decomposition
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eigenstuff_image-compression.html">
+     7.6. Low-Rank Approximation Using the SVD
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -512,7 +517,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.007044792175292969
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.0055217742919921875
 </pre></div>
 </div>
 </div>
@@ -540,7 +545,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0013108253479003906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.00024509429931640625
 </pre></div>
 </div>
 </div>
@@ -580,8 +585,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.008466958999633789
-time taken to compute A*B[:,cols]:  0.0005221366882324219
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.0051348209381103516
+time taken to compute A*B[:,cols]:  0.00028514862060546875
 </pre></div>
 </div>
 </div>
@@ -632,8 +637,8 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005457162857055664
-time taken to compute A[i,:]*B:  0.000522613525390625
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.00529026985168457
+time taken to compute A[i,:]*B:  0.0001919269561767578
 </pre></div>
 </div>
 </div>
@@ -670,8 +675,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0068547725677490234
-time taken to compute A[rows,:]*B:  0.0003190040588378906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.005708217620849609
+time taken to compute A[rows,:]*B:  0.000308990478515625
 </pre></div>
 </div>
 </div>
