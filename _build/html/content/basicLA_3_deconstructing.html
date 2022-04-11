@@ -512,7 +512,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.0067708492279052734
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.007044792175292969
 </pre></div>
 </div>
 </div>
@@ -540,7 +540,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0006451606750488281
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0013108253479003906
 </pre></div>
 </div>
 </div>
@@ -580,8 +580,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.007628917694091797
-time taken to compute A*B[:,cols]:  0.0005040168762207031
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.008466958999633789
+time taken to compute A*B[:,cols]:  0.0005221366882324219
 </pre></div>
 </div>
 </div>
@@ -632,8 +632,8 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.007109165191650391
-time taken to compute A[i,:]*B:  0.0002818107604980469
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005457162857055664
+time taken to compute A[i,:]*B:  0.000522613525390625
 </pre></div>
 </div>
 </div>
@@ -670,8 +670,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.005872964859008789
-time taken to compute A[rows,:]*B:  0.0010981559753417969
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0068547725677490234
+time taken to compute A[rows,:]*B:  0.0003190040588378906
 </pre></div>
 </div>
 </div>
