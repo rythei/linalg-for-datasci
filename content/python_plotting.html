@@ -293,13 +293,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Eigenthings, the spectral theorem, and the singular value decomposition
+  The EVD, SVD and applications
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="eigenstuff_chheader.html">
-   7. Eigenstuff
+   7. Eigenthings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -333,8 +333,30 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenstuff_image-compression.html">
+    <a class="reference internal" href="eigenstuff_low-rank-approximation.html">
      7.6. Low-Rank Approximation Using the SVD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="applications_chheader.html">
+   8. Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_PCA.html">
+     8.1. Principal Component Analysis (PCA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_spectral-clustering.html">
+     8.2. Sprectral Clustering
     </a>
    </li>
   </ul>
@@ -769,10 +791,10 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>points:
-[[0.2971407  0.73749953 0.89322781 0.88214402 0.26441899 0.93742541
-  0.57204693 0.89910754 0.47078429 0.83107874]
- [0.9502884  0.79606328 0.51953485 0.71213669 0.90437068 0.05017824
-  0.66179322 0.16372455 0.08517076 0.40781611]]
+[[0.55494006 0.05791638 0.73494252 0.81531991 0.59787101 0.95738906
+  0.82284073 0.40074055 0.60995988 0.55141607]
+ [0.89945351 0.03053232 0.35790939 0.71638838 0.16839004 0.21314137
+  0.993872   0.4151418  0.66309861 0.75525724]]
 
 points has shape (2, 10)
 </pre></div>
@@ -793,12 +815,12 @@ points has shape (2, 10)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>xs (shape: (10,)):
-[0.2971407  0.73749953 0.89322781 0.88214402 0.26441899 0.93742541
- 0.57204693 0.89910754 0.47078429 0.83107874]
+[0.55494006 0.05791638 0.73494252 0.81531991 0.59787101 0.95738906
+ 0.82284073 0.40074055 0.60995988 0.55141607]
 
 ys (shape: (10,)):
-[0.9502884  0.79606328 0.51953485 0.71213669 0.90437068 0.05017824
- 0.66179322 0.16372455 0.08517076 0.40781611]
+[0.89945351 0.03053232 0.35790939 0.71638838 0.16839004 0.21314137
+ 0.993872   0.4151418  0.66309861 0.75525724]
 </pre></div>
 </div>
 </div>
