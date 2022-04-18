@@ -22,7 +22,7 @@ In clustering, we want to partition the dataset $D$ into $K$ subsets $C_1,\dots,
 
 1. Randomly assign the datapoints $\boldsymbol{x}_1,\dots, \boldsymbol{x}_n$ to $K$ clusters $C_1,\dots,C_K$
 2. Compute the mean of each cluster $\boldsymbol{\mu}_j = \frac{1}{|C_j|}\sum_{\boldsymbol{x}_i \in C_j}\boldsymbol{x}_i$
-3. Reassign each point $\boldsymbol{x}_i$ to the cluster whose mean it is closest too
+3. Reassign each point $\boldsymbol{x}_i$ to the cluster whose mean it is closest to
 4. Repeat steps 2 and 3 until the clusters stop updating
 
 Despite its simplicity, the $K$-means clustering algorithm is suprisingly effective, especially for relatively simple problems. However, basic $K$-means begins to perform worse when we move to higher dimensions -- i.e. when the number of features $p$ and samples $n$ grows large. In this situation, we often want a method that utilizes some type of dimension reduction. This is where the singular value decomposition and/or eigenvalue decomposition becomes an important tool. In the next subsection, we discuss one such method that uses the EVD to make clustering easier in high dimensions.
@@ -38,7 +38,7 @@ In our context, we think of each node as being an observation $\boldsymbol{x}_i$
 A few common examples used in practice would be the absolute-cosine similarity $\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \frac{\boldsymbol{|x^\top x'|}}{\|\boldsymbol{x}\|_2\|\boldsymbol{x}'\|_2}$, or the so-called Gaussian RBF kernel $\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \exp(-\gamma \|\boldsymbol{x}-\boldsymbol{x}'\|_2)$, where $\gamma$ is a hyperparameter that we can choose as the user. Both of these metrics are larger for more "similar" datapoints, and smaller for more dissimilar points. The graph representing the dataset is completely described by the $n\times n$ similarity matrix $\boldsymbol{S}$ where
 
 $$
-\boldsymbol{S}_{ij} = \mathsf{sim}(\boldsymbol{x}_i,\boldsymbol{s}_j).
+\boldsymbol{S}_{ij} = \mathsf{sim}(\boldsymbol{x}_i,\boldsymbol{x}_j).
 $$
 
 Typically we assume that $\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \mathsf{sim}(\boldsymbol{x}',\boldsymbol{x})$ so that the matrix $\boldsymbol{S}$ is symmetric.
