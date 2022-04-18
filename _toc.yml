@@ -40,7 +40,7 @@ parts:
     - file: content/basicLA_4_QR_linear_systems
     - file: content/basicLA_4_projections
     #- file: 20_BasicLA/basicLA_4_inverses-revisited
-- caption: Eigenthings, the spectral theorem, and the singular value decomposition
+- caption: The EVD, SVD and applications
   numbered: true
   chapters:
   - file: content/eigenstuff_chheader
@@ -50,4 +50,8 @@ parts:
     - file: content/eigenstuff_eigenthings-special-matrices
     - file: content/eigenstuff_qr-algorithm
     - file: content/eigenstuff_SVD
-    - file: content/eigenstuff_image-compression
+    - file: content/eigenstuff_low-rank-approximation
+  - file: content/applications_chheader
+    sections:
+    - file: content/applications_PCA
+    - file: content/applications_spectral-clustering

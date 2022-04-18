@@ -293,13 +293,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Eigenthings, the spectral theorem, and the singular value decomposition
+  The EVD, SVD and applications
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="eigenstuff_chheader.html">
-   7. Eigenstuff
+   7. Eigenthings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -333,8 +333,30 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenstuff_image-compression.html">
+    <a class="reference internal" href="eigenstuff_low-rank-approximation.html">
      7.6. Low-Rank Approximation Using the SVD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="applications_chheader.html">
+   8. Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_PCA.html">
+     8.1. Principal Component Analysis (PCA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_spectral-clustering.html">
+     8.2. Sprectral Clustering
     </a>
    </li>
   </ul>
@@ -517,11 +539,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.20019048  0.03245467  0.34869435]
- [ 0.58583549  0.86883662 -1.70976773]
- [-0.41718197 -1.92605944 -0.56711242]
- [-0.28248967  0.31165802  0.51670344]
- [ 3.96416128 -0.25712992 -1.5797553 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.18349655 -0.60498337 -0.66149227]
+ [-0.447146   -0.48191453  1.30584909]
+ [ 0.85267308 -1.90117395 -1.19628162]
+ [-0.22373252 -0.15388942  1.62274689]
+ [ 0.5975924  -0.97954262  0.30787742]]
 </pre></div>
 </div>
 </div>
@@ -626,7 +648,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.3890531426628807
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0810617046900517
 </pre></div>
 </div>
 </div>
@@ -728,8 +750,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.8475561141967773 seconds
-time using np.dot: 0.007590055465698242 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.8887171745300293 seconds
+time using np.dot: 0.0073871612548828125 seconds
 </pre></div>
 </div>
 </div>

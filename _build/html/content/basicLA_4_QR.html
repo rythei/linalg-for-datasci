@@ -293,13 +293,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Eigenthings, the spectral theorem, and the singular value decomposition
+  The EVD, SVD and applications
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="eigenstuff_chheader.html">
-   7. Eigenstuff
+   7. Eigenthings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -333,8 +333,30 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenstuff_image-compression.html">
+    <a class="reference internal" href="eigenstuff_low-rank-approximation.html">
      7.6. Low-Rank Approximation Using the SVD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="applications_chheader.html">
+   8. Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_PCA.html">
+     8.1. Principal Component Analysis (PCA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_spectral-clustering.html">
+     8.2. Sprectral Clustering
     </a>
    </li>
   </ul>
@@ -594,11 +616,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.,  0.,  0., -0., -0.],
-       [ 0.,  1., -0., -0., -0.],
-       [ 0., -0.,  1.,  0.,  0.],
-       [-0., -0.,  0.,  1.,  0.],
-       [-0., -0.,  0.,  0.,  1.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.,  0.,  0.,  0.,  0.],
+       [ 0.,  1., -0., -0.,  0.],
+       [ 0., -0.,  1., -0.,  0.],
+       [ 0., -0., -0.,  1.,  0.],
+       [ 0.,  0.,  0.,  0.,  1.]])
 </pre></div>
 </div>
 </div>
@@ -690,11 +712,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 4.04647864,  0.71613188, -0.09821993,  0.23888017, -1.13529885],
-       [ 0.        ,  2.82954529,  0.99094648, -1.46707109,  0.06125742],
-       [ 0.        , -0.        ,  1.94034944,  0.67061914,  0.06872873],
-       [ 0.        ,  0.        ,  0.        ,  2.86676978, -1.15127447],
-       [-0.        ,  0.        ,  0.        , -0.        ,  2.84987852]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 4.16801415,  0.32302629,  0.61650034, -1.65325574,  0.36409701],
+       [ 0.        ,  3.10300855,  0.5724868 , -1.21951952, -0.22391902],
+       [ 0.        ,  0.        ,  2.3400642 , -0.15690082,  0.07503906],
+       [-0.        , -0.        , -0.        ,  2.26118071, -0.09919147],
+       [-0.        , -0.        , -0.        , -0.        ,  2.22353984]])
 </pre></div>
 </div>
 </div>

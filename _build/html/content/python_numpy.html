@@ -293,13 +293,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Eigenthings, the spectral theorem, and the singular value decomposition
+  The EVD, SVD and applications
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="eigenstuff_chheader.html">
-   7. Eigenstuff
+   7. Eigenthings
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -333,8 +333,30 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="eigenstuff_image-compression.html">
+    <a class="reference internal" href="eigenstuff_low-rank-approximation.html">
      7.6. Low-Rank Approximation Using the SVD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="applications_chheader.html">
+   8. Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_PCA.html">
+     8.1. Principal Component Analysis (PCA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_spectral-clustering.html">
+     8.2. Sprectral Clustering
     </a>
    </li>
   </ul>
@@ -711,8 +733,8 @@ There are several ways how we can do this.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 529 ms, sys: 517 ms, total: 1.05 s
-Wall time: 473 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 520 ms, sys: 506 ms, total: 1.03 s
+Wall time: 485 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49999995000000
@@ -729,8 +751,8 @@ Instead, we can use NumPy to do the same operation much faster.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.8 ms, sys: 11.1 ms, total: 22.9 ms
-Wall time: 22.8 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.3 ms, sys: 12 ms, total: 24.3 ms
+Wall time: 24.2 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49999995000000
@@ -1603,8 +1625,8 @@ v^T w = v_{1}w_{1}+v_{2}w_{2}+\dots+v_{n}w_{n}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 67 µs, sys: 65 µs, total: 132 µs
-Wall time: 46 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 46 µs, sys: 0 ns, total: 46 µs
+Wall time: 47 µs
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([44])
@@ -1621,8 +1643,8 @@ Instead, we can use numpy’s build in function to compute the inner product.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 22 µs, sys: 10 µs, total: 32 µs
-Wall time: 17.9 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13 µs, sys: 8 µs, total: 21 µs
+Wall time: 21.9 µs
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[44]])

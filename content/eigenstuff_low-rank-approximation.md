@@ -12,7 +12,7 @@ kernelspec:
 ---
 
 
-# Low-Rank Approximation Using the SVD
+# Low-rank approximation using the SVD
 
 In the previous section, we saw that the singular value decomposition (SVD) represents any $m\times n$ matrix $\boldsymbol{A}$ as $\boldsymbol{U\Sigma V}^\top$ where $\boldsymbol{U}, \boldsymbol{V}$ are orthogonal matrices containing the left and right singular vectors of $\boldsymbol{A}$, and $\boldsymbol{\Sigma}$ is a "rectangular-diagonal" matrix containing the singular values of $\boldsymbol{A}$. In this section we see an application of the SVD to image compression.
 
