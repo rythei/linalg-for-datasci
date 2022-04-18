@@ -509,7 +509,7 @@
 <ol class="simple">
 <li><p>Randomly assign the datapoints <span class="math notranslate nohighlight">\(\boldsymbol{x}_1,\dots, \boldsymbol{x}_n\)</span> to <span class="math notranslate nohighlight">\(K\)</span> clusters <span class="math notranslate nohighlight">\(C_1,\dots,C_K\)</span></p></li>
 <li><p>Compute the mean of each cluster <span class="math notranslate nohighlight">\(\boldsymbol{\mu}_j = \frac{1}{|C_j|}\sum_{\boldsymbol{x}_i \in C_j}\boldsymbol{x}_i\)</span></p></li>
-<li><p>Reassign each point <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> to the cluster whose mean it is closest too</p></li>
+<li><p>Reassign each point <span class="math notranslate nohighlight">\(\boldsymbol{x}_i\)</span> to the cluster whose mean it is closest to</p></li>
 <li><p>Repeat steps 2 and 3 until the clusters stop updating</p></li>
 </ol>
 <p>Despite its simplicity, the <span class="math notranslate nohighlight">\(K\)</span>-means clustering algorithm is suprisingly effective, especially for relatively simple problems. However, basic <span class="math notranslate nohighlight">\(K\)</span>-means begins to perform worse when we move to higher dimensions – i.e. when the number of features <span class="math notranslate nohighlight">\(p\)</span> and samples <span class="math notranslate nohighlight">\(n\)</span> grows large. In this situation, we often want a method that utilizes some type of dimension reduction. This is where the singular value decomposition and/or eigenvalue decomposition becomes an important tool. In the next subsection, we discuss one such method that uses the EVD to make clustering easier in high dimensions.</p>
@@ -522,7 +522,7 @@
 <p>A few common examples used in practice would be the absolute-cosine similarity <span class="math notranslate nohighlight">\(\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \frac{\boldsymbol{|x^\top x'|}}{\|\boldsymbol{x}\|_2\|\boldsymbol{x}'\|_2}\)</span>, or the so-called Gaussian RBF kernel <span class="math notranslate nohighlight">\(\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \exp(-\gamma \|\boldsymbol{x}-\boldsymbol{x}'\|_2)\)</span>, where <span class="math notranslate nohighlight">\(\gamma\)</span> is a hyperparameter that we can choose as the user. Both of these metrics are larger for more “similar” datapoints, and smaller for more dissimilar points. The graph representing the dataset is completely described by the <span class="math notranslate nohighlight">\(n\times n\)</span> similarity matrix <span class="math notranslate nohighlight">\(\boldsymbol{S}\)</span> where</p>
 <div class="math notranslate nohighlight">
 \[
-\boldsymbol{S}_{ij} = \mathsf{sim}(\boldsymbol{x}_i,\boldsymbol{s}_j).
+\boldsymbol{S}_{ij} = \mathsf{sim}(\boldsymbol{x}_i,\boldsymbol{x}_j).
 \]</div>
 <p>Typically we assume that <span class="math notranslate nohighlight">\(\mathsf{sim}(\boldsymbol{x},\boldsymbol{x}') = \mathsf{sim}(\boldsymbol{x}',\boldsymbol{x})\)</span> so that the matrix <span class="math notranslate nohighlight">\(\boldsymbol{S}\)</span> is symmetric.</p>
 <p>Next, it is common practice to normalize this matrix in a few ways. First, we define a diagonal matrix <span class="math notranslate nohighlight">\(\boldsymbol{D} = \text{diag}(d_1,\dots, d_n)\)</span> where</p>
