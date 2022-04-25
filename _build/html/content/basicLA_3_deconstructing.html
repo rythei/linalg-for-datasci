@@ -366,15 +366,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="applications_double-descent.html">
-     8.4. How many samples
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     do we need to find
-     <span class="math notranslate nohighlight">
-      \(\boldsymbol{b}_\star\)
-     </span>
-     ? The “double descent” phenomenon
+     8.4. The “double descent” phenomenon
     </a>
    </li>
   </ul>
@@ -557,7 +549,7 @@ We first define two random matrices <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.005128145217895508
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith column:  0.00832676887512207
 </pre></div>
 </div>
 </div>
@@ -585,7 +577,7 @@ Let’s try this method, and compare the time with the above method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.00030112266540527344
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute A*B[:,i]:  0.0006051063537597656
 </pre></div>
 </div>
 </div>
@@ -625,8 +617,8 @@ In Python, we can do this with the following code.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.005263805389404297
-time taken to compute A*B[:,cols]:  0.00040602684020996094
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of columns:  0.0055959224700927734
+time taken to compute A*B[:,cols]:  0.00022292137145996094
 </pre></div>
 </div>
 </div>
@@ -677,8 +669,8 @@ Let’s compare this method to the naive approach of computing the full product 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005156040191650391
-time taken to compute A[i,:]*B:  0.00025010108947753906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select the ith row:  0.005657196044921875
+time taken to compute A[i,:]*B:  0.0002219676971435547
 </pre></div>
 </div>
 </div>
@@ -715,8 +707,8 @@ For example, if we wanted the <span class="math notranslate nohighlight">\(4^{th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0033102035522460938
-time taken to compute A[rows,:]*B:  0.0003159046173095703
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken to compute AB and select subset of rows:  0.0048100948333740234
+time taken to compute A[rows,:]*B:  0.00033783912658691406
 </pre></div>
 </div>
 </div>

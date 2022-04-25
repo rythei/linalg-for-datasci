@@ -31,14 +31,16 @@ In this simulation, for various values of $n$, we draw a data matrix $\boldsymbo
 import matplotlib.pyplot as plt
 import numpy as np
 
-N_TRIALS = 100
+
 
 def simulation(p, n_min, n_max, snr=np.sqrt(5)):
+    N_TRIALS = 50
+
     b_star = np.random.normal(size=p)
     b_star /= np.linalg.norm(b_star)/snr
     errors = []
     std = []
-    nn = [i for i in np.arange(n_min, n_max+1, 1) if i != p]
+    nn = [i for i in np.arange(n_min, n_max+1, 2) if i != p]
     for n in nn:
         temp = []
         for t in range(N_TRIALS):
@@ -59,20 +61,20 @@ def simulation(p, n_min, n_max, snr=np.sqrt(5)):
 
 
 
-p = 200
-n_min = 100
-n_max = 300
+p = 100
+n_min = 50
+n_max = 150
 
 
 errors, std = simulation(p=p, n_min=n_min, n_max=n_max)
 
-nn = [i for i in np.arange(n_min, n_max+1, 1) if i != p]
+nn = [i for i in np.arange(n_min, n_max+1, 2) if i != p]
 
 fig = plt.figure(figsize=(12,6))
-plt.plot(nn, errors)
+plt.plot(nn, errors, marker='s', markerfacecolor='white')
 plt.xlabel('n', fontsize=16)
 plt.ylabel('Error', fontsize=16)
-plt.title('Errors as a function of the number of samples')
+plt.title('Errors as a function of the number of samples', fontsize=16)
 plt.show()
 ```
 
