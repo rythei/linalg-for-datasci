@@ -354,8 +354,11 @@ inversion_error_ls
 # \boldsymbol{X}^\dagger = \boldsymbol{X^\top} (\boldsymbol{XX}^\top)^{-1}.
 # $$
 # 
-# (Note this is clearly a right inverse, since $\boldsymbol{XX}^\dagger = \boldsymbol{XX^\top} (\boldsymbol{XX}^\top)^{-1} = \boldsymbol{I}$).
-# Using this we can define the so-called least norm solution $\hat{\boldsymbol{b}} = \boldsymbol{X}^\dagger \boldsymbol{y}$. It is called the least-norm solution because it satisfies the following property:
+# Note this is clearly a right inverse, since $\boldsymbol{XX}^\dagger = \boldsymbol{XX^\top} (\boldsymbol{XX}^\top)^{-1} = \boldsymbol{I}$.
+# 
+# **Remark.** The pseudo-inverse can actually be defined even when $\boldsymbol{XX}^\top$ is not invertible: if $\boldsymbol{X} = \boldsymbol{U\Sigma V}^\top$ is the SVD of $\boldsymbol{X}$, then the pseudo-inverse is $\boldsymbol{X}^\dagger = \boldsymbol{V}\boldsymbol{\Sigma}^\dagger \boldsymbol{U}^\top$ where we define $\boldsymbol{\Sigma}^\dagger$ by taking the reciprocal of all the non-zero elements of $\boldsymbol{\Sigma}$. 
+# 
+# Using the pseudo-inverse we can define the so-called least-norm solution $\hat{\boldsymbol{b}} = \boldsymbol{X}^\dagger \boldsymbol{y}$. It is called the least-norm solution because it satisfies the following property:
 # 
 # $$
 # \hat{\boldsymbol{b}} = \text{argmin}_{\boldsymbol{b}: \boldsymbol{Xb} =\boldsymbol{y}} \|\boldsymbol{b}\|.
