@@ -865,8 +865,9 @@ Now suppose we have <span class="math notranslate nohighlight">\(n\)</span> data
 \[
 \boldsymbol{X}^\dagger = \boldsymbol{X^\top} (\boldsymbol{XX}^\top)^{-1}.
 \]</div>
-<p>(Note this is clearly a right inverse, since <span class="math notranslate nohighlight">\(\boldsymbol{XX}^\dagger = \boldsymbol{XX^\top} (\boldsymbol{XX}^\top)^{-1} = \boldsymbol{I}\)</span>).
-Using this we can define the so-called least norm solution <span class="math notranslate nohighlight">\(\hat{\boldsymbol{b}} = \boldsymbol{X}^\dagger \boldsymbol{y}\)</span>. It is called the least-norm solution because it satisfies the following property:</p>
+<p>Note this is clearly a right inverse, since <span class="math notranslate nohighlight">\(\boldsymbol{XX}^\dagger = \boldsymbol{XX^\top} (\boldsymbol{XX}^\top)^{-1} = \boldsymbol{I}\)</span>.</p>
+<p><strong>Remark.</strong> The pseudo-inverse can actually be defined even when <span class="math notranslate nohighlight">\(\boldsymbol{XX}^\top\)</span> is not invertible: if <span class="math notranslate nohighlight">\(\boldsymbol{X} = \boldsymbol{U\Sigma V}^\top\)</span> is the SVD of <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>, then the pseudo-inverse is <span class="math notranslate nohighlight">\(\boldsymbol{X}^\dagger = \boldsymbol{V}\boldsymbol{\Sigma}^\dagger \boldsymbol{U}^\top\)</span> where we define <span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}^\dagger\)</span> by taking the reciprocal of all the non-zero elements of <span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}\)</span>.</p>
+<p>Using the pseudo-inverse we can define the so-called least-norm solution <span class="math notranslate nohighlight">\(\hat{\boldsymbol{b}} = \boldsymbol{X}^\dagger \boldsymbol{y}\)</span>. It is called the least-norm solution because it satisfies the following property:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{\boldsymbol{b}} = \text{argmin}_{\boldsymbol{b}: \boldsymbol{Xb} =\boldsymbol{y}} \|\boldsymbol{b}\|.
