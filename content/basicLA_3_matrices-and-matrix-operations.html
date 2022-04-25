@@ -334,7 +334,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="eigenstuff_low-rank-approximation.html">
-     7.6. Low-Rank Approximation Using the SVD
+     7.6. Low-rank approximation using the SVD
     </a>
    </li>
   </ul>
@@ -357,6 +357,24 @@
    <li class="toctree-l2">
     <a class="reference internal" href="applications_spectral-clustering.html">
      8.2. Sprectral Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_least-squares.html">
+     8.3. Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_double-descent.html">
+     8.4. How many samples
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     do we need to find
+     <span class="math notranslate nohighlight">
+      \(\boldsymbol{b}_\star\)
+     </span>
+     ? The “double descent” phenomenon
     </a>
    </li>
   </ul>
@@ -539,11 +557,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.18349655 -0.60498337 -0.66149227]
- [-0.447146   -0.48191453  1.30584909]
- [ 0.85267308 -1.90117395 -1.19628162]
- [-0.22373252 -0.15388942  1.62274689]
- [ 0.5975924  -0.97954262  0.30787742]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.47094788 -1.30856604 -1.74707256]
+ [ 2.11479918  0.40494619  0.84608253]
+ [ 0.46647116  0.44598804 -1.3527494 ]
+ [-0.51049244 -0.28404887  0.32408076]
+ [-0.86404688  2.27891002 -0.22332935]]
 </pre></div>
 </div>
 </div>
@@ -648,7 +666,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0810617046900517
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.0642503248891284
 </pre></div>
 </div>
 </div>
@@ -750,8 +768,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.8887171745300293 seconds
-time using np.dot: 0.0073871612548828125 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time using our function: 0.8363807201385498 seconds
+time using np.dot: 0.006969928741455078 seconds
 </pre></div>
 </div>
 </div>
