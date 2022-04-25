@@ -366,15 +366,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="applications_double-descent.html">
-     8.4. How many samples
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     do we need to find
-     <span class="math notranslate nohighlight">
-      \(\boldsymbol{b}_\star\)
-     </span>
-     ? The “double descent” phenomenon
+     8.4. The “double descent” phenomenon
     </a>
    </li>
   </ul>
@@ -624,16 +616,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1., -0.,  0., -0.,  0.,  0.,  0., -0.,  0., -0.],
-       [-0.,  1.,  0., -0., -0., -0.,  0., -0.,  0.,  0.],
-       [ 0.,  0.,  1.,  0., -0.,  0., -0., -0.,  0.,  0.],
-       [-0., -0.,  0.,  1.,  0., -0., -0.,  0.,  0.,  0.],
-       [ 0., -0., -0.,  0.,  1., -0.,  0.,  0.,  0.,  0.],
-       [ 0., -0.,  0., -0., -0.,  1., -0., -0.,  0.,  0.],
-       [ 0.,  0., -0., -0.,  0., -0.,  1., -0.,  0.,  0.],
-       [-0., -0., -0.,  0.,  0., -0., -0.,  1., -0., -0.],
-       [ 0.,  0.,  0.,  0.,  0.,  0.,  0., -0.,  1., -0.],
-       [-0.,  0.,  0.,  0.,  0.,  0.,  0., -0., -0.,  1.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.,  0., -0., -0., -0.,  0., -0.,  0., -0.,  0.],
+       [ 0.,  1., -0.,  0.,  0., -0.,  0.,  0., -0.,  0.],
+       [-0., -0.,  1., -0., -0.,  0., -0.,  0., -0.,  0.],
+       [-0.,  0., -0.,  1., -0., -0.,  0., -0., -0., -0.],
+       [-0.,  0., -0., -0.,  1.,  0., -0., -0., -0., -0.],
+       [ 0., -0.,  0., -0.,  0.,  1.,  0.,  0., -0.,  0.],
+       [-0.,  0., -0.,  0., -0.,  0.,  1.,  0.,  0.,  0.],
+       [ 0.,  0.,  0., -0., -0.,  0.,  0.,  1.,  0.,  0.],
+       [-0., -0., -0., -0., -0., -0.,  0.,  0.,  1., -0.],
+       [ 0.,  0.,  0., -0., -0.,  0.,  0.,  0., -0.,  1.]])
 </pre></div>
 </div>
 </div>
@@ -711,8 +703,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the diagonal entries of R are  [-2.6470595   2.28852401  2.34248082 -2.96941224 -3.13018215]
-the eigenvalues of R are  [-2.6470595   2.28852401  2.34248082 -2.96941224 -3.13018215]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the diagonal entries of R are  [ 3.94317512  2.65648448 -2.02191166 -2.7560563  -2.77326378]
+the eigenvalues of R are  [ 3.94317512  2.65648448 -2.02191166 -2.7560563  -2.77326378]
 </pre></div>
 </div>
 </div>

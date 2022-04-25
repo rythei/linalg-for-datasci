@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import matplotlib.pyplot as plt', 'import numpy as np', '', 'N_TRIALS = 100', '']
+['import matplotlib.pyplot as plt', 'import numpy as np', '', '', '']
 ...
-['plt.plot(nn, errors)', "plt.xlabel('n', fontsize=16)", "plt.ylabel('Error', fontsize=16)", "plt.title('Errors as a function of the number of samples')", 'plt.show()']
+["plt.plot(nn, errors, marker='s', markerfacecolor='white')", "plt.xlabel('n', fontsize=16)", "plt.ylabel('Error', fontsize=16)", "plt.title('Errors as a function of the number of samples', fontsize=16)", 'plt.show()']
 -------------------
 

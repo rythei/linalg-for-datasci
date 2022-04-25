@@ -490,14 +490,16 @@ y_i = \boldsymbol{x}_i^\top \boldsymbol{b}_\star + \varepsilon_i
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">N_TRIALS</span> <span class="o">=</span> <span class="mi">100</span>
+
 
 <span class="k">def</span> <span class="nf">simulation</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="p">,</span> <span class="n">snr</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)):</span>
+    <span class="n">N_TRIALS</span> <span class="o">=</span> <span class="mi">50</span>
+
     <span class="n">b_star</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
     <span class="n">b_star</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b_star</span><span class="p">)</span><span class="o">/</span><span class="n">snr</span>
     <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">std</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">nn</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">p</span><span class="p">]</span>
+    <span class="n">nn</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">p</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nn</span><span class="p">:</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_TRIALS</span><span class="p">):</span>
@@ -518,62 +520,26 @@ y_i = \boldsymbol{x}_i^\top \boldsymbol{b}_\star + \varepsilon_i
 
 
 
-<span class="n">p</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">n_min</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">n_max</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">n_min</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">n_max</span> <span class="o">=</span> <span class="mi">150</span>
 
 
 <span class="n">errors</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="n">simulation</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">n_min</span><span class="o">=</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="o">=</span><span class="n">n_max</span><span class="p">)</span>
 
-<span class="n">nn</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">p</span><span class="p">]</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">p</span><span class="p">]</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Errors as a function of the number of samples&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Errors as a function of the number of samples&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="n">c26277e7d3a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> 
-<span class="g g-Whitespace">     </span><span class="mi">36</span> 
-<span class="ne">---&gt; </span><span class="mi">37</span> <span class="n">errors</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="n">simulation</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">n_min</span><span class="o">=</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="o">=</span><span class="n">n_max</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> 
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="n">nn</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span> <span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">p</span><span class="p">]</span>
-
-<span class="nn">&lt;ipython-input-1-0c26277e7d3a&gt;</span> in <span class="ni">simulation</span><span class="nt">(p, n_min, n_max, snr)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>             <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">b_star</span><span class="p">)</span> <span class="o">+</span> <span class="n">epsilon</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="ne">---&gt; </span><span class="mi">21</span>             <span class="n">b_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="n">y</span><span class="p">)</span> <span class="c1"># find least squares solution</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> 
-<span class="g g-Whitespace">     </span><span class="mi">23</span>             <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b_hat</span><span class="o">-</span><span class="n">b_star</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># record error</span>
-
-<span class="nn">~/opt/miniconda3/lib/python3.9/site-packages/numpy/core/overrides.py</span> in <span class="ni">pinv</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="nn">~/opt/miniconda3/lib/python3.9/site-packages/numpy/linalg/linalg.py</span> in <span class="ni">pinv</span><span class="nt">(a, rcond, hermitian)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1988</span>         <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1989</span>     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1990</span>     <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vt</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">hermitian</span><span class="o">=</span><span class="n">hermitian</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1991</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1992</span>     <span class="c1"># discard small singular values</span>
-
-<span class="nn">~/opt/miniconda3/lib/python3.9/site-packages/numpy/core/overrides.py</span> in <span class="ni">svd</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="nn">~/opt/miniconda3/lib/python3.9/site-packages/numpy/linalg/linalg.py</span> in <span class="ni">svd</span><span class="nt">(a, full_matrices, compute_uv, hermitian)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1646</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1647</span>         <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;DdD&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;ddd&#39;</span>
-<span class="ne">-&gt; </span><span class="mi">1648</span>         <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1649</span>         <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1650</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">_realType</span><span class="p">(</span><span class="n">result_t</span><span class="p">),</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
+<img alt="../_images/applications_double-descent_1_0.png" src="../_images/applications_double-descent_1_0.png" />
 </div>
 </div>
 <p>Somewhat amazingly, the plot of <span class="math notranslate nohighlight">\(e_n\)</span> verses in <span class="math notranslate nohighlight">\(n\)</span> is not monotone at all – in fact, it reaches a maximum at <span class="math notranslate nohighlight">\(n=p\)</span>! So more data points do not always help us; this is particularly true when <span class="math notranslate nohighlight">\(p\)</span> is very large. This phenomenon has recently been referred to as “double descent”, and it is hypothesized that a similar phenomenon is behind the remarkable recent successes of neural networks.</p>
