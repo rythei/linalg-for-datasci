@@ -19,7 +19,9 @@ $$
 y_i = \boldsymbol{x}_i^\top \boldsymbol{b}_\star + \varepsilon_i
 $$
 
-where $\varepsilon_i$ is some noise. One interesting question from the statistical perspective is: how many samples $n$ we need to approximately recover $\boldsymbol{b}_\star$? For formally, suppose we fix $p$ as some reasonably large dimension. Given $n$ training samples, we fit a $\hat{\boldsymbol{b}}$ (either using $\hat{\boldsymbol{b}} = \boldsymbol{X}^\top (\boldsymbol{XX}^\top)^{-1}\boldsymbol{y}$ or $\hat{\boldsymbol{b}} = (\boldsymbol{X^\top X})^{-1}\boldsymbol{X}^\top \boldsymbol{y}$), and measure the error $e_n = \|\hat{\boldsymbol{b}} - \boldsymbol{b}_\star\|_2^2$. Intuitively, we might think that as $n$ get's bigger, $e_n$ will get smaller, since we're "learning more about $\boldsymbol{b}_\star$". Intruigingly, this is not always the case.
+where $\varepsilon_i$ is noise, usually assumed to have mean zero and variance $\sigma^2$, and $\boldsymbol{b}_\star$ is the unobserved "ground truth" which we would like to be able to estimate.
+
+One interesting question from the statistical perspective is: how many samples $n$ we need to approximately recover $\boldsymbol{b}_\star$? For formally, suppose we fix $p$ as some reasonably large dimension. Given $n$ training samples, we fit a $\hat{\boldsymbol{b}}$ (either using $\hat{\boldsymbol{b}} = \boldsymbol{X}^\top (\boldsymbol{XX}^\top)^{-1}\boldsymbol{y}$ or $\hat{\boldsymbol{b}} = (\boldsymbol{X^\top X})^{-1}\boldsymbol{X}^\top \boldsymbol{y}$), and measure the error $e_n = \|\hat{\boldsymbol{b}} - \boldsymbol{b}_\star\|_2^2$. Intuitively, we might think that as $n$ get's bigger, $e_n$ will get smaller, since we're "learning more about $\boldsymbol{b}_\star$". Intruigingly, this is not always the case.
 
 Below we run a simple simulation to find $e_n$ as a function of $n$. It turns out that the shape of this plot depends largely on the "signal-to-noise" ratio, which is $\|\boldsymbol{\beta}_\star\|_2 / \sigma$ where $\sigma^2 = \text{Var}(\varepsilon)$. Intuitively, if the signal-to-noise ratio is large, the "signal" term $\boldsymbol{Xb}_\star$ is larger than the noise part $\varepsilon$.
 
@@ -27,6 +29,7 @@ In this simulation, for various values of $n$, we draw a data matrix $\boldsymbo
 
 ```{code-cell}
 import matplotlib.pyplot as plt
+import numpy as np
 
 N_TRIALS = 100
 
