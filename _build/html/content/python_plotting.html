@@ -334,7 +334,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="eigenstuff_low-rank-approximation.html">
-     7.6. Low-Rank Approximation Using the SVD
+     7.6. Low-rank approximation using the SVD
     </a>
    </li>
   </ul>
@@ -357,6 +357,24 @@
    <li class="toctree-l2">
     <a class="reference internal" href="applications_spectral-clustering.html">
      8.2. Sprectral Clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_least-squares.html">
+     8.3. Least Squares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applications_double-descent.html">
+     8.4. How many samples
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     do we need to find
+     <span class="math notranslate nohighlight">
+      \(\boldsymbol{b}_\star\)
+     </span>
+     ? The “double descent” phenomenon
     </a>
    </li>
   </ul>
@@ -791,10 +809,10 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>points:
-[[0.55494006 0.05791638 0.73494252 0.81531991 0.59787101 0.95738906
-  0.82284073 0.40074055 0.60995988 0.55141607]
- [0.89945351 0.03053232 0.35790939 0.71638838 0.16839004 0.21314137
-  0.993872   0.4151418  0.66309861 0.75525724]]
+[[0.41947975 0.60277075 0.43512405 0.04081653 0.19022525 0.99890725
+  0.22237326 0.5538874  0.11853343 0.64685019]
+ [0.04706848 0.61828018 0.40704117 0.22649182 0.49216533 0.04441474
+  0.6664474  0.26406181 0.13400439 0.71462711]]
 
 points has shape (2, 10)
 </pre></div>
@@ -815,12 +833,12 @@ points has shape (2, 10)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>xs (shape: (10,)):
-[0.55494006 0.05791638 0.73494252 0.81531991 0.59787101 0.95738906
- 0.82284073 0.40074055 0.60995988 0.55141607]
+[0.41947975 0.60277075 0.43512405 0.04081653 0.19022525 0.99890725
+ 0.22237326 0.5538874  0.11853343 0.64685019]
 
 ys (shape: (10,)):
-[0.89945351 0.03053232 0.35790939 0.71638838 0.16839004 0.21314137
- 0.993872   0.4151418  0.66309861 0.75525724]
+[0.04706848 0.61828018 0.40704117 0.22649182 0.49216533 0.04441474
+ 0.6664474  0.26406181 0.13400439 0.71462711]
 </pre></div>
 </div>
 </div>
