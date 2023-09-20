@@ -1,0 +1,3 @@
+# Homework 10 Computational Instructions
+
+For this computational assignment, we will use need to use a dataset of images that you can download [here](https://drive.google.com/file/d/1ATiXXhpePn0FmVcU1yWQBK19O9dpww2l/view?usp=sharing). There you can download a zip folder containing the data files, in the directory `country_flags_npy/`, as well as a file `country_names.csv` and a `hw10.ipynb` file containing further instructions on using the data and as well as problems. Note that the data files are reasonably large -- approximately 220MB after unzipped, so make sure you save the files somewhere with adequate space.
